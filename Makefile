@@ -13,6 +13,8 @@ deps:
 include deps.mk
 
 .c.log:
-	printf '%s %s %s\n' $(CC) $(CFLAGS) $< > $@
 	-$(CC) $(CFLAGS) $< >> $@ 2>> $@
-	printf '%s returned %d\n' $(CC) $$? >> $@
+	printf '\nreturned %d\n' $$? >> $@
+
+clean:
+	rm -f *.o *.obj *.exe a.out *.log

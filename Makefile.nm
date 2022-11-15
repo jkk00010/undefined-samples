@@ -1,0 +1,13 @@
+.SUFFIXES: .c .log
+
+CC=cl
+CFLAGS=/nologo /std:c17
+
+all:
+
+!INCLUDE deps.mk
+
+.c.log:
+	-$(CC) $(CFLAGS) $< > $@
+	echo. >> $@
+	echo returned %ERRORLEVEL% >> $@
