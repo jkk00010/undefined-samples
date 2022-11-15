@@ -2,10 +2,17 @@ all: ctype-function-parameter-not-representable.log
 all: declaring-a-variable-of-incomplete-type.log
 all: execution-reaches-end-brace-of-function.log
 all: function-declared-extern-inline.log
+all: incompatible-declarations.log
+all: indeterminate-auto-value.log
+all: integer-conversion.log
 all: integer-overflow.log
 all: manually-declaring-__func__.log
 all: modifying-a-string-literal.log
+all: no-valid-main.log
+all: non-empty-no-newline.log
+all: register-array.log
 all: returning-from-a-_Noreturn-function.log
 all: undefined-extern-variable.log
 all: undefined-preprocessor-directive.log
 all: undefining-a-predefined-macro.log
+all: void-value.log
