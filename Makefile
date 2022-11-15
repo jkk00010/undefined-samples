@@ -13,7 +13,7 @@ deps:
 include deps.mk
 
 .c.log:
-	-$(CC) $(CFLAGS) $< >> $@ 2>> $@
+	-$(CC) $(CFLAGS) $< -o $* >> $@ 2>> $@
 	printf '\nreturned %d\n' $$? >> $@
 
 clean:
