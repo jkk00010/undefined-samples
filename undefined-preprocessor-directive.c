@@ -1,1 +1,5 @@
 #hello
+
+int main(void)
+{
+}
