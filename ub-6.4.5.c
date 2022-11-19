@@ -1,3 +1,5 @@
+/* The program attempts to modify a string literal (6.4.5). */
+
 #include <stdio.h>
 
 int main(void)
