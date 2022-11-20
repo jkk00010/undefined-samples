@@ -1,8 +1,8 @@
 .POSIX:
 
-CC=gcc
+CC=clang
 CFLAGS=-std=c17
-OUT=gcc-base
+OUT=$(CC)-base
 
 all:
 

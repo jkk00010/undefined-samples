@@ -1,4 +1,4 @@
-/* A pointer is used to call a function whose typeis not compatible with the referenced type (6.3.2.3). */
+/* A pointer is used to call a function whose type is not compatible with the referenced type (6.3.2.3). */
 #include <stdio.h>
 
 int foo(int n)
