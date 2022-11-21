@@ -9,53 +9,53 @@ $(OUT)/4.sample-1.log: 4/sample-1.c
 	-($(CC) $(CFLAGS) $< -o $(OUT)/4.sample-1 || printf -- '--returned %d\n' $$?) >> $@ 2>> $@
 	-if [ -x "$(OUT)/4.sample-1" ]; then printf ' [RUN] %s\n' "$(OUT)/4.sample-1"; (printf '\nrunning...\n'; ./$(OUT)/4.sample-1; printf -- '--returned %d\n' $$?) >> $@ 2>> $@; fi
 
-all: $(OUT)/5.1.1.2.sample-2.log
-$(OUT)/5.1.1.2.sample-2.log: 5/1/1/2/sample-2.c
+all: $(OUT)/5.1.1.2.token-concatenation-makes-universal-character-name.log
+$(OUT)/5.1.1.2.token-concatenation-makes-universal-character-name.log: 5/1/1/2/token-concatenation-makes-universal-character-name.c
 	mkdir -p $(OUT)
 	rm -f $@
-	printf ' [CC]  %s\n' "5/1/1/2/sample-2.c"
-	-($(CC) $(CFLAGS) $< -o $(OUT)/5.1.1.2.sample-2 || printf -- '--returned %d\n' $$?) >> $@ 2>> $@
-	-if [ -x "$(OUT)/5.1.1.2.sample-2" ]; then printf ' [RUN] %s\n' "$(OUT)/5.1.1.2.sample-2"; (printf '\nrunning...\n'; ./$(OUT)/5.1.1.2.sample-2; printf -- '--returned %d\n' $$?) >> $@ 2>> $@; fi
+	printf ' [CC]  %s\n' "5/1/1/2/token-concatenation-makes-universal-character-name.c"
+	-($(CC) $(CFLAGS) $< -o $(OUT)/5.1.1.2.token-concatenation-makes-universal-character-name || printf -- '--returned %d\n' $$?) >> $@ 2>> $@
+	-if [ -x "$(OUT)/5.1.1.2.token-concatenation-makes-universal-character-name" ]; then printf ' [RUN] %s\n' "$(OUT)/5.1.1.2.token-concatenation-makes-universal-character-name"; (printf '\nrunning...\n'; ./$(OUT)/5.1.1.2.token-concatenation-makes-universal-character-name; printf -- '--returned %d\n' $$?) >> $@ 2>> $@; fi
 
-all: $(OUT)/5.1.1.2.sample-1.log
-$(OUT)/5.1.1.2.sample-1.log: 5/1/1/2/sample-1.c
+all: $(OUT)/5.1.1.2.ends-with-partial-comment.log
+$(OUT)/5.1.1.2.ends-with-partial-comment.log: 5/1/1/2/ends-with-partial-comment.c
 	mkdir -p $(OUT)
 	rm -f $@
-	printf ' [CC]  %s\n' "5/1/1/2/sample-1.c"
-	-($(CC) $(CFLAGS) $< -o $(OUT)/5.1.1.2.sample-1 || printf -- '--returned %d\n' $$?) >> $@ 2>> $@
-	-if [ -x "$(OUT)/5.1.1.2.sample-1" ]; then printf ' [RUN] %s\n' "$(OUT)/5.1.1.2.sample-1"; (printf '\nrunning...\n'; ./$(OUT)/5.1.1.2.sample-1; printf -- '--returned %d\n' $$?) >> $@ 2>> $@; fi
+	printf ' [CC]  %s\n' "5/1/1/2/ends-with-partial-comment.c"
+	-($(CC) $(CFLAGS) $< -o $(OUT)/5.1.1.2.ends-with-partial-comment || printf -- '--returned %d\n' $$?) >> $@ 2>> $@
+	-if [ -x "$(OUT)/5.1.1.2.ends-with-partial-comment" ]; then printf ' [RUN] %s\n' "$(OUT)/5.1.1.2.ends-with-partial-comment"; (printf '\nrunning...\n'; ./$(OUT)/5.1.1.2.ends-with-partial-comment; printf -- '--returned %d\n' $$?) >> $@ 2>> $@; fi
 
-all: $(OUT)/5.1.2.4.sample-1.log
-$(OUT)/5.1.2.4.sample-1.log: 5/1/2/4/sample-1.c
+all: $(OUT)/5.1.2.4.data-race.log
+$(OUT)/5.1.2.4.data-race.log: 5/1/2/4/data-race.c
 	mkdir -p $(OUT)
 	rm -f $@
-	printf ' [CC]  %s\n' "5/1/2/4/sample-1.c"
-	-($(CC) $(CFLAGS) $< -o $(OUT)/5.1.2.4.sample-1 || printf -- '--returned %d\n' $$?) >> $@ 2>> $@
-	-if [ -x "$(OUT)/5.1.2.4.sample-1" ]; then printf ' [RUN] %s\n' "$(OUT)/5.1.2.4.sample-1"; (printf '\nrunning...\n'; ./$(OUT)/5.1.2.4.sample-1; printf -- '--returned %d\n' $$?) >> $@ 2>> $@; fi
+	printf ' [CC]  %s\n' "5/1/2/4/data-race.c"
+	-($(CC) $(CFLAGS) $< -lpthread -o $(OUT)/5.1.2.4.data-race || printf -- '--returned %d\n' $$?) >> $@ 2>> $@
+	-if [ -x "$(OUT)/5.1.2.4.data-race" ]; then printf ' [RUN] %s\n' "$(OUT)/5.1.2.4.data-race"; (printf '\nrunning...\n'; ./$(OUT)/5.1.2.4.data-race; printf -- '--returned %d\n' $$?) >> $@ 2>> $@; fi
 
-all: $(OUT)/5.1.2.2.1.sample-1.log
-$(OUT)/5.1.2.2.1.sample-1.log: 5/1/2/2/1/sample-1.c
+all: $(OUT)/5.1.2.2.1.no-standard-main.log
+$(OUT)/5.1.2.2.1.no-standard-main.log: 5/1/2/2/1/no-standard-main.c
 	mkdir -p $(OUT)
 	rm -f $@
-	printf ' [CC]  %s\n' "5/1/2/2/1/sample-1.c"
-	-($(CC) $(CFLAGS) $< -o $(OUT)/5.1.2.2.1.sample-1 || printf -- '--returned %d\n' $$?) >> $@ 2>> $@
-	-if [ -x "$(OUT)/5.1.2.2.1.sample-1" ]; then printf ' [RUN] %s\n' "$(OUT)/5.1.2.2.1.sample-1"; (printf '\nrunning...\n'; ./$(OUT)/5.1.2.2.1.sample-1; printf -- '--returned %d\n' $$?) >> $@ 2>> $@; fi
+	printf ' [CC]  %s\n' "5/1/2/2/1/no-standard-main.c"
+	-($(CC) $(CFLAGS) $< -o $(OUT)/5.1.2.2.1.no-standard-main || printf -- '--returned %d\n' $$?) >> $@ 2>> $@
+	-if [ -x "$(OUT)/5.1.2.2.1.no-standard-main" ]; then printf ' [RUN] %s\n' "$(OUT)/5.1.2.2.1.no-standard-main"; (printf '\nrunning...\n'; ./$(OUT)/5.1.2.2.1.no-standard-main; printf -- '--returned %d\n' $$?) >> $@ 2>> $@; fi
 
-all: $(OUT)/5.2.1.sample-1.log
-$(OUT)/5.2.1.sample-1.log: 5/2/1/sample-1.c
+all: $(OUT)/5.2.1.non-basic-character.log
+$(OUT)/5.2.1.non-basic-character.log: 5/2/1/non-basic-character.c
 	mkdir -p $(OUT)
 	rm -f $@
-	printf ' [CC]  %s\n' "5/2/1/sample-1.c"
-	-($(CC) $(CFLAGS) $< -o $(OUT)/5.2.1.sample-1 || printf -- '--returned %d\n' $$?) >> $@ 2>> $@
-	-if [ -x "$(OUT)/5.2.1.sample-1" ]; then printf ' [RUN] %s\n' "$(OUT)/5.2.1.sample-1"; (printf '\nrunning...\n'; ./$(OUT)/5.2.1.sample-1; printf -- '--returned %d\n' $$?) >> $@ 2>> $@; fi
+	printf ' [CC]  %s\n' "5/2/1/non-basic-character.c"
+	-($(CC) $(CFLAGS) $< -o $(OUT)/5.2.1.non-basic-character || printf -- '--returned %d\n' $$?) >> $@ 2>> $@
+	-if [ -x "$(OUT)/5.2.1.non-basic-character" ]; then printf ' [RUN] %s\n' "$(OUT)/5.2.1.non-basic-character"; (printf '\nrunning...\n'; ./$(OUT)/5.2.1.non-basic-character; printf -- '--returned %d\n' $$?) >> $@ 2>> $@; fi
 
-all: $(OUT)/5.2.1.2.sample-1.log
-$(OUT)/5.2.1.2.sample-1.log: 5/2/1/2/sample-1.c
+all: $(OUT)/5.2.1.2.invalid-multibyte-character.log
+$(OUT)/5.2.1.2.invalid-multibyte-character.log: 5/2/1/2/invalid-multibyte-character.c
 	mkdir -p $(OUT)
 	rm -f $@
-	printf ' [CC]  %s\n' "5/2/1/2/sample-1.c"
-	-($(CC) $(CFLAGS) $< -o $(OUT)/5.2.1.2.sample-1 || printf -- '--returned %d\n' $$?) >> $@ 2>> $@
-	-if [ -x "$(OUT)/5.2.1.2.sample-1" ]; then printf ' [RUN] %s\n' "$(OUT)/5.2.1.2.sample-1"; (printf '\nrunning...\n'; ./$(OUT)/5.2.1.2.sample-1; printf -- '--returned %d\n' $$?) >> $@ 2>> $@; fi
+	printf ' [CC]  %s\n' "5/2/1/2/invalid-multibyte-character.c"
+	-($(CC) $(CFLAGS) $< -o $(OUT)/5.2.1.2.invalid-multibyte-character || printf -- '--returned %d\n' $$?) >> $@ 2>> $@
+	-if [ -x "$(OUT)/5.2.1.2.invalid-multibyte-character" ]; then printf ' [RUN] %s\n' "$(OUT)/5.2.1.2.invalid-multibyte-character"; (printf '\nrunning...\n'; ./$(OUT)/5.2.1.2.invalid-multibyte-character; printf -- '--returned %d\n' $$?) >> $@ 2>> $@; fi
 
 all: $(OUT)/6.4.unmatched-quote.log
 $(OUT)/6.4.unmatched-quote.log: 6/4/unmatched-quote.c
@@ -966,7 +966,7 @@ $(OUT)/7.26.4.6.sample-1.log: 7/26/4/6/sample-1.c
 	mkdir -p $(OUT)
 	rm -f $@
 	printf ' [CC]  %s\n' "7/26/4/6/sample-1.c"
-	-($(CC) $(CFLAGS) $< -o $(OUT)/7.26.4.6.sample-1 || printf -- '--returned %d\n' $$?) >> $@ 2>> $@
+	-($(CC) $(CFLAGS) $< -lpthread -o $(OUT)/7.26.4.6.sample-1 || printf -- '--returned %d\n' $$?) >> $@ 2>> $@
 	-if [ -x "$(OUT)/7.26.4.6.sample-1" ]; then printf ' [RUN] %s\n' "$(OUT)/7.26.4.6.sample-1"; (printf '\nrunning...\n'; ./$(OUT)/7.26.4.6.sample-1; printf -- '--returned %d\n' $$?) >> $@ 2>> $@; fi
 
 all: $(OUT)/7.26.4.3.sample-1.log
@@ -974,7 +974,7 @@ $(OUT)/7.26.4.3.sample-1.log: 7/26/4/3/sample-1.c
 	mkdir -p $(OUT)
 	rm -f $@
 	printf ' [CC]  %s\n' "7/26/4/3/sample-1.c"
-	-($(CC) $(CFLAGS) $< -o $(OUT)/7.26.4.3.sample-1 || printf -- '--returned %d\n' $$?) >> $@ 2>> $@
+	-($(CC) $(CFLAGS) $< -lpthread -o $(OUT)/7.26.4.3.sample-1 || printf -- '--returned %d\n' $$?) >> $@ 2>> $@
 	-if [ -x "$(OUT)/7.26.4.3.sample-1" ]; then printf ' [RUN] %s\n' "$(OUT)/7.26.4.3.sample-1"; (printf '\nrunning...\n'; ./$(OUT)/7.26.4.3.sample-1; printf -- '--returned %d\n' $$?) >> $@ 2>> $@; fi
 
 all: $(OUT)/7.26.5.3.sample-1.log
@@ -982,7 +982,7 @@ $(OUT)/7.26.5.3.sample-1.log: 7/26/5/3/sample-1.c
 	mkdir -p $(OUT)
 	rm -f $@
 	printf ' [CC]  %s\n' "7/26/5/3/sample-1.c"
-	-($(CC) $(CFLAGS) $< -o $(OUT)/7.26.5.3.sample-1 || printf -- '--returned %d\n' $$?) >> $@ 2>> $@
+	-($(CC) $(CFLAGS) $< -lpthread -o $(OUT)/7.26.5.3.sample-1 || printf -- '--returned %d\n' $$?) >> $@ 2>> $@
 	-if [ -x "$(OUT)/7.26.5.3.sample-1" ]; then printf ' [RUN] %s\n' "$(OUT)/7.26.5.3.sample-1"; (printf '\nrunning...\n'; ./$(OUT)/7.26.5.3.sample-1; printf -- '--returned %d\n' $$?) >> $@ 2>> $@; fi
 
 all: $(OUT)/7.26.6.1.sample-1.log
@@ -998,7 +998,7 @@ $(OUT)/7.26.6.2.sample-1.log: 7/26/6/2/sample-1.c
 	mkdir -p $(OUT)
 	rm -f $@
 	printf ' [CC]  %s\n' "7/26/6/2/sample-1.c"
-	-($(CC) $(CFLAGS) $< -o $(OUT)/7.26.6.2.sample-1 || printf -- '--returned %d\n' $$?) >> $@ 2>> $@
+	-($(CC) $(CFLAGS) $< -lpthread -o $(OUT)/7.26.6.2.sample-1 || printf -- '--returned %d\n' $$?) >> $@ 2>> $@
 	-if [ -x "$(OUT)/7.26.6.2.sample-1" ]; then printf ' [RUN] %s\n' "$(OUT)/7.26.6.2.sample-1"; (printf '\nrunning...\n'; ./$(OUT)/7.26.6.2.sample-1; printf -- '--returned %d\n' $$?) >> $@ 2>> $@; fi
 
 all: $(OUT)/7.4.sample-1.log
@@ -1038,7 +1038,7 @@ $(OUT)/7.14.1.1.sample-8.log: 7/14/1/1/sample-8.c
 	mkdir -p $(OUT)
 	rm -f $@
 	printf ' [CC]  %s\n' "7/14/1/1/sample-8.c"
-	-($(CC) $(CFLAGS) $< -o $(OUT)/7.14.1.1.sample-8 || printf -- '--returned %d\n' $$?) >> $@ 2>> $@
+	-($(CC) $(CFLAGS) $< -lpthread -o $(OUT)/7.14.1.1.sample-8 || printf -- '--returned %d\n' $$?) >> $@ 2>> $@
 	-if [ -x "$(OUT)/7.14.1.1.sample-8" ]; then printf ' [RUN] %s\n' "$(OUT)/7.14.1.1.sample-8"; (printf '\nrunning...\n'; ./$(OUT)/7.14.1.1.sample-8; printf -- '--returned %d\n' $$?) >> $@ 2>> $@; fi
 
 all: $(OUT)/7.14.1.1.sample-7.log
@@ -1086,7 +1086,7 @@ $(OUT)/7.14.1.1.sample-5.log: 7/14/1/1/sample-5.c
 	mkdir -p $(OUT)
 	rm -f $@
 	printf ' [CC]  %s\n' "7/14/1/1/sample-5.c"
-	-($(CC) $(CFLAGS) $< -o $(OUT)/7.14.1.1.sample-5 || printf -- '--returned %d\n' $$?) >> $@ 2>> $@
+	-($(CC) $(CFLAGS) $< -lpthread -o $(OUT)/7.14.1.1.sample-5 || printf -- '--returned %d\n' $$?) >> $@ 2>> $@
 	-if [ -x "$(OUT)/7.14.1.1.sample-5" ]; then printf ' [RUN] %s\n' "$(OUT)/7.14.1.1.sample-5"; (printf '\nrunning...\n'; ./$(OUT)/7.14.1.1.sample-5; printf -- '--returned %d\n' $$?) >> $@ 2>> $@; fi
 
 all: $(OUT)/7.29.4.5.7.sample-1.log
