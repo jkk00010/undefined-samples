@@ -89,13 +89,13 @@ $(OUT)/6.4.5.modify-string-literal.log: 6/4/5/modify-string-literal.c
 	-($(CC) $(CFLAGS) $< -o $(OUT)/6.4.5.modify-string-literal || printf -- '--returned %d\n' $$?) >> $@ 2>> $@
 	-if [ -x "$(OUT)/6.4.5.modify-string-literal" ]; then printf ' [RUN] %s\n' "$(OUT)/6.4.5.modify-string-literal"; (printf '\nrunning...\n'; ./$(OUT)/6.4.5.modify-string-literal; printf -- '--returned %d\n' $$?) >> $@ 2>> $@; fi
 
-all: $(OUT)/6.4.2.1.sample-2.log
-$(OUT)/6.4.2.1.sample-2.log: 6/4/2/1/sample-2.c
+all: $(OUT)/6.4.2.1.invalid-universal-character-identifer.log
+$(OUT)/6.4.2.1.invalid-universal-character-identifer.log: 6/4/2/1/invalid-universal-character-identifer.c
 	mkdir -p $(OUT)
 	rm -f $@
-	printf ' [CC]  %s\n' "6/4/2/1/sample-2.c"
-	-($(CC) $(CFLAGS) $< -o $(OUT)/6.4.2.1.sample-2 || printf -- '--returned %d\n' $$?) >> $@ 2>> $@
-	-if [ -x "$(OUT)/6.4.2.1.sample-2" ]; then printf ' [RUN] %s\n' "$(OUT)/6.4.2.1.sample-2"; (printf '\nrunning...\n'; ./$(OUT)/6.4.2.1.sample-2; printf -- '--returned %d\n' $$?) >> $@ 2>> $@; fi
+	printf ' [CC]  %s\n' "6/4/2/1/invalid-universal-character-identifer.c"
+	-($(CC) $(CFLAGS) $< -o $(OUT)/6.4.2.1.invalid-universal-character-identifer || printf -- '--returned %d\n' $$?) >> $@ 2>> $@
+	-if [ -x "$(OUT)/6.4.2.1.invalid-universal-character-identifer" ]; then printf ' [RUN] %s\n' "$(OUT)/6.4.2.1.invalid-universal-character-identifer"; (printf '\nrunning...\n'; ./$(OUT)/6.4.2.1.invalid-universal-character-identifer; printf -- '--returned %d\n' $$?) >> $@ 2>> $@; fi
 
 all: $(OUT)/6.4.2.1.sample-3.log
 $(OUT)/6.4.2.1.sample-3.log: 6/4/2/1/sample-3.c
@@ -105,13 +105,13 @@ $(OUT)/6.4.2.1.sample-3.log: 6/4/2/1/sample-3.c
 	-($(CC) $(CFLAGS) $< -o $(OUT)/6.4.2.1.sample-3 || printf -- '--returned %d\n' $$?) >> $@ 2>> $@
 	-if [ -x "$(OUT)/6.4.2.1.sample-3" ]; then printf ' [RUN] %s\n' "$(OUT)/6.4.2.1.sample-3"; (printf '\nrunning...\n'; ./$(OUT)/6.4.2.1.sample-3; printf -- '--returned %d\n' $$?) >> $@ 2>> $@; fi
 
-all: $(OUT)/6.4.2.1.sample-1.log
-$(OUT)/6.4.2.1.sample-1.log: 6/4/2/1/sample-1.c
+all: $(OUT)/6.4.2.1.leading-universal-character-digit.log
+$(OUT)/6.4.2.1.leading-universal-character-digit.log: 6/4/2/1/leading-universal-character-digit.c
 	mkdir -p $(OUT)
 	rm -f $@
-	printf ' [CC]  %s\n' "6/4/2/1/sample-1.c"
-	-($(CC) $(CFLAGS) $< -o $(OUT)/6.4.2.1.sample-1 || printf -- '--returned %d\n' $$?) >> $@ 2>> $@
-	-if [ -x "$(OUT)/6.4.2.1.sample-1" ]; then printf ' [RUN] %s\n' "$(OUT)/6.4.2.1.sample-1"; (printf '\nrunning...\n'; ./$(OUT)/6.4.2.1.sample-1; printf -- '--returned %d\n' $$?) >> $@ 2>> $@; fi
+	printf ' [CC]  %s\n' "6/4/2/1/leading-universal-character-digit.c"
+	-($(CC) $(CFLAGS) $< -o $(OUT)/6.4.2.1.leading-universal-character-digit || printf -- '--returned %d\n' $$?) >> $@ 2>> $@
+	-if [ -x "$(OUT)/6.4.2.1.leading-universal-character-digit" ]; then printf ' [RUN] %s\n' "$(OUT)/6.4.2.1.leading-universal-character-digit"; (printf '\nrunning...\n'; ./$(OUT)/6.4.2.1.leading-universal-character-digit; printf -- '--returned %d\n' $$?) >> $@ 2>> $@; fi
 
 all: $(OUT)/6.4.2.2.explicit-declaration-of-__func__.log
 $(OUT)/6.4.2.2.explicit-declaration-of-__func__.log: 6/4/2/2/explicit-declaration-of-__func__.c
@@ -145,6 +145,14 @@ $(OUT)/6.7.1.block-scope-function-declaration.log: 6/7/1/block-scope-function-de
 	-($(CC) $(CFLAGS) $< -o $(OUT)/6.7.1.block-scope-function-declaration || printf -- '--returned %d\n' $$?) >> $@ 2>> $@
 	-if [ -x "$(OUT)/6.7.1.block-scope-function-declaration" ]; then printf ' [RUN] %s\n' "$(OUT)/6.7.1.block-scope-function-declaration"; (printf '\nrunning...\n'; ./$(OUT)/6.7.1.block-scope-function-declaration; printf -- '--returned %d\n' $$?) >> $@ 2>> $@; fi
 
+all: $(OUT)/6.7.5.declaration-and-definition-with-different-alignment.log
+$(OUT)/6.7.5.declaration-and-definition-with-different-alignment.log: 6/7/5/declaration-and-definition-with-different-alignment.c
+	mkdir -p $(OUT)
+	rm -f $@
+	printf ' [CC]  %s\n' "6/7/5/declaration-and-definition-with-different-alignment.c"
+	-($(CC) $(CFLAGS) $< -o $(OUT)/6.7.5.declaration-and-definition-with-different-alignment || printf -- '--returned %d\n' $$?) >> $@ 2>> $@
+	-if [ -x "$(OUT)/6.7.5.declaration-and-definition-with-different-alignment" ]; then printf ' [RUN] %s\n' "$(OUT)/6.7.5.declaration-and-definition-with-different-alignment"; (printf '\nrunning...\n'; ./$(OUT)/6.7.5.declaration-and-definition-with-different-alignment; printf -- '--returned %d\n' $$?) >> $@ 2>> $@; fi
+
 all: $(OUT)/6.7.5.sample-2.log
 $(OUT)/6.7.5.sample-2.log: 6/7/5/sample-2.c
 	mkdir -p $(OUT)
@@ -152,14 +160,6 @@ $(OUT)/6.7.5.sample-2.log: 6/7/5/sample-2.c
 	printf ' [CC]  %s\n' "6/7/5/sample-2.c"
 	-($(CC) $(CFLAGS) $< -o $(OUT)/6.7.5.sample-2 || printf -- '--returned %d\n' $$?) >> $@ 2>> $@
 	-if [ -x "$(OUT)/6.7.5.sample-2" ]; then printf ' [RUN] %s\n' "$(OUT)/6.7.5.sample-2"; (printf '\nrunning...\n'; ./$(OUT)/6.7.5.sample-2; printf -- '--returned %d\n' $$?) >> $@ 2>> $@; fi
-
-all: $(OUT)/6.7.5.sample-1.log
-$(OUT)/6.7.5.sample-1.log: 6/7/5/sample-1.c
-	mkdir -p $(OUT)
-	rm -f $@
-	printf ' [CC]  %s\n' "6/7/5/sample-1.c"
-	-($(CC) $(CFLAGS) $< -o $(OUT)/6.7.5.sample-1 || printf -- '--returned %d\n' $$?) >> $@ 2>> $@
-	-if [ -x "$(OUT)/6.7.5.sample-1" ]; then printf ' [RUN] %s\n' "$(OUT)/6.7.5.sample-1"; (printf '\nrunning...\n'; ./$(OUT)/6.7.5.sample-1; printf -- '--returned %d\n' $$?) >> $@ 2>> $@; fi
 
 all: $(OUT)/6.7.6.1.sample-1.log
 $(OUT)/6.7.6.1.sample-1.log: 6/7/6/1/sample-1.c
@@ -169,6 +169,14 @@ $(OUT)/6.7.6.1.sample-1.log: 6/7/6/1/sample-1.c
 	-($(CC) $(CFLAGS) $< -o $(OUT)/6.7.6.1.sample-1 || printf -- '--returned %d\n' $$?) >> $@ 2>> $@
 	-if [ -x "$(OUT)/6.7.6.1.sample-1" ]; then printf ' [RUN] %s\n' "$(OUT)/6.7.6.1.sample-1"; (printf '\nrunning...\n'; ./$(OUT)/6.7.6.1.sample-1; printf -- '--returned %d\n' $$?) >> $@ 2>> $@; fi
 
+all: $(OUT)/6.7.6.2.negative-array-size-at-runtime.log
+$(OUT)/6.7.6.2.negative-array-size-at-runtime.log: 6/7/6/2/negative-array-size-at-runtime.c
+	mkdir -p $(OUT)
+	rm -f $@
+	printf ' [CC]  %s\n' "6/7/6/2/negative-array-size-at-runtime.c"
+	-($(CC) $(CFLAGS) $< -o $(OUT)/6.7.6.2.negative-array-size-at-runtime || printf -- '--returned %d\n' $$?) >> $@ 2>> $@
+	-if [ -x "$(OUT)/6.7.6.2.negative-array-size-at-runtime" ]; then printf ' [RUN] %s\n' "$(OUT)/6.7.6.2.negative-array-size-at-runtime"; (printf '\nrunning...\n'; ./$(OUT)/6.7.6.2.negative-array-size-at-runtime; printf -- '--returned %d\n' $$?) >> $@ 2>> $@; fi
+
 all: $(OUT)/6.7.6.2.sample-2.log
 $(OUT)/6.7.6.2.sample-2.log: 6/7/6/2/sample-2.c
 	mkdir -p $(OUT)
@@ -176,22 +184,6 @@ $(OUT)/6.7.6.2.sample-2.log: 6/7/6/2/sample-2.c
 	printf ' [CC]  %s\n' "6/7/6/2/sample-2.c"
 	-($(CC) $(CFLAGS) $< -o $(OUT)/6.7.6.2.sample-2 || printf -- '--returned %d\n' $$?) >> $@ 2>> $@
 	-if [ -x "$(OUT)/6.7.6.2.sample-2" ]; then printf ' [RUN] %s\n' "$(OUT)/6.7.6.2.sample-2"; (printf '\nrunning...\n'; ./$(OUT)/6.7.6.2.sample-2; printf -- '--returned %d\n' $$?) >> $@ 2>> $@; fi
-
-all: $(OUT)/6.7.6.2.sample-1.log
-$(OUT)/6.7.6.2.sample-1.log: 6/7/6/2/sample-1.c
-	mkdir -p $(OUT)
-	rm -f $@
-	printf ' [CC]  %s\n' "6/7/6/2/sample-1.c"
-	-($(CC) $(CFLAGS) $< -o $(OUT)/6.7.6.2.sample-1 || printf -- '--returned %d\n' $$?) >> $@ 2>> $@
-	-if [ -x "$(OUT)/6.7.6.2.sample-1" ]; then printf ' [RUN] %s\n' "$(OUT)/6.7.6.2.sample-1"; (printf '\nrunning...\n'; ./$(OUT)/6.7.6.2.sample-1; printf -- '--returned %d\n' $$?) >> $@ 2>> $@; fi
-
-all: $(OUT)/6.7.6.3.sample-2.log
-$(OUT)/6.7.6.3.sample-2.log: 6/7/6/3/sample-2.c
-	mkdir -p $(OUT)
-	rm -f $@
-	printf ' [CC]  %s\n' "6/7/6/3/sample-2.c"
-	-($(CC) $(CFLAGS) $< -o $(OUT)/6.7.6.3.sample-2 || printf -- '--returned %d\n' $$?) >> $@ 2>> $@
-	-if [ -x "$(OUT)/6.7.6.3.sample-2" ]; then printf ' [RUN] %s\n' "$(OUT)/6.7.6.3.sample-2"; (printf '\nrunning...\n'; ./$(OUT)/6.7.6.3.sample-2; printf -- '--returned %d\n' $$?) >> $@ 2>> $@; fi
 
 all: $(OUT)/6.7.6.3.static-array-param-too-small.log
 $(OUT)/6.7.6.3.static-array-param-too-small.log: 6/7/6/3/static-array-param-too-small.c
@@ -209,29 +201,29 @@ $(OUT)/6.7.6.3.sample-3.log: 6/7/6/3/sample-3.c
 	-($(CC) $(CFLAGS) $< -o $(OUT)/6.7.6.3.sample-3 || printf -- '--returned %d\n' $$?) >> $@ 2>> $@
 	-if [ -x "$(OUT)/6.7.6.3.sample-3" ]; then printf ' [RUN] %s\n' "$(OUT)/6.7.6.3.sample-3"; (printf '\nrunning...\n'; ./$(OUT)/6.7.6.3.sample-3; printf -- '--returned %d\n' $$?) >> $@ 2>> $@; fi
 
-all: $(OUT)/6.7.9.sample-4.log
-$(OUT)/6.7.9.sample-4.log: 6/7/9/sample-4.c
+all: $(OUT)/6.7.6.3.qualified-void-parameter.log
+$(OUT)/6.7.6.3.qualified-void-parameter.log: 6/7/6/3/qualified-void-parameter.c
 	mkdir -p $(OUT)
 	rm -f $@
-	printf ' [CC]  %s\n' "6/7/9/sample-4.c"
-	-($(CC) $(CFLAGS) $< -o $(OUT)/6.7.9.sample-4 || printf -- '--returned %d\n' $$?) >> $@ 2>> $@
-	-if [ -x "$(OUT)/6.7.9.sample-4" ]; then printf ' [RUN] %s\n' "$(OUT)/6.7.9.sample-4"; (printf '\nrunning...\n'; ./$(OUT)/6.7.9.sample-4; printf -- '--returned %d\n' $$?) >> $@ 2>> $@; fi
+	printf ' [CC]  %s\n' "6/7/6/3/qualified-void-parameter.c"
+	-($(CC) $(CFLAGS) $< -o $(OUT)/6.7.6.3.qualified-void-parameter || printf -- '--returned %d\n' $$?) >> $@ 2>> $@
+	-if [ -x "$(OUT)/6.7.6.3.qualified-void-parameter" ]; then printf ' [RUN] %s\n' "$(OUT)/6.7.6.3.qualified-void-parameter"; (printf '\nrunning...\n'; ./$(OUT)/6.7.6.3.qualified-void-parameter; printf -- '--returned %d\n' $$?) >> $@ 2>> $@; fi
 
-all: $(OUT)/6.7.9.sample-2.log
-$(OUT)/6.7.9.sample-2.log: 6/7/9/sample-2.c
+all: $(OUT)/6.7.9.struct-initialized-without-list.log
+$(OUT)/6.7.9.struct-initialized-without-list.log: 6/7/9/struct-initialized-without-list.c
 	mkdir -p $(OUT)
 	rm -f $@
-	printf ' [CC]  %s\n' "6/7/9/sample-2.c"
-	-($(CC) $(CFLAGS) $< -o $(OUT)/6.7.9.sample-2 || printf -- '--returned %d\n' $$?) >> $@ 2>> $@
-	-if [ -x "$(OUT)/6.7.9.sample-2" ]; then printf ' [RUN] %s\n' "$(OUT)/6.7.9.sample-2"; (printf '\nrunning...\n'; ./$(OUT)/6.7.9.sample-2; printf -- '--returned %d\n' $$?) >> $@ 2>> $@; fi
+	printf ' [CC]  %s\n' "6/7/9/struct-initialized-without-list.c"
+	-($(CC) $(CFLAGS) $< -o $(OUT)/6.7.9.struct-initialized-without-list || printf -- '--returned %d\n' $$?) >> $@ 2>> $@
+	-if [ -x "$(OUT)/6.7.9.struct-initialized-without-list" ]; then printf ' [RUN] %s\n' "$(OUT)/6.7.9.struct-initialized-without-list"; (printf '\nrunning...\n'; ./$(OUT)/6.7.9.struct-initialized-without-list; printf -- '--returned %d\n' $$?) >> $@ 2>> $@; fi
 
-all: $(OUT)/6.7.9.sample-3.log
-$(OUT)/6.7.9.sample-3.log: 6/7/9/sample-3.c
+all: $(OUT)/6.7.9.aggregrate-initialized-without-braces.log
+$(OUT)/6.7.9.aggregrate-initialized-without-braces.log: 6/7/9/aggregrate-initialized-without-braces.c
 	mkdir -p $(OUT)
 	rm -f $@
-	printf ' [CC]  %s\n' "6/7/9/sample-3.c"
-	-($(CC) $(CFLAGS) $< -o $(OUT)/6.7.9.sample-3 || printf -- '--returned %d\n' $$?) >> $@ 2>> $@
-	-if [ -x "$(OUT)/6.7.9.sample-3" ]; then printf ' [RUN] %s\n' "$(OUT)/6.7.9.sample-3"; (printf '\nrunning...\n'; ./$(OUT)/6.7.9.sample-3; printf -- '--returned %d\n' $$?) >> $@ 2>> $@; fi
+	printf ' [CC]  %s\n' "6/7/9/aggregrate-initialized-without-braces.c"
+	-($(CC) $(CFLAGS) $< -o $(OUT)/6.7.9.aggregrate-initialized-without-braces || printf -- '--returned %d\n' $$?) >> $@ 2>> $@
+	-if [ -x "$(OUT)/6.7.9.aggregrate-initialized-without-braces" ]; then printf ' [RUN] %s\n' "$(OUT)/6.7.9.aggregrate-initialized-without-braces"; (printf '\nrunning...\n'; ./$(OUT)/6.7.9.aggregrate-initialized-without-braces; printf -- '--returned %d\n' $$?) >> $@ 2>> $@; fi
 
 all: $(OUT)/6.7.9.sample-1.log
 $(OUT)/6.7.9.sample-1.log: 6/7/9/sample-1.c
@@ -241,6 +233,14 @@ $(OUT)/6.7.9.sample-1.log: 6/7/9/sample-1.c
 	-($(CC) $(CFLAGS) $< -o $(OUT)/6.7.9.sample-1 || printf -- '--returned %d\n' $$?) >> $@ 2>> $@
 	-if [ -x "$(OUT)/6.7.9.sample-1" ]; then printf ' [RUN] %s\n' "$(OUT)/6.7.9.sample-1"; (printf '\nrunning...\n'; ./$(OUT)/6.7.9.sample-1; printf -- '--returned %d\n' $$?) >> $@ 2>> $@; fi
 
+all: $(OUT)/6.7.9.scalar-initialized-with-non-scalar.log
+$(OUT)/6.7.9.scalar-initialized-with-non-scalar.log: 6/7/9/scalar-initialized-with-non-scalar.c
+	mkdir -p $(OUT)
+	rm -f $@
+	printf ' [CC]  %s\n' "6/7/9/scalar-initialized-with-non-scalar.c"
+	-($(CC) $(CFLAGS) $< -o $(OUT)/6.7.9.scalar-initialized-with-non-scalar || printf -- '--returned %d\n' $$?) >> $@ 2>> $@
+	-if [ -x "$(OUT)/6.7.9.scalar-initialized-with-non-scalar" ]; then printf ' [RUN] %s\n' "$(OUT)/6.7.9.scalar-initialized-with-non-scalar"; (printf '\nrunning...\n'; ./$(OUT)/6.7.9.scalar-initialized-with-non-scalar; printf -- '--returned %d\n' $$?) >> $@ 2>> $@; fi
+
 all: $(OUT)/6.7.sample-1.log
 $(OUT)/6.7.sample-1.log: 6/7/sample-1.c
 	mkdir -p $(OUT)
@@ -249,13 +249,13 @@ $(OUT)/6.7.sample-1.log: 6/7/sample-1.c
 	-($(CC) $(CFLAGS) $< -o $(OUT)/6.7.sample-1 || printf -- '--returned %d\n' $$?) >> $@ 2>> $@
 	-if [ -x "$(OUT)/6.7.sample-1" ]; then printf ' [RUN] %s\n' "$(OUT)/6.7.sample-1"; (printf '\nrunning...\n'; ./$(OUT)/6.7.sample-1; printf -- '--returned %d\n' $$?) >> $@ 2>> $@; fi
 
-all: $(OUT)/6.7.2.1.sample-2.log
-$(OUT)/6.7.2.1.sample-2.log: 6/7/2/1/sample-2.c
+all: $(OUT)/6.7.2.1.access-unprovided-flexible-array-member.log
+$(OUT)/6.7.2.1.access-unprovided-flexible-array-member.log: 6/7/2/1/access-unprovided-flexible-array-member.c
 	mkdir -p $(OUT)
 	rm -f $@
-	printf ' [CC]  %s\n' "6/7/2/1/sample-2.c"
-	-($(CC) $(CFLAGS) $< -o $(OUT)/6.7.2.1.sample-2 || printf -- '--returned %d\n' $$?) >> $@ 2>> $@
-	-if [ -x "$(OUT)/6.7.2.1.sample-2" ]; then printf ' [RUN] %s\n' "$(OUT)/6.7.2.1.sample-2"; (printf '\nrunning...\n'; ./$(OUT)/6.7.2.1.sample-2; printf -- '--returned %d\n' $$?) >> $@ 2>> $@; fi
+	printf ' [CC]  %s\n' "6/7/2/1/access-unprovided-flexible-array-member.c"
+	-($(CC) $(CFLAGS) $< -o $(OUT)/6.7.2.1.access-unprovided-flexible-array-member || printf -- '--returned %d\n' $$?) >> $@ 2>> $@
+	-if [ -x "$(OUT)/6.7.2.1.access-unprovided-flexible-array-member" ]; then printf ' [RUN] %s\n' "$(OUT)/6.7.2.1.access-unprovided-flexible-array-member"; (printf '\nrunning...\n'; ./$(OUT)/6.7.2.1.access-unprovided-flexible-array-member; printf -- '--returned %d\n' $$?) >> $@ 2>> $@; fi
 
 all: $(OUT)/6.7.2.1.struct-with-no-named-members.log
 $(OUT)/6.7.2.1.struct-with-no-named-members.log: 6/7/2/1/struct-with-no-named-members.c
@@ -281,6 +281,22 @@ $(OUT)/6.7.3.sample-4.log: 6/7/3/sample-4.c
 	-($(CC) $(CFLAGS) $< -o $(OUT)/6.7.3.sample-4 || printf -- '--returned %d\n' $$?) >> $@ 2>> $@
 	-if [ -x "$(OUT)/6.7.3.sample-4" ]; then printf ' [RUN] %s\n' "$(OUT)/6.7.3.sample-4"; (printf '\nrunning...\n'; ./$(OUT)/6.7.3.sample-4; printf -- '--returned %d\n' $$?) >> $@ 2>> $@; fi
 
+all: $(OUT)/6.7.3.refer-to-volatile-through-non-volatile-lvalue.log
+$(OUT)/6.7.3.refer-to-volatile-through-non-volatile-lvalue.log: 6/7/3/refer-to-volatile-through-non-volatile-lvalue.c
+	mkdir -p $(OUT)
+	rm -f $@
+	printf ' [CC]  %s\n' "6/7/3/refer-to-volatile-through-non-volatile-lvalue.c"
+	-($(CC) $(CFLAGS) $< -o $(OUT)/6.7.3.refer-to-volatile-through-non-volatile-lvalue || printf -- '--returned %d\n' $$?) >> $@ 2>> $@
+	-if [ -x "$(OUT)/6.7.3.refer-to-volatile-through-non-volatile-lvalue" ]; then printf ' [RUN] %s\n' "$(OUT)/6.7.3.refer-to-volatile-through-non-volatile-lvalue"; (printf '\nrunning...\n'; ./$(OUT)/6.7.3.refer-to-volatile-through-non-volatile-lvalue; printf -- '--returned %d\n' $$?) >> $@ 2>> $@; fi
+
+all: $(OUT)/6.7.3.modify-const-through-non-const-lvalue.log
+$(OUT)/6.7.3.modify-const-through-non-const-lvalue.log: 6/7/3/modify-const-through-non-const-lvalue.c
+	mkdir -p $(OUT)
+	rm -f $@
+	printf ' [CC]  %s\n' "6/7/3/modify-const-through-non-const-lvalue.c"
+	-($(CC) $(CFLAGS) $< -o $(OUT)/6.7.3.modify-const-through-non-const-lvalue || printf -- '--returned %d\n' $$?) >> $@ 2>> $@
+	-if [ -x "$(OUT)/6.7.3.modify-const-through-non-const-lvalue" ]; then printf ' [RUN] %s\n' "$(OUT)/6.7.3.modify-const-through-non-const-lvalue"; (printf '\nrunning...\n'; ./$(OUT)/6.7.3.modify-const-through-non-const-lvalue; printf -- '--returned %d\n' $$?) >> $@ 2>> $@; fi
+
 all: $(OUT)/6.7.3.1.sample-2.log
 $(OUT)/6.7.3.1.sample-2.log: 6/7/3/1/sample-2.c
 	mkdir -p $(OUT)
@@ -297,29 +313,21 @@ $(OUT)/6.7.3.1.sample-1.log: 6/7/3/1/sample-1.c
 	-($(CC) $(CFLAGS) $< -o $(OUT)/6.7.3.1.sample-1 || printf -- '--returned %d\n' $$?) >> $@ 2>> $@
 	-if [ -x "$(OUT)/6.7.3.1.sample-1" ]; then printf ' [RUN] %s\n' "$(OUT)/6.7.3.1.sample-1"; (printf '\nrunning...\n'; ./$(OUT)/6.7.3.1.sample-1; printf -- '--returned %d\n' $$?) >> $@ 2>> $@; fi
 
-all: $(OUT)/6.7.3.sample-2.log
-$(OUT)/6.7.3.sample-2.log: 6/7/3/sample-2.c
+all: $(OUT)/6.7.3.qualified-function.log
+$(OUT)/6.7.3.qualified-function.log: 6/7/3/qualified-function.c
 	mkdir -p $(OUT)
 	rm -f $@
-	printf ' [CC]  %s\n' "6/7/3/sample-2.c"
-	-($(CC) $(CFLAGS) $< -o $(OUT)/6.7.3.sample-2 || printf -- '--returned %d\n' $$?) >> $@ 2>> $@
-	-if [ -x "$(OUT)/6.7.3.sample-2" ]; then printf ' [RUN] %s\n' "$(OUT)/6.7.3.sample-2"; (printf '\nrunning...\n'; ./$(OUT)/6.7.3.sample-2; printf -- '--returned %d\n' $$?) >> $@ 2>> $@; fi
+	printf ' [CC]  %s\n' "6/7/3/qualified-function.c"
+	-($(CC) $(CFLAGS) $< -o $(OUT)/6.7.3.qualified-function || printf -- '--returned %d\n' $$?) >> $@ 2>> $@
+	-if [ -x "$(OUT)/6.7.3.qualified-function" ]; then printf ' [RUN] %s\n' "$(OUT)/6.7.3.qualified-function"; (printf '\nrunning...\n'; ./$(OUT)/6.7.3.qualified-function; printf -- '--returned %d\n' $$?) >> $@ 2>> $@; fi
 
-all: $(OUT)/6.7.3.sample-3.log
-$(OUT)/6.7.3.sample-3.log: 6/7/3/sample-3.c
+all: $(OUT)/6.5.exceptional-condition-in-evaluation.log
+$(OUT)/6.5.exceptional-condition-in-evaluation.log: 6/5/exceptional-condition-in-evaluation.c
 	mkdir -p $(OUT)
 	rm -f $@
-	printf ' [CC]  %s\n' "6/7/3/sample-3.c"
-	-($(CC) $(CFLAGS) $< -o $(OUT)/6.7.3.sample-3 || printf -- '--returned %d\n' $$?) >> $@ 2>> $@
-	-if [ -x "$(OUT)/6.7.3.sample-3" ]; then printf ' [RUN] %s\n' "$(OUT)/6.7.3.sample-3"; (printf '\nrunning...\n'; ./$(OUT)/6.7.3.sample-3; printf -- '--returned %d\n' $$?) >> $@ 2>> $@; fi
-
-all: $(OUT)/6.7.3.sample-1.log
-$(OUT)/6.7.3.sample-1.log: 6/7/3/sample-1.c
-	mkdir -p $(OUT)
-	rm -f $@
-	printf ' [CC]  %s\n' "6/7/3/sample-1.c"
-	-($(CC) $(CFLAGS) $< -o $(OUT)/6.7.3.sample-1 || printf -- '--returned %d\n' $$?) >> $@ 2>> $@
-	-if [ -x "$(OUT)/6.7.3.sample-1" ]; then printf ' [RUN] %s\n' "$(OUT)/6.7.3.sample-1"; (printf '\nrunning...\n'; ./$(OUT)/6.7.3.sample-1; printf -- '--returned %d\n' $$?) >> $@ 2>> $@; fi
+	printf ' [CC]  %s\n' "6/5/exceptional-condition-in-evaluation.c"
+	-($(CC) $(CFLAGS) $< -o $(OUT)/6.5.exceptional-condition-in-evaluation || printf -- '--returned %d\n' $$?) >> $@ 2>> $@
+	-if [ -x "$(OUT)/6.5.exceptional-condition-in-evaluation" ]; then printf ' [RUN] %s\n' "$(OUT)/6.5.exceptional-condition-in-evaluation"; (printf '\nrunning...\n'; ./$(OUT)/6.5.exceptional-condition-in-evaluation; printf -- '--returned %d\n' $$?) >> $@ 2>> $@; fi
 
 all: $(OUT)/6.5.4.invalid-pointer-conversion.log
 $(OUT)/6.5.4.invalid-pointer-conversion.log: 6/5/4/invalid-pointer-conversion.c
@@ -329,13 +337,13 @@ $(OUT)/6.5.4.invalid-pointer-conversion.log: 6/5/4/invalid-pointer-conversion.c
 	-($(CC) $(CFLAGS) $< -o $(OUT)/6.5.4.invalid-pointer-conversion || printf -- '--returned %d\n' $$?) >> $@ 2>> $@
 	-if [ -x "$(OUT)/6.5.4.invalid-pointer-conversion" ]; then printf ' [RUN] %s\n' "$(OUT)/6.5.4.invalid-pointer-conversion"; (printf '\nrunning...\n'; ./$(OUT)/6.5.4.invalid-pointer-conversion; printf -- '--returned %d\n' $$?) >> $@ 2>> $@; fi
 
-all: $(OUT)/6.5.16.1.sample-1.log
-$(OUT)/6.5.16.1.sample-1.log: 6/5/16/1/sample-1.c
+all: $(OUT)/6.5.16.1.assignment-with-incompatible-type.log
+$(OUT)/6.5.16.1.assignment-with-incompatible-type.log: 6/5/16/1/assignment-with-incompatible-type.c
 	mkdir -p $(OUT)
 	rm -f $@
-	printf ' [CC]  %s\n' "6/5/16/1/sample-1.c"
-	-($(CC) $(CFLAGS) $< -o $(OUT)/6.5.16.1.sample-1 || printf -- '--returned %d\n' $$?) >> $@ 2>> $@
-	-if [ -x "$(OUT)/6.5.16.1.sample-1" ]; then printf ' [RUN] %s\n' "$(OUT)/6.5.16.1.sample-1"; (printf '\nrunning...\n'; ./$(OUT)/6.5.16.1.sample-1; printf -- '--returned %d\n' $$?) >> $@ 2>> $@; fi
+	printf ' [CC]  %s\n' "6/5/16/1/assignment-with-incompatible-type.c"
+	-($(CC) $(CFLAGS) $< -o $(OUT)/6.5.16.1.assignment-with-incompatible-type || printf -- '--returned %d\n' $$?) >> $@ 2>> $@
+	-if [ -x "$(OUT)/6.5.16.1.assignment-with-incompatible-type" ]; then printf ' [RUN] %s\n' "$(OUT)/6.5.16.1.assignment-with-incompatible-type"; (printf '\nrunning...\n'; ./$(OUT)/6.5.16.1.assignment-with-incompatible-type; printf -- '--returned %d\n' $$?) >> $@ 2>> $@; fi
 
 all: $(OUT)/6.5.7.illegal-shift.log
 $(OUT)/6.5.7.illegal-shift.log: 6/5/7/illegal-shift.c
@@ -345,61 +353,37 @@ $(OUT)/6.5.7.illegal-shift.log: 6/5/7/illegal-shift.c
 	-($(CC) $(CFLAGS) $< -o $(OUT)/6.5.7.illegal-shift || printf -- '--returned %d\n' $$?) >> $@ 2>> $@
 	-if [ -x "$(OUT)/6.5.7.illegal-shift" ]; then printf ' [RUN] %s\n' "$(OUT)/6.5.7.illegal-shift"; (printf '\nrunning...\n'; ./$(OUT)/6.5.7.illegal-shift; printf -- '--returned %d\n' $$?) >> $@ 2>> $@; fi
 
-all: $(OUT)/6.5.7.sample-2.log
-$(OUT)/6.5.7.sample-2.log: 6/5/7/sample-2.c
+all: $(OUT)/6.5.7.left-shift-negative.log
+$(OUT)/6.5.7.left-shift-negative.log: 6/5/7/left-shift-negative.c
 	mkdir -p $(OUT)
 	rm -f $@
-	printf ' [CC]  %s\n' "6/5/7/sample-2.c"
-	-($(CC) $(CFLAGS) $< -o $(OUT)/6.5.7.sample-2 || printf -- '--returned %d\n' $$?) >> $@ 2>> $@
-	-if [ -x "$(OUT)/6.5.7.sample-2" ]; then printf ' [RUN] %s\n' "$(OUT)/6.5.7.sample-2"; (printf '\nrunning...\n'; ./$(OUT)/6.5.7.sample-2; printf -- '--returned %d\n' $$?) >> $@ 2>> $@; fi
+	printf ' [CC]  %s\n' "6/5/7/left-shift-negative.c"
+	-($(CC) $(CFLAGS) $< -o $(OUT)/6.5.7.left-shift-negative || printf -- '--returned %d\n' $$?) >> $@ 2>> $@
+	-if [ -x "$(OUT)/6.5.7.left-shift-negative" ]; then printf ' [RUN] %s\n' "$(OUT)/6.5.7.left-shift-negative"; (printf '\nrunning...\n'; ./$(OUT)/6.5.7.left-shift-negative; printf -- '--returned %d\n' $$?) >> $@ 2>> $@; fi
 
-all: $(OUT)/6.5.sample-2.log
-$(OUT)/6.5.sample-2.log: 6/5/sample-2.c
+all: $(OUT)/6.5.incorrect-lvalue-type.log
+$(OUT)/6.5.incorrect-lvalue-type.log: 6/5/incorrect-lvalue-type.c
 	mkdir -p $(OUT)
 	rm -f $@
-	printf ' [CC]  %s\n' "6/5/sample-2.c"
-	-($(CC) $(CFLAGS) $< -o $(OUT)/6.5.sample-2 || printf -- '--returned %d\n' $$?) >> $@ 2>> $@
-	-if [ -x "$(OUT)/6.5.sample-2" ]; then printf ' [RUN] %s\n' "$(OUT)/6.5.sample-2"; (printf '\nrunning...\n'; ./$(OUT)/6.5.sample-2; printf -- '--returned %d\n' $$?) >> $@ 2>> $@; fi
+	printf ' [CC]  %s\n' "6/5/incorrect-lvalue-type.c"
+	-($(CC) $(CFLAGS) $< -o $(OUT)/6.5.incorrect-lvalue-type || printf -- '--returned %d\n' $$?) >> $@ 2>> $@
+	-if [ -x "$(OUT)/6.5.incorrect-lvalue-type" ]; then printf ' [RUN] %s\n' "$(OUT)/6.5.incorrect-lvalue-type"; (printf '\nrunning...\n'; ./$(OUT)/6.5.incorrect-lvalue-type; printf -- '--returned %d\n' $$?) >> $@ 2>> $@; fi
 
-all: $(OUT)/6.5.5.sample-2.log
-$(OUT)/6.5.5.sample-2.log: 6/5/5/sample-2.c
+all: $(OUT)/6.5.5.nonrepresentable-divison.log
+$(OUT)/6.5.5.nonrepresentable-divison.log: 6/5/5/nonrepresentable-divison.c
 	mkdir -p $(OUT)
 	rm -f $@
-	printf ' [CC]  %s\n' "6/5/5/sample-2.c"
-	-($(CC) $(CFLAGS) $< -o $(OUT)/6.5.5.sample-2 || printf -- '--returned %d\n' $$?) >> $@ 2>> $@
-	-if [ -x "$(OUT)/6.5.5.sample-2" ]; then printf ' [RUN] %s\n' "$(OUT)/6.5.5.sample-2"; (printf '\nrunning...\n'; ./$(OUT)/6.5.5.sample-2; printf -- '--returned %d\n' $$?) >> $@ 2>> $@; fi
+	printf ' [CC]  %s\n' "6/5/5/nonrepresentable-divison.c"
+	-($(CC) $(CFLAGS) $< -o $(OUT)/6.5.5.nonrepresentable-divison || printf -- '--returned %d\n' $$?) >> $@ 2>> $@
+	-if [ -x "$(OUT)/6.5.5.nonrepresentable-divison" ]; then printf ' [RUN] %s\n' "$(OUT)/6.5.5.nonrepresentable-divison"; (printf '\nrunning...\n'; ./$(OUT)/6.5.5.nonrepresentable-divison; printf -- '--returned %d\n' $$?) >> $@ 2>> $@; fi
 
-all: $(OUT)/6.5.5.sample-1.log
-$(OUT)/6.5.5.sample-1.log: 6/5/5/sample-1.c
+all: $(OUT)/6.5.5.divide-by-zero.log
+$(OUT)/6.5.5.divide-by-zero.log: 6/5/5/divide-by-zero.c
 	mkdir -p $(OUT)
 	rm -f $@
-	printf ' [CC]  %s\n' "6/5/5/sample-1.c"
-	-($(CC) $(CFLAGS) $< -o $(OUT)/6.5.5.sample-1 || printf -- '--returned %d\n' $$?) >> $@ 2>> $@
-	-if [ -x "$(OUT)/6.5.5.sample-1" ]; then printf ' [RUN] %s\n' "$(OUT)/6.5.5.sample-1"; (printf '\nrunning...\n'; ./$(OUT)/6.5.5.sample-1; printf -- '--returned %d\n' $$?) >> $@ 2>> $@; fi
-
-all: $(OUT)/6.5.6.sample-4.log
-$(OUT)/6.5.6.sample-4.log: 6/5/6/sample-4.c
-	mkdir -p $(OUT)
-	rm -f $@
-	printf ' [CC]  %s\n' "6/5/6/sample-4.c"
-	-($(CC) $(CFLAGS) $< -o $(OUT)/6.5.6.sample-4 || printf -- '--returned %d\n' $$?) >> $@ 2>> $@
-	-if [ -x "$(OUT)/6.5.6.sample-4" ]; then printf ' [RUN] %s\n' "$(OUT)/6.5.6.sample-4"; (printf '\nrunning...\n'; ./$(OUT)/6.5.6.sample-4; printf -- '--returned %d\n' $$?) >> $@ 2>> $@; fi
-
-all: $(OUT)/6.5.6.sample-2.log
-$(OUT)/6.5.6.sample-2.log: 6/5/6/sample-2.c
-	mkdir -p $(OUT)
-	rm -f $@
-	printf ' [CC]  %s\n' "6/5/6/sample-2.c"
-	-($(CC) $(CFLAGS) $< -o $(OUT)/6.5.6.sample-2 || printf -- '--returned %d\n' $$?) >> $@ 2>> $@
-	-if [ -x "$(OUT)/6.5.6.sample-2" ]; then printf ' [RUN] %s\n' "$(OUT)/6.5.6.sample-2"; (printf '\nrunning...\n'; ./$(OUT)/6.5.6.sample-2; printf -- '--returned %d\n' $$?) >> $@ 2>> $@; fi
-
-all: $(OUT)/6.5.6.sample-1.log
-$(OUT)/6.5.6.sample-1.log: 6/5/6/sample-1.c
-	mkdir -p $(OUT)
-	rm -f $@
-	printf ' [CC]  %s\n' "6/5/6/sample-1.c"
-	-($(CC) $(CFLAGS) $< -o $(OUT)/6.5.6.sample-1 || printf -- '--returned %d\n' $$?) >> $@ 2>> $@
-	-if [ -x "$(OUT)/6.5.6.sample-1" ]; then printf ' [RUN] %s\n' "$(OUT)/6.5.6.sample-1"; (printf '\nrunning...\n'; ./$(OUT)/6.5.6.sample-1; printf -- '--returned %d\n' $$?) >> $@ 2>> $@; fi
+	printf ' [CC]  %s\n' "6/5/5/divide-by-zero.c"
+	-($(CC) $(CFLAGS) $< -o $(OUT)/6.5.5.divide-by-zero || printf -- '--returned %d\n' $$?) >> $@ 2>> $@
+	-if [ -x "$(OUT)/6.5.5.divide-by-zero" ]; then printf ' [RUN] %s\n' "$(OUT)/6.5.5.divide-by-zero"; (printf '\nrunning...\n'; ./$(OUT)/6.5.5.divide-by-zero; printf -- '--returned %d\n' $$?) >> $@ 2>> $@; fi
 
 all: $(OUT)/6.5.6.sample-5.log
 $(OUT)/6.5.6.sample-5.log: 6/5/6/sample-5.c
@@ -409,6 +393,22 @@ $(OUT)/6.5.6.sample-5.log: 6/5/6/sample-5.c
 	-($(CC) $(CFLAGS) $< -o $(OUT)/6.5.6.sample-5 || printf -- '--returned %d\n' $$?) >> $@ 2>> $@
 	-if [ -x "$(OUT)/6.5.6.sample-5" ]; then printf ' [RUN] %s\n' "$(OUT)/6.5.6.sample-5"; (printf '\nrunning...\n'; ./$(OUT)/6.5.6.sample-5; printf -- '--returned %d\n' $$?) >> $@ 2>> $@; fi
 
+all: $(OUT)/6.5.6.pointer-arithmetic-just-beyond-array.log
+$(OUT)/6.5.6.pointer-arithmetic-just-beyond-array.log: 6/5/6/pointer-arithmetic-just-beyond-array.c
+	mkdir -p $(OUT)
+	rm -f $@
+	printf ' [CC]  %s\n' "6/5/6/pointer-arithmetic-just-beyond-array.c"
+	-($(CC) $(CFLAGS) $< -o $(OUT)/6.5.6.pointer-arithmetic-just-beyond-array || printf -- '--returned %d\n' $$?) >> $@ 2>> $@
+	-if [ -x "$(OUT)/6.5.6.pointer-arithmetic-just-beyond-array" ]; then printf ' [RUN] %s\n' "$(OUT)/6.5.6.pointer-arithmetic-just-beyond-array"; (printf '\nrunning...\n'; ./$(OUT)/6.5.6.pointer-arithmetic-just-beyond-array; printf -- '--returned %d\n' $$?) >> $@ 2>> $@; fi
+
+all: $(OUT)/6.5.6.pointer-arithmetic-outside.array.log
+$(OUT)/6.5.6.pointer-arithmetic-outside.array.log: 6/5/6/pointer-arithmetic-outside.array.c
+	mkdir -p $(OUT)
+	rm -f $@
+	printf ' [CC]  %s\n' "6/5/6/pointer-arithmetic-outside.array.c"
+	-($(CC) $(CFLAGS) $< -o $(OUT)/6.5.6.pointer-arithmetic-outside.array || printf -- '--returned %d\n' $$?) >> $@ 2>> $@
+	-if [ -x "$(OUT)/6.5.6.pointer-arithmetic-outside.array" ]; then printf ' [RUN] %s\n' "$(OUT)/6.5.6.pointer-arithmetic-outside.array"; (printf '\nrunning...\n'; ./$(OUT)/6.5.6.pointer-arithmetic-outside.array; printf -- '--returned %d\n' $$?) >> $@ 2>> $@; fi
+
 all: $(OUT)/6.5.6.subtraction-between-different-pointers.log
 $(OUT)/6.5.6.subtraction-between-different-pointers.log: 6/5/6/subtraction-between-different-pointers.c
 	mkdir -p $(OUT)
@@ -417,29 +417,21 @@ $(OUT)/6.5.6.subtraction-between-different-pointers.log: 6/5/6/subtraction-betwe
 	-($(CC) $(CFLAGS) $< -o $(OUT)/6.5.6.subtraction-between-different-pointers || printf -- '--returned %d\n' $$?) >> $@ 2>> $@
 	-if [ -x "$(OUT)/6.5.6.subtraction-between-different-pointers" ]; then printf ' [RUN] %s\n' "$(OUT)/6.5.6.subtraction-between-different-pointers"; (printf '\nrunning...\n'; ./$(OUT)/6.5.6.subtraction-between-different-pointers; printf -- '--returned %d\n' $$?) >> $@ 2>> $@; fi
 
-all: $(OUT)/6.5.8.sample-1.log
-$(OUT)/6.5.8.sample-1.log: 6/5/8/sample-1.c
+all: $(OUT)/6.5.6.array-subscript-out-of-range.log
+$(OUT)/6.5.6.array-subscript-out-of-range.log: 6/5/6/array-subscript-out-of-range.c
 	mkdir -p $(OUT)
 	rm -f $@
-	printf ' [CC]  %s\n' "6/5/8/sample-1.c"
-	-($(CC) $(CFLAGS) $< -o $(OUT)/6.5.8.sample-1 || printf -- '--returned %d\n' $$?) >> $@ 2>> $@
-	-if [ -x "$(OUT)/6.5.8.sample-1" ]; then printf ' [RUN] %s\n' "$(OUT)/6.5.8.sample-1"; (printf '\nrunning...\n'; ./$(OUT)/6.5.8.sample-1; printf -- '--returned %d\n' $$?) >> $@ 2>> $@; fi
+	printf ' [CC]  %s\n' "6/5/6/array-subscript-out-of-range.c"
+	-($(CC) $(CFLAGS) $< -o $(OUT)/6.5.6.array-subscript-out-of-range || printf -- '--returned %d\n' $$?) >> $@ 2>> $@
+	-if [ -x "$(OUT)/6.5.6.array-subscript-out-of-range" ]; then printf ' [RUN] %s\n' "$(OUT)/6.5.6.array-subscript-out-of-range"; (printf '\nrunning...\n'; ./$(OUT)/6.5.6.array-subscript-out-of-range; printf -- '--returned %d\n' $$?) >> $@ 2>> $@; fi
 
-all: $(OUT)/6.5.sample-3.log
-$(OUT)/6.5.sample-3.log: 6/5/sample-3.c
+all: $(OUT)/6.5.8.invalid-pointer-comparison.log
+$(OUT)/6.5.8.invalid-pointer-comparison.log: 6/5/8/invalid-pointer-comparison.c
 	mkdir -p $(OUT)
 	rm -f $@
-	printf ' [CC]  %s\n' "6/5/sample-3.c"
-	-($(CC) $(CFLAGS) $< -o $(OUT)/6.5.sample-3 || printf -- '--returned %d\n' $$?) >> $@ 2>> $@
-	-if [ -x "$(OUT)/6.5.sample-3" ]; then printf ' [RUN] %s\n' "$(OUT)/6.5.sample-3"; (printf '\nrunning...\n'; ./$(OUT)/6.5.sample-3; printf -- '--returned %d\n' $$?) >> $@ 2>> $@; fi
-
-all: $(OUT)/6.5.sample-1.log
-$(OUT)/6.5.sample-1.log: 6/5/sample-1.c
-	mkdir -p $(OUT)
-	rm -f $@
-	printf ' [CC]  %s\n' "6/5/sample-1.c"
-	-($(CC) $(CFLAGS) $< -o $(OUT)/6.5.sample-1 || printf -- '--returned %d\n' $$?) >> $@ 2>> $@
-	-if [ -x "$(OUT)/6.5.sample-1" ]; then printf ' [RUN] %s\n' "$(OUT)/6.5.sample-1"; (printf '\nrunning...\n'; ./$(OUT)/6.5.sample-1; printf -- '--returned %d\n' $$?) >> $@ 2>> $@; fi
+	printf ' [CC]  %s\n' "6/5/8/invalid-pointer-comparison.c"
+	-($(CC) $(CFLAGS) $< -o $(OUT)/6.5.8.invalid-pointer-comparison || printf -- '--returned %d\n' $$?) >> $@ 2>> $@
+	-if [ -x "$(OUT)/6.5.8.invalid-pointer-comparison" ]; then printf ' [RUN] %s\n' "$(OUT)/6.5.8.invalid-pointer-comparison"; (printf '\nrunning...\n'; ./$(OUT)/6.5.8.invalid-pointer-comparison; printf -- '--returned %d\n' $$?) >> $@ 2>> $@; fi
 
 all: $(OUT)/6.5.2.2.sample-4.log
 $(OUT)/6.5.2.2.sample-4.log: 6/5/2/2/sample-4.c
@@ -449,6 +441,14 @@ $(OUT)/6.5.2.2.sample-4.log: 6/5/2/2/sample-4.c
 	-($(CC) $(CFLAGS) $< -o $(OUT)/6.5.2.2.sample-4 || printf -- '--returned %d\n' $$?) >> $@ 2>> $@
 	-if [ -x "$(OUT)/6.5.2.2.sample-4" ]; then printf ' [RUN] %s\n' "$(OUT)/6.5.2.2.sample-4"; (printf '\nrunning...\n'; ./$(OUT)/6.5.2.2.sample-4; printf -- '--returned %d\n' $$?) >> $@ 2>> $@; fi
 
+all: $(OUT)/6.5.2.2.function-call-no-prototype-ellipses.log
+$(OUT)/6.5.2.2.function-call-no-prototype-ellipses.log: 6/5/2/2/function-call-no-prototype-ellipses.c
+	mkdir -p $(OUT)
+	rm -f $@
+	printf ' [CC]  %s\n' "6/5/2/2/function-call-no-prototype-ellipses.c"
+	-($(CC) $(CFLAGS) $< -o $(OUT)/6.5.2.2.function-call-no-prototype-ellipses || printf -- '--returned %d\n' $$?) >> $@ 2>> $@
+	-if [ -x "$(OUT)/6.5.2.2.function-call-no-prototype-ellipses" ]; then printf ' [RUN] %s\n' "$(OUT)/6.5.2.2.function-call-no-prototype-ellipses"; (printf '\nrunning...\n'; ./$(OUT)/6.5.2.2.function-call-no-prototype-ellipses; printf -- '--returned %d\n' $$?) >> $@ 2>> $@; fi
+
 all: $(OUT)/6.5.2.2.function-call-no-prototype-mismatched-parameters.log
 $(OUT)/6.5.2.2.function-call-no-prototype-mismatched-parameters.log: 6/5/2/2/function-call-no-prototype-mismatched-parameters.c
 	mkdir -p $(OUT)
@@ -457,29 +457,21 @@ $(OUT)/6.5.2.2.function-call-no-prototype-mismatched-parameters.log: 6/5/2/2/fun
 	-($(CC) $(CFLAGS) $< -o $(OUT)/6.5.2.2.function-call-no-prototype-mismatched-parameters || printf -- '--returned %d\n' $$?) >> $@ 2>> $@
 	-if [ -x "$(OUT)/6.5.2.2.function-call-no-prototype-mismatched-parameters" ]; then printf ' [RUN] %s\n' "$(OUT)/6.5.2.2.function-call-no-prototype-mismatched-parameters"; (printf '\nrunning...\n'; ./$(OUT)/6.5.2.2.function-call-no-prototype-mismatched-parameters; printf -- '--returned %d\n' $$?) >> $@ 2>> $@; fi
 
-all: $(OUT)/6.5.2.2.sample-2.log
-$(OUT)/6.5.2.2.sample-2.log: 6/5/2/2/sample-2.c
+all: $(OUT)/6.5.2.2.function-call-no-prototype-mismatch-parameter-list.log
+$(OUT)/6.5.2.2.function-call-no-prototype-mismatch-parameter-list.log: 6/5/2/2/function-call-no-prototype-mismatch-parameter-list.c
 	mkdir -p $(OUT)
 	rm -f $@
-	printf ' [CC]  %s\n' "6/5/2/2/sample-2.c"
-	-($(CC) $(CFLAGS) $< -o $(OUT)/6.5.2.2.sample-2 || printf -- '--returned %d\n' $$?) >> $@ 2>> $@
-	-if [ -x "$(OUT)/6.5.2.2.sample-2" ]; then printf ' [RUN] %s\n' "$(OUT)/6.5.2.2.sample-2"; (printf '\nrunning...\n'; ./$(OUT)/6.5.2.2.sample-2; printf -- '--returned %d\n' $$?) >> $@ 2>> $@; fi
+	printf ' [CC]  %s\n' "6/5/2/2/function-call-no-prototype-mismatch-parameter-list.c"
+	-($(CC) $(CFLAGS) $< -o $(OUT)/6.5.2.2.function-call-no-prototype-mismatch-parameter-list || printf -- '--returned %d\n' $$?) >> $@ 2>> $@
+	-if [ -x "$(OUT)/6.5.2.2.function-call-no-prototype-mismatch-parameter-list" ]; then printf ' [RUN] %s\n' "$(OUT)/6.5.2.2.function-call-no-prototype-mismatch-parameter-list"; (printf '\nrunning...\n'; ./$(OUT)/6.5.2.2.function-call-no-prototype-mismatch-parameter-list; printf -- '--returned %d\n' $$?) >> $@ 2>> $@; fi
 
-all: $(OUT)/6.5.2.2.sample-3.log
-$(OUT)/6.5.2.2.sample-3.log: 6/5/2/2/sample-3.c
+all: $(OUT)/6.5.2.3.accessing-member-of-atomic-struct.log
+$(OUT)/6.5.2.3.accessing-member-of-atomic-struct.log: 6/5/2/3/accessing-member-of-atomic-struct.c
 	mkdir -p $(OUT)
 	rm -f $@
-	printf ' [CC]  %s\n' "6/5/2/2/sample-3.c"
-	-($(CC) $(CFLAGS) $< -o $(OUT)/6.5.2.2.sample-3 || printf -- '--returned %d\n' $$?) >> $@ 2>> $@
-	-if [ -x "$(OUT)/6.5.2.2.sample-3" ]; then printf ' [RUN] %s\n' "$(OUT)/6.5.2.2.sample-3"; (printf '\nrunning...\n'; ./$(OUT)/6.5.2.2.sample-3; printf -- '--returned %d\n' $$?) >> $@ 2>> $@; fi
-
-all: $(OUT)/6.5.2.3.sample-1.log
-$(OUT)/6.5.2.3.sample-1.log: 6/5/2/3/sample-1.c
-	mkdir -p $(OUT)
-	rm -f $@
-	printf ' [CC]  %s\n' "6/5/2/3/sample-1.c"
-	-($(CC) $(CFLAGS) $< -o $(OUT)/6.5.2.3.sample-1 || printf -- '--returned %d\n' $$?) >> $@ 2>> $@
-	-if [ -x "$(OUT)/6.5.2.3.sample-1" ]; then printf ' [RUN] %s\n' "$(OUT)/6.5.2.3.sample-1"; (printf '\nrunning...\n'; ./$(OUT)/6.5.2.3.sample-1; printf -- '--returned %d\n' $$?) >> $@ 2>> $@; fi
+	printf ' [CC]  %s\n' "6/5/2/3/accessing-member-of-atomic-struct.c"
+	-($(CC) $(CFLAGS) $< -o $(OUT)/6.5.2.3.accessing-member-of-atomic-struct || printf -- '--returned %d\n' $$?) >> $@ 2>> $@
+	-if [ -x "$(OUT)/6.5.2.3.accessing-member-of-atomic-struct" ]; then printf ' [RUN] %s\n' "$(OUT)/6.5.2.3.accessing-member-of-atomic-struct"; (printf '\nrunning...\n'; ./$(OUT)/6.5.2.3.accessing-member-of-atomic-struct; printf -- '--returned %d\n' $$?) >> $@ 2>> $@; fi
 
 all: $(OUT)/6.5.3.2.sample-1.log
 $(OUT)/6.5.3.2.sample-1.log: 6/5/3/2/sample-1.c
@@ -489,6 +481,14 @@ $(OUT)/6.5.3.2.sample-1.log: 6/5/3/2/sample-1.c
 	-($(CC) $(CFLAGS) $< -o $(OUT)/6.5.3.2.sample-1 || printf -- '--returned %d\n' $$?) >> $@ 2>> $@
 	-if [ -x "$(OUT)/6.5.3.2.sample-1" ]; then printf ' [RUN] %s\n' "$(OUT)/6.5.3.2.sample-1"; (printf '\nrunning...\n'; ./$(OUT)/6.5.3.2.sample-1; printf -- '--returned %d\n' $$?) >> $@ 2>> $@; fi
 
+all: $(OUT)/6.5.unsequenced-side-effects.log
+$(OUT)/6.5.unsequenced-side-effects.log: 6/5/unsequenced-side-effects.c
+	mkdir -p $(OUT)
+	rm -f $@
+	printf ' [CC]  %s\n' "6/5/unsequenced-side-effects.c"
+	-($(CC) $(CFLAGS) $< -o $(OUT)/6.5.unsequenced-side-effects || printf -- '--returned %d\n' $$?) >> $@ 2>> $@
+	-if [ -x "$(OUT)/6.5.unsequenced-side-effects" ]; then printf ' [RUN] %s\n' "$(OUT)/6.5.unsequenced-side-effects"; (printf '\nrunning...\n'; ./$(OUT)/6.5.unsequenced-side-effects; printf -- '--returned %d\n' $$?) >> $@ 2>> $@; fi
+
 all: $(OUT)/6.6.sample-4.log
 $(OUT)/6.6.sample-4.log: 6/6/sample-4.c
 	mkdir -p $(OUT)
@@ -497,13 +497,21 @@ $(OUT)/6.6.sample-4.log: 6/6/sample-4.c
 	-($(CC) $(CFLAGS) $< -o $(OUT)/6.6.sample-4 || printf -- '--returned %d\n' $$?) >> $@ 2>> $@
 	-if [ -x "$(OUT)/6.6.sample-4" ]; then printf ' [RUN] %s\n' "$(OUT)/6.6.sample-4"; (printf '\nrunning...\n'; ./$(OUT)/6.6.sample-4; printf -- '--returned %d\n' $$?) >> $@ 2>> $@; fi
 
-all: $(OUT)/6.6.sample-2.log
-$(OUT)/6.6.sample-2.log: 6/6/sample-2.c
+all: $(OUT)/6.6.non-constant-expression-where-constant-required.log
+$(OUT)/6.6.non-constant-expression-where-constant-required.log: 6/6/non-constant-expression-where-constant-required.c
 	mkdir -p $(OUT)
 	rm -f $@
-	printf ' [CC]  %s\n' "6/6/sample-2.c"
-	-($(CC) $(CFLAGS) $< -o $(OUT)/6.6.sample-2 || printf -- '--returned %d\n' $$?) >> $@ 2>> $@
-	-if [ -x "$(OUT)/6.6.sample-2" ]; then printf ' [RUN] %s\n' "$(OUT)/6.6.sample-2"; (printf '\nrunning...\n'; ./$(OUT)/6.6.sample-2; printf -- '--returned %d\n' $$?) >> $@ 2>> $@; fi
+	printf ' [CC]  %s\n' "6/6/non-constant-expression-where-constant-required.c"
+	-($(CC) $(CFLAGS) $< -o $(OUT)/6.6.non-constant-expression-where-constant-required || printf -- '--returned %d\n' $$?) >> $@ 2>> $@
+	-if [ -x "$(OUT)/6.6.non-constant-expression-where-constant-required" ]; then printf ' [RUN] %s\n' "$(OUT)/6.6.non-constant-expression-where-constant-required"; (printf '\nrunning...\n'; ./$(OUT)/6.6.non-constant-expression-where-constant-required; printf -- '--returned %d\n' $$?) >> $@ 2>> $@; fi
+
+all: $(OUT)/6.6.non-integer-where-integr-required.log
+$(OUT)/6.6.non-integer-where-integr-required.log: 6/6/non-integer-where-integr-required.c
+	mkdir -p $(OUT)
+	rm -f $@
+	printf ' [CC]  %s\n' "6/6/non-integer-where-integr-required.c"
+	-($(CC) $(CFLAGS) $< -o $(OUT)/6.6.non-integer-where-integr-required || printf -- '--returned %d\n' $$?) >> $@ 2>> $@
+	-if [ -x "$(OUT)/6.6.non-integer-where-integr-required" ]; then printf ' [RUN] %s\n' "$(OUT)/6.6.non-integer-where-integr-required"; (printf '\nrunning...\n'; ./$(OUT)/6.6.non-integer-where-integr-required; printf -- '--returned %d\n' $$?) >> $@ 2>> $@; fi
 
 all: $(OUT)/6.6.sample-3.log
 $(OUT)/6.6.sample-3.log: 6/6/sample-3.c
@@ -512,14 +520,6 @@ $(OUT)/6.6.sample-3.log: 6/6/sample-3.c
 	printf ' [CC]  %s\n' "6/6/sample-3.c"
 	-($(CC) $(CFLAGS) $< -o $(OUT)/6.6.sample-3 || printf -- '--returned %d\n' $$?) >> $@ 2>> $@
 	-if [ -x "$(OUT)/6.6.sample-3" ]; then printf ' [RUN] %s\n' "$(OUT)/6.6.sample-3"; (printf '\nrunning...\n'; ./$(OUT)/6.6.sample-3; printf -- '--returned %d\n' $$?) >> $@ 2>> $@; fi
-
-all: $(OUT)/6.6.sample-1.log
-$(OUT)/6.6.sample-1.log: 6/6/sample-1.c
-	mkdir -p $(OUT)
-	rm -f $@
-	printf ' [CC]  %s\n' "6/6/sample-1.c"
-	-($(CC) $(CFLAGS) $< -o $(OUT)/6.6.sample-1 || printf -- '--returned %d\n' $$?) >> $@ 2>> $@
-	-if [ -x "$(OUT)/6.6.sample-1" ]; then printf ' [RUN] %s\n' "$(OUT)/6.6.sample-1"; (printf '\nrunning...\n'; ./$(OUT)/6.6.sample-1; printf -- '--returned %d\n' $$?) >> $@ 2>> $@; fi
 
 all: $(OUT)/6.9.missing-extern-definition.log
 $(OUT)/6.9.missing-extern-definition.log: 6/9/missing-extern-definition.c
@@ -545,29 +545,37 @@ $(OUT)/6.9.1.untyped-parameters.log: 6/9/1/untyped-parameters.c
 	-($(CC) $(CFLAGS) $< -o $(OUT)/6.9.1.untyped-parameters || printf -- '--returned %d\n' $$?) >> $@ 2>> $@
 	-if [ -x "$(OUT)/6.9.1.untyped-parameters" ]; then printf ' [RUN] %s\n' "$(OUT)/6.9.1.untyped-parameters"; (printf '\nrunning...\n'; ./$(OUT)/6.9.1.untyped-parameters; printf -- '--returned %d\n' $$?) >> $@ 2>> $@; fi
 
-all: $(OUT)/6.9.1.sample-2.log
-$(OUT)/6.9.1.sample-2.log: 6/9/1/sample-2.c
+all: $(OUT)/6.9.1.variadic-function-missing-ellipses.log
+$(OUT)/6.9.1.variadic-function-missing-ellipses.log: 6/9/1/variadic-function-missing-ellipses.c
 	mkdir -p $(OUT)
 	rm -f $@
-	printf ' [CC]  %s\n' "6/9/1/sample-2.c"
-	-($(CC) $(CFLAGS) $< -o $(OUT)/6.9.1.sample-2 || printf -- '--returned %d\n' $$?) >> $@ 2>> $@
-	-if [ -x "$(OUT)/6.9.1.sample-2" ]; then printf ' [RUN] %s\n' "$(OUT)/6.9.1.sample-2"; (printf '\nrunning...\n'; ./$(OUT)/6.9.1.sample-2; printf -- '--returned %d\n' $$?) >> $@ 2>> $@; fi
+	printf ' [CC]  %s\n' "6/9/1/variadic-function-missing-ellipses.c"
+	-($(CC) $(CFLAGS) $< -o $(OUT)/6.9.1.variadic-function-missing-ellipses || printf -- '--returned %d\n' $$?) >> $@ 2>> $@
+	-if [ -x "$(OUT)/6.9.1.variadic-function-missing-ellipses" ]; then printf ' [RUN] %s\n' "$(OUT)/6.9.1.variadic-function-missing-ellipses"; (printf '\nrunning...\n'; ./$(OUT)/6.9.1.variadic-function-missing-ellipses; printf -- '--returned %d\n' $$?) >> $@ 2>> $@; fi
 
-all: $(OUT)/6.9.1.sample-3.log
-$(OUT)/6.9.1.sample-3.log: 6/9/1/sample-3.c
+all: $(OUT)/6.9.1.incomplete-function-parameter.log
+$(OUT)/6.9.1.incomplete-function-parameter.log: 6/9/1/incomplete-function-parameter.c
 	mkdir -p $(OUT)
 	rm -f $@
-	printf ' [CC]  %s\n' "6/9/1/sample-3.c"
-	-($(CC) $(CFLAGS) $< -o $(OUT)/6.9.1.sample-3 || printf -- '--returned %d\n' $$?) >> $@ 2>> $@
-	-if [ -x "$(OUT)/6.9.1.sample-3" ]; then printf ' [RUN] %s\n' "$(OUT)/6.9.1.sample-3"; (printf '\nrunning...\n'; ./$(OUT)/6.9.1.sample-3; printf -- '--returned %d\n' $$?) >> $@ 2>> $@; fi
+	printf ' [CC]  %s\n' "6/9/1/incomplete-function-parameter.c"
+	-($(CC) $(CFLAGS) $< -o $(OUT)/6.9.1.incomplete-function-parameter || printf -- '--returned %d\n' $$?) >> $@ 2>> $@
+	-if [ -x "$(OUT)/6.9.1.incomplete-function-parameter" ]; then printf ' [RUN] %s\n' "$(OUT)/6.9.1.incomplete-function-parameter"; (printf '\nrunning...\n'; ./$(OUT)/6.9.1.incomplete-function-parameter; printf -- '--returned %d\n' $$?) >> $@ 2>> $@; fi
 
-all: $(OUT)/6.9.2.sample-1.log
-$(OUT)/6.9.2.sample-1.log: 6/9/2/sample-1.c
+all: $(OUT)/6.9.2.tentative-internal-declaration-of-incomplete-type.log
+$(OUT)/6.9.2.tentative-internal-declaration-of-incomplete-type.log: 6/9/2/tentative-internal-declaration-of-incomplete-type.c
 	mkdir -p $(OUT)
 	rm -f $@
-	printf ' [CC]  %s\n' "6/9/2/sample-1.c"
-	-($(CC) $(CFLAGS) $< -o $(OUT)/6.9.2.sample-1 || printf -- '--returned %d\n' $$?) >> $@ 2>> $@
-	-if [ -x "$(OUT)/6.9.2.sample-1" ]; then printf ' [RUN] %s\n' "$(OUT)/6.9.2.sample-1"; (printf '\nrunning...\n'; ./$(OUT)/6.9.2.sample-1; printf -- '--returned %d\n' $$?) >> $@ 2>> $@; fi
+	printf ' [CC]  %s\n' "6/9/2/tentative-internal-declaration-of-incomplete-type.c"
+	-($(CC) $(CFLAGS) $< -o $(OUT)/6.9.2.tentative-internal-declaration-of-incomplete-type || printf -- '--returned %d\n' $$?) >> $@ 2>> $@
+	-if [ -x "$(OUT)/6.9.2.tentative-internal-declaration-of-incomplete-type" ]; then printf ' [RUN] %s\n' "$(OUT)/6.9.2.tentative-internal-declaration-of-incomplete-type"; (printf '\nrunning...\n'; ./$(OUT)/6.9.2.tentative-internal-declaration-of-incomplete-type; printf -- '--returned %d\n' $$?) >> $@ 2>> $@; fi
+
+all: $(OUT)/6.2.4.object-reference-outside-lifetime.log
+$(OUT)/6.2.4.object-reference-outside-lifetime.log: 6/2/4/object-reference-outside-lifetime.c
+	mkdir -p $(OUT)
+	rm -f $@
+	printf ' [CC]  %s\n' "6/2/4/object-reference-outside-lifetime.c"
+	-($(CC) $(CFLAGS) $< -o $(OUT)/6.2.4.object-reference-outside-lifetime || printf -- '--returned %d\n' $$?) >> $@ 2>> $@
+	-if [ -x "$(OUT)/6.2.4.object-reference-outside-lifetime" ]; then printf ' [RUN] %s\n' "$(OUT)/6.2.4.object-reference-outside-lifetime"; (printf '\nrunning...\n'; ./$(OUT)/6.2.4.object-reference-outside-lifetime; printf -- '--returned %d\n' $$?) >> $@ 2>> $@; fi
 
 all: $(OUT)/6.2.4.use-of-indeterminite-automatic-value.log
 $(OUT)/6.2.4.use-of-indeterminite-automatic-value.log: 6/2/4/use-of-indeterminite-automatic-value.c
@@ -576,14 +584,6 @@ $(OUT)/6.2.4.use-of-indeterminite-automatic-value.log: 6/2/4/use-of-indeterminit
 	printf ' [CC]  %s\n' "6/2/4/use-of-indeterminite-automatic-value.c"
 	-($(CC) $(CFLAGS) $< -o $(OUT)/6.2.4.use-of-indeterminite-automatic-value || printf -- '--returned %d\n' $$?) >> $@ 2>> $@
 	-if [ -x "$(OUT)/6.2.4.use-of-indeterminite-automatic-value" ]; then printf ' [RUN] %s\n' "$(OUT)/6.2.4.use-of-indeterminite-automatic-value"; (printf '\nrunning...\n'; ./$(OUT)/6.2.4.use-of-indeterminite-automatic-value; printf -- '--returned %d\n' $$?) >> $@ 2>> $@; fi
-
-all: $(OUT)/6.2.4.sample-1.log
-$(OUT)/6.2.4.sample-1.log: 6/2/4/sample-1.c
-	mkdir -p $(OUT)
-	rm -f $@
-	printf ' [CC]  %s\n' "6/2/4/sample-1.c"
-	-($(CC) $(CFLAGS) $< -o $(OUT)/6.2.4.sample-1 || printf -- '--returned %d\n' $$?) >> $@ 2>> $@
-	-if [ -x "$(OUT)/6.2.4.sample-1" ]; then printf ' [RUN] %s\n' "$(OUT)/6.2.4.sample-1"; (printf '\nrunning...\n'; ./$(OUT)/6.2.4.sample-1; printf -- '--returned %d\n' $$?) >> $@ 2>> $@; fi
 
 all: $(OUT)/6.2.4.pointer-to-object-after-lifetime.log
 $(OUT)/6.2.4.pointer-to-object-after-lifetime.log: 6/2/4/pointer-to-object-after-lifetime.c
@@ -649,29 +649,29 @@ $(OUT)/6.3.1.4.convert-to-integer-outside-range.log: 6/3/1/4/convert-to-integer-
 	-($(CC) $(CFLAGS) $< -o $(OUT)/6.3.1.4.convert-to-integer-outside-range || printf -- '--returned %d\n' $$?) >> $@ 2>> $@
 	-if [ -x "$(OUT)/6.3.1.4.convert-to-integer-outside-range" ]; then printf ' [RUN] %s\n' "$(OUT)/6.3.1.4.convert-to-integer-outside-range"; (printf '\nrunning...\n'; ./$(OUT)/6.3.1.4.convert-to-integer-outside-range; printf -- '--returned %d\n' $$?) >> $@ 2>> $@; fi
 
-all: $(OUT)/6.3.1.5.sample-1.log
-$(OUT)/6.3.1.5.sample-1.log: 6/3/1/5/sample-1.c
+all: $(OUT)/6.3.1.5.float-demotion-overflow.log
+$(OUT)/6.3.1.5.float-demotion-overflow.log: 6/3/1/5/float-demotion-overflow.c
 	mkdir -p $(OUT)
 	rm -f $@
-	printf ' [CC]  %s\n' "6/3/1/5/sample-1.c"
-	-($(CC) $(CFLAGS) $< -o $(OUT)/6.3.1.5.sample-1 || printf -- '--returned %d\n' $$?) >> $@ 2>> $@
-	-if [ -x "$(OUT)/6.3.1.5.sample-1" ]; then printf ' [RUN] %s\n' "$(OUT)/6.3.1.5.sample-1"; (printf '\nrunning...\n'; ./$(OUT)/6.3.1.5.sample-1; printf -- '--returned %d\n' $$?) >> $@ 2>> $@; fi
+	printf ' [CC]  %s\n' "6/3/1/5/float-demotion-overflow.c"
+	-($(CC) $(CFLAGS) $< -o $(OUT)/6.3.1.5.float-demotion-overflow || printf -- '--returned %d\n' $$?) >> $@ 2>> $@
+	-if [ -x "$(OUT)/6.3.1.5.float-demotion-overflow" ]; then printf ' [RUN] %s\n' "$(OUT)/6.3.1.5.float-demotion-overflow"; (printf '\nrunning...\n'; ./$(OUT)/6.3.1.5.float-demotion-overflow; printf -- '--returned %d\n' $$?) >> $@ 2>> $@; fi
 
-all: $(OUT)/6.3.2.1.sample-2.log
-$(OUT)/6.3.2.1.sample-2.log: 6/3/2/1/sample-2.c
+all: $(OUT)/6.3.2.1.invalid-lvalue.log
+$(OUT)/6.3.2.1.invalid-lvalue.log: 6/3/2/1/invalid-lvalue.c
 	mkdir -p $(OUT)
 	rm -f $@
-	printf ' [CC]  %s\n' "6/3/2/1/sample-2.c"
-	-($(CC) $(CFLAGS) $< -o $(OUT)/6.3.2.1.sample-2 || printf -- '--returned %d\n' $$?) >> $@ 2>> $@
-	-if [ -x "$(OUT)/6.3.2.1.sample-2" ]; then printf ' [RUN] %s\n' "$(OUT)/6.3.2.1.sample-2"; (printf '\nrunning...\n'; ./$(OUT)/6.3.2.1.sample-2; printf -- '--returned %d\n' $$?) >> $@ 2>> $@; fi
+	printf ' [CC]  %s\n' "6/3/2/1/invalid-lvalue.c"
+	-($(CC) $(CFLAGS) $< -o $(OUT)/6.3.2.1.invalid-lvalue || printf -- '--returned %d\n' $$?) >> $@ 2>> $@
+	-if [ -x "$(OUT)/6.3.2.1.invalid-lvalue" ]; then printf ' [RUN] %s\n' "$(OUT)/6.3.2.1.invalid-lvalue"; (printf '\nrunning...\n'; ./$(OUT)/6.3.2.1.invalid-lvalue; printf -- '--returned %d\n' $$?) >> $@ 2>> $@; fi
 
-all: $(OUT)/6.3.2.1.sample-1.log
-$(OUT)/6.3.2.1.sample-1.log: 6/3/2/1/sample-1.c
+all: $(OUT)/6.3.2.1.uninitialized-lvalue.log
+$(OUT)/6.3.2.1.uninitialized-lvalue.log: 6/3/2/1/uninitialized-lvalue.c
 	mkdir -p $(OUT)
 	rm -f $@
-	printf ' [CC]  %s\n' "6/3/2/1/sample-1.c"
-	-($(CC) $(CFLAGS) $< -o $(OUT)/6.3.2.1.sample-1 || printf -- '--returned %d\n' $$?) >> $@ 2>> $@
-	-if [ -x "$(OUT)/6.3.2.1.sample-1" ]; then printf ' [RUN] %s\n' "$(OUT)/6.3.2.1.sample-1"; (printf '\nrunning...\n'; ./$(OUT)/6.3.2.1.sample-1; printf -- '--returned %d\n' $$?) >> $@ 2>> $@; fi
+	printf ' [CC]  %s\n' "6/3/2/1/uninitialized-lvalue.c"
+	-($(CC) $(CFLAGS) $< -o $(OUT)/6.3.2.1.uninitialized-lvalue || printf -- '--returned %d\n' $$?) >> $@ 2>> $@
+	-if [ -x "$(OUT)/6.3.2.1.uninitialized-lvalue" ]; then printf ' [RUN] %s\n' "$(OUT)/6.3.2.1.uninitialized-lvalue"; (printf '\nrunning...\n'; ./$(OUT)/6.3.2.1.uninitialized-lvalue; printf -- '--returned %d\n' $$?) >> $@ 2>> $@; fi
 
 all: $(OUT)/6.3.2.1.convert-register-array-to-pointer.log
 $(OUT)/6.3.2.1.convert-register-array-to-pointer.log: 6/3/2/1/convert-register-array-to-pointer.c
@@ -761,21 +761,21 @@ $(OUT)/6.10.2.invalid-include.log: 6/10/2/invalid-include.c
 	-($(CC) $(CFLAGS) $< -o $(OUT)/6.10.2.invalid-include || printf -- '--returned %d\n' $$?) >> $@ 2>> $@
 	-if [ -x "$(OUT)/6.10.2.invalid-include" ]; then printf ' [RUN] %s\n' "$(OUT)/6.10.2.invalid-include"; (printf '\nrunning...\n'; ./$(OUT)/6.10.2.invalid-include; printf -- '--returned %d\n' $$?) >> $@ 2>> $@; fi
 
-all: $(OUT)/6.10.2.sample-2.log
-$(OUT)/6.10.2.sample-2.log: 6/10/2/sample-2.c
+all: $(OUT)/6.10.2.include-leading-digit.log
+$(OUT)/6.10.2.include-leading-digit.log: 6/10/2/include-leading-digit.c
 	mkdir -p $(OUT)
 	rm -f $@
-	printf ' [CC]  %s\n' "6/10/2/sample-2.c"
-	-($(CC) $(CFLAGS) $< -o $(OUT)/6.10.2.sample-2 || printf -- '--returned %d\n' $$?) >> $@ 2>> $@
-	-if [ -x "$(OUT)/6.10.2.sample-2" ]; then printf ' [RUN] %s\n' "$(OUT)/6.10.2.sample-2"; (printf '\nrunning...\n'; ./$(OUT)/6.10.2.sample-2; printf -- '--returned %d\n' $$?) >> $@ 2>> $@; fi
+	printf ' [CC]  %s\n' "6/10/2/include-leading-digit.c"
+	-($(CC) $(CFLAGS) $< -o $(OUT)/6.10.2.include-leading-digit || printf -- '--returned %d\n' $$?) >> $@ 2>> $@
+	-if [ -x "$(OUT)/6.10.2.include-leading-digit" ]; then printf ' [RUN] %s\n' "$(OUT)/6.10.2.include-leading-digit"; (printf '\nrunning...\n'; ./$(OUT)/6.10.2.include-leading-digit; printf -- '--returned %d\n' $$?) >> $@ 2>> $@; fi
 
-all: $(OUT)/6.10.3.sample-1.log
-$(OUT)/6.10.3.sample-1.log: 6/10/3/sample-1.c
+all: $(OUT)/6.10.3.directive-as-argument.log
+$(OUT)/6.10.3.directive-as-argument.log: 6/10/3/directive-as-argument.c
 	mkdir -p $(OUT)
 	rm -f $@
-	printf ' [CC]  %s\n' "6/10/3/sample-1.c"
-	-($(CC) $(CFLAGS) $< -o $(OUT)/6.10.3.sample-1 || printf -- '--returned %d\n' $$?) >> $@ 2>> $@
-	-if [ -x "$(OUT)/6.10.3.sample-1" ]; then printf ' [RUN] %s\n' "$(OUT)/6.10.3.sample-1"; (printf '\nrunning...\n'; ./$(OUT)/6.10.3.sample-1; printf -- '--returned %d\n' $$?) >> $@ 2>> $@; fi
+	printf ' [CC]  %s\n' "6/10/3/directive-as-argument.c"
+	-($(CC) $(CFLAGS) $< -o $(OUT)/6.10.3.directive-as-argument || printf -- '--returned %d\n' $$?) >> $@ 2>> $@
+	-if [ -x "$(OUT)/6.10.3.directive-as-argument" ]; then printf ' [RUN] %s\n' "$(OUT)/6.10.3.directive-as-argument"; (printf '\nrunning...\n'; ./$(OUT)/6.10.3.directive-as-argument; printf -- '--returned %d\n' $$?) >> $@ 2>> $@; fi
 
 all: $(OUT)/6.10.3.2.sample-1.log
 $(OUT)/6.10.3.2.sample-1.log: 6/10/3/2/sample-1.c
