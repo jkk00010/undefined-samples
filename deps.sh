@@ -7,7 +7,8 @@ printf '.POSIX:\n.SILENT:\n'
 for src in $(find */ -name \*.c); do
 	out=$(echo $src | sed -e 's#^/##g;s#/#.#g;s#\.c$##g;')
 	lib=''
-	if (grep -q thread $src); then lib='-lpthread '; fi
+	if (grep -q thread.h $src); then lib='-lpthread '; fi
+	if (grep -q -e math.h -e fenv.h $src); then lib='-lm '; fi
 	cat <<EOF
 
 all: \$(OUT)/${out}.log
