@@ -17,6 +17,11 @@ all: \$(OUT)/${out}.log
 	rm -f \$@
 	printf ' [CC]  %s\\n' "$src"
 	-(\$(CC) \$(CFLAGS) \$< ${lib}-o \$(OUT)/${out} || printf -- '--returned %d\\n' \$\$?) >> \$@ 2>> \$@
-	-if [ -x "\$(OUT)/${out}" ]; then printf ' [RUN] %s\\n' "\$(OUT)/${out}"; (printf '\\nrunning...\\n'; ./\$(OUT)/${out}; printf -- '--returned %d\\n' \$\$?) >> \$@ 2>> \$@; fi
 EOF
 done
+
+# If we want to run the generated programs, this would do it
+# But many of them hang, so let's not
+cat <<EOF > /dev/null
+	-if [ -x "\$(OUT)/${out}" ]; then printf ' [RUN] %s\\n' "\$(OUT)/${out}"; (printf '\\nrunning...\\n'; ./\$(OUT)/${out}; printf -- '--returned %d\\n' \$\$?) >> \$@ 2>> \$@; fi
+EOF
