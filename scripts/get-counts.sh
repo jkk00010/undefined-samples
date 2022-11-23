@@ -1,7 +1,7 @@
 #!/bin/sh
 
 if [ $# -ne 1 ]; then
-	printf 'usage: %s file\n' $0
+	printf 'usage: %s file\n' $0 >&2
 	exit 1
 fi
 

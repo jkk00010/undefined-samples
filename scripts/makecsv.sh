@@ -1,7 +1,7 @@
 #!/bin/sh
 
 if [ $# -eq 0 ]; then
-	printf 'usage: %s dir...\n' "$0"
+	printf 'usage: %s dir...\n' "$0" >&2
 	exit 1
 fi
 
