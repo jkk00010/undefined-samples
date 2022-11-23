@@ -18,7 +18,7 @@ for src in $(find . -name '*.c' | grep -v sample- | sort); do
 		elif [ $(wc -l "${dir}/${out}.log" | cut -d' ' -f1) -gt 1 ]; then
 			printf ', W'
 		else
-			printf ', I'
+			printf ', U'
 		fi
 	done
 	printf '\n'
