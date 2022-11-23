@@ -1,13 +1,1250 @@
+.SILENT:\n'
 .SUFFIXES: .c .log
 
 CC=cl
 CFLAGS=/nologo /std:c17
+OUT=msvc
 
 all:
-
-!INCLUDE deps.mk
-
-.c.log:
-	-$(CC) $(CFLAGS) $< > $@
-	echo. >> $@
-	echo returned %ERRORLEVEL% >> $@
+all: $(OUT)/.log
+$(OUT)/.log: 4/sample-1.c
+	mkdir $(OUT)
+	del $@
+	echo "  [CC] 4/sample-1.c"
+	-($(CC) $(CFLAGS) $< -o $(OUT)/ || echo "--returned %ERRORLEVEL%\n") >> $@ 2>> $@
+all: $(OUT)/.log
+$(OUT)/.log: 5/1/1/2/token-concatenation-makes-universal-character-name.c
+	mkdir $(OUT)
+	del $@
+	echo "  [CC] 5/1/1/2/token-concatenation-makes-universal-character-name.c"
+	-($(CC) $(CFLAGS) $< -o $(OUT)/ || echo "--returned %ERRORLEVEL%\n") >> $@ 2>> $@
+all: $(OUT)/.log
+$(OUT)/.log: 5/1/1/2/ends-with-partial-comment.c
+	mkdir $(OUT)
+	del $@
+	echo "  [CC] 5/1/1/2/ends-with-partial-comment.c"
+	-($(CC) $(CFLAGS) $< -o $(OUT)/ || echo "--returned %ERRORLEVEL%\n") >> $@ 2>> $@
+all: $(OUT)/.log
+$(OUT)/.log: 5/1/2/4/data-race.c
+	mkdir $(OUT)
+	del $@
+	echo "  [CC] 5/1/2/4/data-race.c"
+	-($(CC) $(CFLAGS) $< -o $(OUT)/ || echo "--returned %ERRORLEVEL%\n") >> $@ 2>> $@
+all: $(OUT)/.log
+$(OUT)/.log: 5/1/2/2/1/no-standard-main.c
+	mkdir $(OUT)
+	del $@
+	echo "  [CC] 5/1/2/2/1/no-standard-main.c"
+	-($(CC) $(CFLAGS) $< -o $(OUT)/ || echo "--returned %ERRORLEVEL%\n") >> $@ 2>> $@
+all: $(OUT)/.log
+$(OUT)/.log: 5/2/1/non-basic-character.c
+	mkdir $(OUT)
+	del $@
+	echo "  [CC] 5/2/1/non-basic-character.c"
+	-($(CC) $(CFLAGS) $< -o $(OUT)/ || echo "--returned %ERRORLEVEL%\n") >> $@ 2>> $@
+all: $(OUT)/.log
+$(OUT)/.log: 5/2/1/2/invalid-multibyte-character.c
+	mkdir $(OUT)
+	del $@
+	echo "  [CC] 5/2/1/2/invalid-multibyte-character.c"
+	-($(CC) $(CFLAGS) $< -o $(OUT)/ || echo "--returned %ERRORLEVEL%\n") >> $@ 2>> $@
+all: $(OUT)/.log
+$(OUT)/.log: 6/4/unmatched-quote.c
+	mkdir $(OUT)
+	del $@
+	echo "  [CC] 6/4/unmatched-quote.c"
+	-($(CC) $(CFLAGS) $< -o $(OUT)/ || echo "--returned %ERRORLEVEL%\n") >> $@ 2>> $@
+all: $(OUT)/.log
+$(OUT)/.log: 6/4/7/invalid-header-sequence.c
+	mkdir $(OUT)
+	del $@
+	echo "  [CC] 6/4/7/invalid-header-sequence.c"
+	-($(CC) $(CFLAGS) $< -o $(OUT)/ || echo "--returned %ERRORLEVEL%\n") >> $@ 2>> $@
+all: $(OUT)/.log
+$(OUT)/.log: 6/4/1/improper-use-of-keyword.c
+	mkdir $(OUT)
+	del $@
+	echo "  [CC] 6/4/1/improper-use-of-keyword.c"
+	-($(CC) $(CFLAGS) $< -o $(OUT)/ || echo "--returned %ERRORLEVEL%\n") >> $@ 2>> $@
+all: $(OUT)/.log
+$(OUT)/.log: 6/4/5/modify-string-literal.c
+	mkdir $(OUT)
+	del $@
+	echo "  [CC] 6/4/5/modify-string-literal.c"
+	-($(CC) $(CFLAGS) $< -o $(OUT)/ || echo "--returned %ERRORLEVEL%\n") >> $@ 2>> $@
+all: $(OUT)/.log
+$(OUT)/.log: 6/4/2/1/invalid-universal-character-identifer.c
+	mkdir $(OUT)
+	del $@
+	echo "  [CC] 6/4/2/1/invalid-universal-character-identifer.c"
+	-($(CC) $(CFLAGS) $< -o $(OUT)/ || echo "--returned %ERRORLEVEL%\n") >> $@ 2>> $@
+all: $(OUT)/.log
+$(OUT)/.log: 6/4/2/1/sample-3.c
+	mkdir $(OUT)
+	del $@
+	echo "  [CC] 6/4/2/1/sample-3.c"
+	-($(CC) $(CFLAGS) $< -o $(OUT)/ || echo "--returned %ERRORLEVEL%\n") >> $@ 2>> $@
+all: $(OUT)/.log
+$(OUT)/.log: 6/4/2/1/leading-universal-character-digit.c
+	mkdir $(OUT)
+	del $@
+	echo "  [CC] 6/4/2/1/leading-universal-character-digit.c"
+	-($(CC) $(CFLAGS) $< -o $(OUT)/ || echo "--returned %ERRORLEVEL%\n") >> $@ 2>> $@
+all: $(OUT)/.log
+$(OUT)/.log: 6/4/2/2/explicit-declaration-of-__func__.c
+	mkdir $(OUT)
+	del $@
+	echo "  [CC] 6/4/2/2/explicit-declaration-of-__func__.c"
+	-($(CC) $(CFLAGS) $< -o $(OUT)/ || echo "--returned %ERRORLEVEL%\n") >> $@ 2>> $@
+all: $(OUT)/.log
+$(OUT)/.log: 6/7/4/extern-inline-function-with-no-definition.c
+	mkdir $(OUT)
+	del $@
+	echo "  [CC] 6/7/4/extern-inline-function-with-no-definition.c"
+	-($(CC) $(CFLAGS) $< -o $(OUT)/ || echo "--returned %ERRORLEVEL%\n") >> $@ 2>> $@
+all: $(OUT)/.log
+$(OUT)/.log: 6/7/4/_Noreturn-function-returns.c
+	mkdir $(OUT)
+	del $@
+	echo "  [CC] 6/7/4/_Noreturn-function-returns.c"
+	-($(CC) $(CFLAGS) $< -o $(OUT)/ || echo "--returned %ERRORLEVEL%\n") >> $@ 2>> $@
+all: $(OUT)/.log
+$(OUT)/.log: 6/7/1/block-scope-function-declaration.c
+	mkdir $(OUT)
+	del $@
+	echo "  [CC] 6/7/1/block-scope-function-declaration.c"
+	-($(CC) $(CFLAGS) $< -o $(OUT)/ || echo "--returned %ERRORLEVEL%\n") >> $@ 2>> $@
+all: $(OUT)/.log
+$(OUT)/.log: 6/7/5/declaration-and-definition-with-different-alignment.c
+	mkdir $(OUT)
+	del $@
+	echo "  [CC] 6/7/5/declaration-and-definition-with-different-alignment.c"
+	-($(CC) $(CFLAGS) $< -o $(OUT)/ || echo "--returned %ERRORLEVEL%\n") >> $@ 2>> $@
+all: $(OUT)/.log
+$(OUT)/.log: 6/7/5/sample-2.c
+	mkdir $(OUT)
+	del $@
+	echo "  [CC] 6/7/5/sample-2.c"
+	-($(CC) $(CFLAGS) $< -o $(OUT)/ || echo "--returned %ERRORLEVEL%\n") >> $@ 2>> $@
+all: $(OUT)/.log
+$(OUT)/.log: 6/7/6/1/sample-1.c
+	mkdir $(OUT)
+	del $@
+	echo "  [CC] 6/7/6/1/sample-1.c"
+	-($(CC) $(CFLAGS) $< -o $(OUT)/ || echo "--returned %ERRORLEVEL%\n") >> $@ 2>> $@
+all: $(OUT)/.log
+$(OUT)/.log: 6/7/6/2/negative-array-size-at-runtime.c
+	mkdir $(OUT)
+	del $@
+	echo "  [CC] 6/7/6/2/negative-array-size-at-runtime.c"
+	-($(CC) $(CFLAGS) $< -o $(OUT)/ || echo "--returned %ERRORLEVEL%\n") >> $@ 2>> $@
+all: $(OUT)/.log
+$(OUT)/.log: 6/7/6/2/sample-2.c
+	mkdir $(OUT)
+	del $@
+	echo "  [CC] 6/7/6/2/sample-2.c"
+	-($(CC) $(CFLAGS) $< -o $(OUT)/ || echo "--returned %ERRORLEVEL%\n") >> $@ 2>> $@
+all: $(OUT)/.log
+$(OUT)/.log: 6/7/6/3/static-array-param-too-small.c
+	mkdir $(OUT)
+	del $@
+	echo "  [CC] 6/7/6/3/static-array-param-too-small.c"
+	-($(CC) $(CFLAGS) $< -o $(OUT)/ || echo "--returned %ERRORLEVEL%\n") >> $@ 2>> $@
+all: $(OUT)/.log
+$(OUT)/.log: 6/7/6/3/sample-3.c
+	mkdir $(OUT)
+	del $@
+	echo "  [CC] 6/7/6/3/sample-3.c"
+	-($(CC) $(CFLAGS) $< -o $(OUT)/ || echo "--returned %ERRORLEVEL%\n") >> $@ 2>> $@
+all: $(OUT)/.log
+$(OUT)/.log: 6/7/6/3/qualified-void-parameter.c
+	mkdir $(OUT)
+	del $@
+	echo "  [CC] 6/7/6/3/qualified-void-parameter.c"
+	-($(CC) $(CFLAGS) $< -o $(OUT)/ || echo "--returned %ERRORLEVEL%\n") >> $@ 2>> $@
+all: $(OUT)/.log
+$(OUT)/.log: 6/7/9/struct-initialized-without-list.c
+	mkdir $(OUT)
+	del $@
+	echo "  [CC] 6/7/9/struct-initialized-without-list.c"
+	-($(CC) $(CFLAGS) $< -o $(OUT)/ || echo "--returned %ERRORLEVEL%\n") >> $@ 2>> $@
+all: $(OUT)/.log
+$(OUT)/.log: 6/7/9/aggregrate-initialized-without-braces.c
+	mkdir $(OUT)
+	del $@
+	echo "  [CC] 6/7/9/aggregrate-initialized-without-braces.c"
+	-($(CC) $(CFLAGS) $< -o $(OUT)/ || echo "--returned %ERRORLEVEL%\n") >> $@ 2>> $@
+all: $(OUT)/.log
+$(OUT)/.log: 6/7/9/sample-1.c
+	mkdir $(OUT)
+	del $@
+	echo "  [CC] 6/7/9/sample-1.c"
+	-($(CC) $(CFLAGS) $< -o $(OUT)/ || echo "--returned %ERRORLEVEL%\n") >> $@ 2>> $@
+all: $(OUT)/.log
+$(OUT)/.log: 6/7/9/scalar-initialized-with-non-scalar.c
+	mkdir $(OUT)
+	del $@
+	echo "  [CC] 6/7/9/scalar-initialized-with-non-scalar.c"
+	-($(CC) $(CFLAGS) $< -o $(OUT)/ || echo "--returned %ERRORLEVEL%\n") >> $@ 2>> $@
+all: $(OUT)/.log
+$(OUT)/.log: 6/7/sample-1.c
+	mkdir $(OUT)
+	del $@
+	echo "  [CC] 6/7/sample-1.c"
+	-($(CC) $(CFLAGS) $< -o $(OUT)/ || echo "--returned %ERRORLEVEL%\n") >> $@ 2>> $@
+all: $(OUT)/.log
+$(OUT)/.log: 6/7/2/1/access-unprovided-flexible-array-member.c
+	mkdir $(OUT)
+	del $@
+	echo "  [CC] 6/7/2/1/access-unprovided-flexible-array-member.c"
+	-($(CC) $(CFLAGS) $< -o $(OUT)/ || echo "--returned %ERRORLEVEL%\n") >> $@ 2>> $@
+all: $(OUT)/.log
+$(OUT)/.log: 6/7/2/1/struct-with-no-named-members.c
+	mkdir $(OUT)
+	del $@
+	echo "  [CC] 6/7/2/1/struct-with-no-named-members.c"
+	-($(CC) $(CFLAGS) $< -o $(OUT)/ || echo "--returned %ERRORLEVEL%\n") >> $@ 2>> $@
+all: $(OUT)/.log
+$(OUT)/.log: 6/7/2/3/sample-1.c
+	mkdir $(OUT)
+	del $@
+	echo "  [CC] 6/7/2/3/sample-1.c"
+	-($(CC) $(CFLAGS) $< -o $(OUT)/ || echo "--returned %ERRORLEVEL%\n") >> $@ 2>> $@
+all: $(OUT)/.log
+$(OUT)/.log: 6/7/3/sample-4.c
+	mkdir $(OUT)
+	del $@
+	echo "  [CC] 6/7/3/sample-4.c"
+	-($(CC) $(CFLAGS) $< -o $(OUT)/ || echo "--returned %ERRORLEVEL%\n") >> $@ 2>> $@
+all: $(OUT)/.log
+$(OUT)/.log: 6/7/3/refer-to-volatile-through-non-volatile-lvalue.c
+	mkdir $(OUT)
+	del $@
+	echo "  [CC] 6/7/3/refer-to-volatile-through-non-volatile-lvalue.c"
+	-($(CC) $(CFLAGS) $< -o $(OUT)/ || echo "--returned %ERRORLEVEL%\n") >> $@ 2>> $@
+all: $(OUT)/.log
+$(OUT)/.log: 6/7/3/modify-const-through-non-const-lvalue.c
+	mkdir $(OUT)
+	del $@
+	echo "  [CC] 6/7/3/modify-const-through-non-const-lvalue.c"
+	-($(CC) $(CFLAGS) $< -o $(OUT)/ || echo "--returned %ERRORLEVEL%\n") >> $@ 2>> $@
+all: $(OUT)/.log
+$(OUT)/.log: 6/7/3/1/sample-2.c
+	mkdir $(OUT)
+	del $@
+	echo "  [CC] 6/7/3/1/sample-2.c"
+	-($(CC) $(CFLAGS) $< -o $(OUT)/ || echo "--returned %ERRORLEVEL%\n") >> $@ 2>> $@
+all: $(OUT)/.log
+$(OUT)/.log: 6/7/3/1/sample-1.c
+	mkdir $(OUT)
+	del $@
+	echo "  [CC] 6/7/3/1/sample-1.c"
+	-($(CC) $(CFLAGS) $< -o $(OUT)/ || echo "--returned %ERRORLEVEL%\n") >> $@ 2>> $@
+all: $(OUT)/.log
+$(OUT)/.log: 6/7/3/qualified-function.c
+	mkdir $(OUT)
+	del $@
+	echo "  [CC] 6/7/3/qualified-function.c"
+	-($(CC) $(CFLAGS) $< -o $(OUT)/ || echo "--returned %ERRORLEVEL%\n") >> $@ 2>> $@
+all: $(OUT)/.log
+$(OUT)/.log: 6/5/exceptional-condition-in-evaluation.c
+	mkdir $(OUT)
+	del $@
+	echo "  [CC] 6/5/exceptional-condition-in-evaluation.c"
+	-($(CC) $(CFLAGS) $< -o $(OUT)/ || echo "--returned %ERRORLEVEL%\n") >> $@ 2>> $@
+all: $(OUT)/.log
+$(OUT)/.log: 6/5/4/invalid-pointer-conversion.c
+	mkdir $(OUT)
+	del $@
+	echo "  [CC] 6/5/4/invalid-pointer-conversion.c"
+	-($(CC) $(CFLAGS) $< -o $(OUT)/ || echo "--returned %ERRORLEVEL%\n") >> $@ 2>> $@
+all: $(OUT)/.log
+$(OUT)/.log: 6/5/16/1/assignment-with-incompatible-type.c
+	mkdir $(OUT)
+	del $@
+	echo "  [CC] 6/5/16/1/assignment-with-incompatible-type.c"
+	-($(CC) $(CFLAGS) $< -o $(OUT)/ || echo "--returned %ERRORLEVEL%\n") >> $@ 2>> $@
+all: $(OUT)/.log
+$(OUT)/.log: 6/5/7/illegal-shift.c
+	mkdir $(OUT)
+	del $@
+	echo "  [CC] 6/5/7/illegal-shift.c"
+	-($(CC) $(CFLAGS) $< -o $(OUT)/ || echo "--returned %ERRORLEVEL%\n") >> $@ 2>> $@
+all: $(OUT)/.log
+$(OUT)/.log: 6/5/7/left-shift-negative.c
+	mkdir $(OUT)
+	del $@
+	echo "  [CC] 6/5/7/left-shift-negative.c"
+	-($(CC) $(CFLAGS) $< -o $(OUT)/ || echo "--returned %ERRORLEVEL%\n") >> $@ 2>> $@
+all: $(OUT)/.log
+$(OUT)/.log: 6/5/incorrect-lvalue-type.c
+	mkdir $(OUT)
+	del $@
+	echo "  [CC] 6/5/incorrect-lvalue-type.c"
+	-($(CC) $(CFLAGS) $< -o $(OUT)/ || echo "--returned %ERRORLEVEL%\n") >> $@ 2>> $@
+all: $(OUT)/.log
+$(OUT)/.log: 6/5/5/nonrepresentable-divison.c
+	mkdir $(OUT)
+	del $@
+	echo "  [CC] 6/5/5/nonrepresentable-divison.c"
+	-($(CC) $(CFLAGS) $< -o $(OUT)/ || echo "--returned %ERRORLEVEL%\n") >> $@ 2>> $@
+all: $(OUT)/.log
+$(OUT)/.log: 6/5/5/divide-by-zero.c
+	mkdir $(OUT)
+	del $@
+	echo "  [CC] 6/5/5/divide-by-zero.c"
+	-($(CC) $(CFLAGS) $< -o $(OUT)/ || echo "--returned %ERRORLEVEL%\n") >> $@ 2>> $@
+all: $(OUT)/.log
+$(OUT)/.log: 6/5/6/sample-5.c
+	mkdir $(OUT)
+	del $@
+	echo "  [CC] 6/5/6/sample-5.c"
+	-($(CC) $(CFLAGS) $< -o $(OUT)/ || echo "--returned %ERRORLEVEL%\n") >> $@ 2>> $@
+all: $(OUT)/.log
+$(OUT)/.log: 6/5/6/pointer-arithmetic-just-beyond-array.c
+	mkdir $(OUT)
+	del $@
+	echo "  [CC] 6/5/6/pointer-arithmetic-just-beyond-array.c"
+	-($(CC) $(CFLAGS) $< -o $(OUT)/ || echo "--returned %ERRORLEVEL%\n") >> $@ 2>> $@
+all: $(OUT)/.log
+$(OUT)/.log: 6/5/6/pointer-arithmetic-outside.array.c
+	mkdir $(OUT)
+	del $@
+	echo "  [CC] 6/5/6/pointer-arithmetic-outside.array.c"
+	-($(CC) $(CFLAGS) $< -o $(OUT)/ || echo "--returned %ERRORLEVEL%\n") >> $@ 2>> $@
+all: $(OUT)/.log
+$(OUT)/.log: 6/5/6/subtraction-between-different-pointers.c
+	mkdir $(OUT)
+	del $@
+	echo "  [CC] 6/5/6/subtraction-between-different-pointers.c"
+	-($(CC) $(CFLAGS) $< -o $(OUT)/ || echo "--returned %ERRORLEVEL%\n") >> $@ 2>> $@
+all: $(OUT)/.log
+$(OUT)/.log: 6/5/6/array-subscript-out-of-range.c
+	mkdir $(OUT)
+	del $@
+	echo "  [CC] 6/5/6/array-subscript-out-of-range.c"
+	-($(CC) $(CFLAGS) $< -o $(OUT)/ || echo "--returned %ERRORLEVEL%\n") >> $@ 2>> $@
+all: $(OUT)/.log
+$(OUT)/.log: 6/5/8/invalid-pointer-comparison.c
+	mkdir $(OUT)
+	del $@
+	echo "  [CC] 6/5/8/invalid-pointer-comparison.c"
+	-($(CC) $(CFLAGS) $< -o $(OUT)/ || echo "--returned %ERRORLEVEL%\n") >> $@ 2>> $@
+all: $(OUT)/.log
+$(OUT)/.log: 6/5/2/2/sample-4.c
+	mkdir $(OUT)
+	del $@
+	echo "  [CC] 6/5/2/2/sample-4.c"
+	-($(CC) $(CFLAGS) $< -o $(OUT)/ || echo "--returned %ERRORLEVEL%\n") >> $@ 2>> $@
+all: $(OUT)/.log
+$(OUT)/.log: 6/5/2/2/function-call-no-prototype-ellipses.c
+	mkdir $(OUT)
+	del $@
+	echo "  [CC] 6/5/2/2/function-call-no-prototype-ellipses.c"
+	-($(CC) $(CFLAGS) $< -o $(OUT)/ || echo "--returned %ERRORLEVEL%\n") >> $@ 2>> $@
+all: $(OUT)/.log
+$(OUT)/.log: 6/5/2/2/function-call-no-prototype-mismatched-parameters.c
+	mkdir $(OUT)
+	del $@
+	echo "  [CC] 6/5/2/2/function-call-no-prototype-mismatched-parameters.c"
+	-($(CC) $(CFLAGS) $< -o $(OUT)/ || echo "--returned %ERRORLEVEL%\n") >> $@ 2>> $@
+all: $(OUT)/.log
+$(OUT)/.log: 6/5/2/2/function-call-no-prototype-mismatch-parameter-list.c
+	mkdir $(OUT)
+	del $@
+	echo "  [CC] 6/5/2/2/function-call-no-prototype-mismatch-parameter-list.c"
+	-($(CC) $(CFLAGS) $< -o $(OUT)/ || echo "--returned %ERRORLEVEL%\n") >> $@ 2>> $@
+all: $(OUT)/.log
+$(OUT)/.log: 6/5/2/3/accessing-member-of-atomic-struct.c
+	mkdir $(OUT)
+	del $@
+	echo "  [CC] 6/5/2/3/accessing-member-of-atomic-struct.c"
+	-($(CC) $(CFLAGS) $< -o $(OUT)/ || echo "--returned %ERRORLEVEL%\n") >> $@ 2>> $@
+all: $(OUT)/.log
+$(OUT)/.log: 6/5/3/2/sample-1.c
+	mkdir $(OUT)
+	del $@
+	echo "  [CC] 6/5/3/2/sample-1.c"
+	-($(CC) $(CFLAGS) $< -o $(OUT)/ || echo "--returned %ERRORLEVEL%\n") >> $@ 2>> $@
+all: $(OUT)/.log
+$(OUT)/.log: 6/5/unsequenced-side-effects.c
+	mkdir $(OUT)
+	del $@
+	echo "  [CC] 6/5/unsequenced-side-effects.c"
+	-($(CC) $(CFLAGS) $< -o $(OUT)/ || echo "--returned %ERRORLEVEL%\n") >> $@ 2>> $@
+all: $(OUT)/.log
+$(OUT)/.log: 6/6/sample-4.c
+	mkdir $(OUT)
+	del $@
+	echo "  [CC] 6/6/sample-4.c"
+	-($(CC) $(CFLAGS) $< -o $(OUT)/ || echo "--returned %ERRORLEVEL%\n") >> $@ 2>> $@
+all: $(OUT)/.log
+$(OUT)/.log: 6/6/non-constant-expression-where-constant-required.c
+	mkdir $(OUT)
+	del $@
+	echo "  [CC] 6/6/non-constant-expression-where-constant-required.c"
+	-($(CC) $(CFLAGS) $< -o $(OUT)/ || echo "--returned %ERRORLEVEL%\n") >> $@ 2>> $@
+all: $(OUT)/.log
+$(OUT)/.log: 6/6/non-integer-where-integr-required.c
+	mkdir $(OUT)
+	del $@
+	echo "  [CC] 6/6/non-integer-where-integr-required.c"
+	-($(CC) $(CFLAGS) $< -o $(OUT)/ || echo "--returned %ERRORLEVEL%\n") >> $@ 2>> $@
+all: $(OUT)/.log
+$(OUT)/.log: 6/6/sample-3.c
+	mkdir $(OUT)
+	del $@
+	echo "  [CC] 6/6/sample-3.c"
+	-($(CC) $(CFLAGS) $< -o $(OUT)/ || echo "--returned %ERRORLEVEL%\n") >> $@ 2>> $@
+all: $(OUT)/.log
+$(OUT)/.log: 6/9/missing-extern-definition.c
+	mkdir $(OUT)
+	del $@
+	echo "  [CC] 6/9/missing-extern-definition.c"
+	-($(CC) $(CFLAGS) $< -o $(OUT)/ || echo "--returned %ERRORLEVEL%\n") >> $@ 2>> $@
+all: $(OUT)/.log
+$(OUT)/.log: 6/9/1/end-brace-is-reached.c
+	mkdir $(OUT)
+	del $@
+	echo "  [CC] 6/9/1/end-brace-is-reached.c"
+	-($(CC) $(CFLAGS) $< -o $(OUT)/ || echo "--returned %ERRORLEVEL%\n") >> $@ 2>> $@
+all: $(OUT)/.log
+$(OUT)/.log: 6/9/1/untyped-parameters.c
+	mkdir $(OUT)
+	del $@
+	echo "  [CC] 6/9/1/untyped-parameters.c"
+	-($(CC) $(CFLAGS) $< -o $(OUT)/ || echo "--returned %ERRORLEVEL%\n") >> $@ 2>> $@
+all: $(OUT)/.log
+$(OUT)/.log: 6/9/1/variadic-function-missing-ellipses.c
+	mkdir $(OUT)
+	del $@
+	echo "  [CC] 6/9/1/variadic-function-missing-ellipses.c"
+	-($(CC) $(CFLAGS) $< -o $(OUT)/ || echo "--returned %ERRORLEVEL%\n") >> $@ 2>> $@
+all: $(OUT)/.log
+$(OUT)/.log: 6/9/1/incomplete-function-parameter.c
+	mkdir $(OUT)
+	del $@
+	echo "  [CC] 6/9/1/incomplete-function-parameter.c"
+	-($(CC) $(CFLAGS) $< -o $(OUT)/ || echo "--returned %ERRORLEVEL%\n") >> $@ 2>> $@
+all: $(OUT)/.log
+$(OUT)/.log: 6/9/2/tentative-internal-declaration-of-incomplete-type.c
+	mkdir $(OUT)
+	del $@
+	echo "  [CC] 6/9/2/tentative-internal-declaration-of-incomplete-type.c"
+	-($(CC) $(CFLAGS) $< -o $(OUT)/ || echo "--returned %ERRORLEVEL%\n") >> $@ 2>> $@
+all: $(OUT)/.log
+$(OUT)/.log: 6/2/4/object-reference-outside-lifetime.c
+	mkdir $(OUT)
+	del $@
+	echo "  [CC] 6/2/4/object-reference-outside-lifetime.c"
+	-($(CC) $(CFLAGS) $< -o $(OUT)/ || echo "--returned %ERRORLEVEL%\n") >> $@ 2>> $@
+all: $(OUT)/.log
+$(OUT)/.log: 6/2/4/use-of-indeterminite-automatic-value.c
+	mkdir $(OUT)
+	del $@
+	echo "  [CC] 6/2/4/use-of-indeterminite-automatic-value.c"
+	-($(CC) $(CFLAGS) $< -o $(OUT)/ || echo "--returned %ERRORLEVEL%\n") >> $@ 2>> $@
+all: $(OUT)/.log
+$(OUT)/.log: 6/2/4/pointer-to-object-after-lifetime.c
+	mkdir $(OUT)
+	del $@
+	echo "  [CC] 6/2/4/pointer-to-object-after-lifetime.c"
+	-($(CC) $(CFLAGS) $< -o $(OUT)/ || echo "--returned %ERRORLEVEL%\n") >> $@ 2>> $@
+all: $(OUT)/.log
+$(OUT)/.log: 6/2/7/sample-2.c
+	mkdir $(OUT)
+	del $@
+	echo "  [CC] 6/2/7/sample-2.c"
+	-($(CC) $(CFLAGS) $< -o $(OUT)/ || echo "--returned %ERRORLEVEL%\n") >> $@ 2>> $@
+all: $(OUT)/.log
+$(OUT)/.log: 6/2/7/incompatible-type-declarations.c
+	mkdir $(OUT)
+	del $@
+	echo "  [CC] 6/2/7/incompatible-type-declarations.c"
+	-($(CC) $(CFLAGS) $< -o $(OUT)/ || echo "--returned %ERRORLEVEL%\n") >> $@ 2>> $@
+all: $(OUT)/.log
+$(OUT)/.log: 6/2/6/1/sample-2.c
+	mkdir $(OUT)
+	del $@
+	echo "  [CC] 6/2/6/1/sample-2.c"
+	-($(CC) $(CFLAGS) $< -o $(OUT)/ || echo "--returned %ERRORLEVEL%\n") >> $@ 2>> $@
+all: $(OUT)/.log
+$(OUT)/.log: 6/2/6/1/sample-1.c
+	mkdir $(OUT)
+	del $@
+	echo "  [CC] 6/2/6/1/sample-1.c"
+	-($(CC) $(CFLAGS) $< -o $(OUT)/ || echo "--returned %ERRORLEVEL%\n") >> $@ 2>> $@
+all: $(OUT)/.log
+$(OUT)/.log: 6/2/6/2/sample-1.c
+	mkdir $(OUT)
+	del $@
+	echo "  [CC] 6/2/6/2/sample-1.c"
+	-($(CC) $(CFLAGS) $< -o $(OUT)/ || echo "--returned %ERRORLEVEL%\n") >> $@ 2>> $@
+all: $(OUT)/.log
+$(OUT)/.log: 6/2/2/identifier-with-internal-and-external-linkage.c
+	mkdir $(OUT)
+	del $@
+	echo "  [CC] 6/2/2/identifier-with-internal-and-external-linkage.c"
+	-($(CC) $(CFLAGS) $< -o $(OUT)/ || echo "--returned %ERRORLEVEL%\n") >> $@ 2>> $@
+all: $(OUT)/.log
+$(OUT)/.log: 6/3/1/4/convert-to-integer-outside-range.c
+	mkdir $(OUT)
+	del $@
+	echo "  [CC] 6/3/1/4/convert-to-integer-outside-range.c"
+	-($(CC) $(CFLAGS) $< -o $(OUT)/ || echo "--returned %ERRORLEVEL%\n") >> $@ 2>> $@
+all: $(OUT)/.log
+$(OUT)/.log: 6/3/1/5/float-demotion-overflow.c
+	mkdir $(OUT)
+	del $@
+	echo "  [CC] 6/3/1/5/float-demotion-overflow.c"
+	-($(CC) $(CFLAGS) $< -o $(OUT)/ || echo "--returned %ERRORLEVEL%\n") >> $@ 2>> $@
+all: $(OUT)/.log
+$(OUT)/.log: 6/3/2/1/invalid-lvalue.c
+	mkdir $(OUT)
+	del $@
+	echo "  [CC] 6/3/2/1/invalid-lvalue.c"
+	-($(CC) $(CFLAGS) $< -o $(OUT)/ || echo "--returned %ERRORLEVEL%\n") >> $@ 2>> $@
+all: $(OUT)/.log
+$(OUT)/.log: 6/3/2/1/uninitialized-lvalue.c
+	mkdir $(OUT)
+	del $@
+	echo "  [CC] 6/3/2/1/uninitialized-lvalue.c"
+	-($(CC) $(CFLAGS) $< -o $(OUT)/ || echo "--returned %ERRORLEVEL%\n") >> $@ 2>> $@
+all: $(OUT)/.log
+$(OUT)/.log: 6/3/2/1/convert-register-array-to-pointer.c
+	mkdir $(OUT)
+	del $@
+	echo "  [CC] 6/3/2/1/convert-register-array-to-pointer.c"
+	-($(CC) $(CFLAGS) $< -o $(OUT)/ || echo "--returned %ERRORLEVEL%\n") >> $@ 2>> $@
+all: $(OUT)/.log
+$(OUT)/.log: 6/3/2/2/value-of-void.c
+	mkdir $(OUT)
+	del $@
+	echo "  [CC] 6/3/2/2/value-of-void.c"
+	-($(CC) $(CFLAGS) $< -o $(OUT)/ || echo "--returned %ERRORLEVEL%\n") >> $@ 2>> $@
+all: $(OUT)/.log
+$(OUT)/.log: 6/3/2/3/call-function-through-incompatible-pointer.c
+	mkdir $(OUT)
+	del $@
+	echo "  [CC] 6/3/2/3/call-function-through-incompatible-pointer.c"
+	-($(CC) $(CFLAGS) $< -o $(OUT)/ || echo "--returned %ERRORLEVEL%\n") >> $@ 2>> $@
+all: $(OUT)/.log
+$(OUT)/.log: 6/3/2/3/convert-pointer-to-integer-outside-range.c
+	mkdir $(OUT)
+	del $@
+	echo "  [CC] 6/3/2/3/convert-pointer-to-integer-outside-range.c"
+	-($(CC) $(CFLAGS) $< -o $(OUT)/ || echo "--returned %ERRORLEVEL%\n") >> $@ 2>> $@
+all: $(OUT)/.log
+$(OUT)/.log: 6/10/4/bad-line.c
+	mkdir $(OUT)
+	del $@
+	echo "  [CC] 6/10/4/bad-line.c"
+	-($(CC) $(CFLAGS) $< -o $(OUT)/ || echo "--returned %ERRORLEVEL%\n") >> $@ 2>> $@
+all: $(OUT)/.log
+$(OUT)/.log: 6/10/1/invalid-use-of-defined-token.c
+	mkdir $(OUT)
+	del $@
+	echo "  [CC] 6/10/1/invalid-use-of-defined-token.c"
+	-($(CC) $(CFLAGS) $< -o $(OUT)/ || echo "--returned %ERRORLEVEL%\n") >> $@ 2>> $@
+all: $(OUT)/.log
+$(OUT)/.log: 6/10/non-directive.c
+	mkdir $(OUT)
+	del $@
+	echo "  [CC] 6/10/non-directive.c"
+	-($(CC) $(CFLAGS) $< -o $(OUT)/ || echo "--returned %ERRORLEVEL%\n") >> $@ 2>> $@
+all: $(OUT)/.log
+$(OUT)/.log: 6/10/6/improper-pragma-STDC.c
+	mkdir $(OUT)
+	del $@
+	echo "  [CC] 6/10/6/improper-pragma-STDC.c"
+	-($(CC) $(CFLAGS) $< -o $(OUT)/ || echo "--returned %ERRORLEVEL%\n") >> $@ 2>> $@
+all: $(OUT)/.log
+$(OUT)/.log: 6/10/6/sample-1.c
+	mkdir $(OUT)
+	del $@
+	echo "  [CC] 6/10/6/sample-1.c"
+	-($(CC) $(CFLAGS) $< -o $(OUT)/ || echo "--returned %ERRORLEVEL%\n") >> $@ 2>> $@
+all: $(OUT)/.log
+$(OUT)/.log: 6/10/8/undefine-predefined-macro.c
+	mkdir $(OUT)
+	del $@
+	echo "  [CC] 6/10/8/undefine-predefined-macro.c"
+	-($(CC) $(CFLAGS) $< -o $(OUT)/ || echo "--returned %ERRORLEVEL%\n") >> $@ 2>> $@
+all: $(OUT)/.log
+$(OUT)/.log: 6/10/2/invalid-include.c
+	mkdir $(OUT)
+	del $@
+	echo "  [CC] 6/10/2/invalid-include.c"
+	-($(CC) $(CFLAGS) $< -o $(OUT)/ || echo "--returned %ERRORLEVEL%\n") >> $@ 2>> $@
+all: $(OUT)/.log
+$(OUT)/.log: 6/10/2/include-leading-digit.c
+	mkdir $(OUT)
+	del $@
+	echo "  [CC] 6/10/2/include-leading-digit.c"
+	-($(CC) $(CFLAGS) $< -o $(OUT)/ || echo "--returned %ERRORLEVEL%\n") >> $@ 2>> $@
+all: $(OUT)/.log
+$(OUT)/.log: 6/10/3/directive-as-argument.c
+	mkdir $(OUT)
+	del $@
+	echo "  [CC] 6/10/3/directive-as-argument.c"
+	-($(CC) $(CFLAGS) $< -o $(OUT)/ || echo "--returned %ERRORLEVEL%\n") >> $@ 2>> $@
+all: $(OUT)/.log
+$(OUT)/.log: 6/10/3/2/sample-1.c
+	mkdir $(OUT)
+	del $@
+	echo "  [CC] 6/10/3/2/sample-1.c"
+	-($(CC) $(CFLAGS) $< -o $(OUT)/ || echo "--returned %ERRORLEVEL%\n") >> $@ 2>> $@
+all: $(OUT)/.log
+$(OUT)/.log: 6/10/3/3/sample-1.c
+	mkdir $(OUT)
+	del $@
+	echo "  [CC] 6/10/3/3/sample-1.c"
+	-($(CC) $(CFLAGS) $< -o $(OUT)/ || echo "--returned %ERRORLEVEL%\n") >> $@ 2>> $@
+all: $(OUT)/.log
+$(OUT)/.log: 7/30/1/sample-1.c
+	mkdir $(OUT)
+	del $@
+	echo "  [CC] 7/30/1/sample-1.c"
+	-($(CC) $(CFLAGS) $< -o $(OUT)/ || echo "--returned %ERRORLEVEL%\n") >> $@ 2>> $@
+all: $(OUT)/.log
+$(OUT)/.log: 7/30/2/2/1/sample-1.c
+	mkdir $(OUT)
+	del $@
+	echo "  [CC] 7/30/2/2/1/sample-1.c"
+	-($(CC) $(CFLAGS) $< -o $(OUT)/ || echo "--returned %ERRORLEVEL%\n") >> $@ 2>> $@
+all: $(OUT)/.log
+$(OUT)/.log: 7/30/3/2/1/sample-1.c
+	mkdir $(OUT)
+	del $@
+	echo "  [CC] 7/30/3/2/1/sample-1.c"
+	-($(CC) $(CFLAGS) $< -o $(OUT)/ || echo "--returned %ERRORLEVEL%\n") >> $@ 2>> $@
+all: $(OUT)/.log
+$(OUT)/.log: 7/20/4/invalid-int-constant-macro-argument.c
+	mkdir $(OUT)
+	del $@
+	echo "  [CC] 7/20/4/invalid-int-constant-macro-argument.c"
+	-($(CC) $(CFLAGS) $< -o $(OUT)/ || echo "--returned %ERRORLEVEL%\n") >> $@ 2>> $@
+all: $(OUT)/.log
+$(OUT)/.log: 7/copy-overlapping-objects.c
+	mkdir $(OUT)
+	del $@
+	echo "  [CC] 7/copy-overlapping-objects.c"
+	-($(CC) $(CFLAGS) $< -o $(OUT)/ || echo "--returned %ERRORLEVEL%\n") >> $@ 2>> $@
+all: $(OUT)/.log
+$(OUT)/.log: 7/27/3/1/asctime-with-invalid-tm.c
+	mkdir $(OUT)
+	del $@
+	echo "  [CC] 7/27/3/1/asctime-with-invalid-tm.c"
+	-($(CC) $(CFLAGS) $< -o $(OUT)/ || echo "--returned %ERRORLEVEL%\n") >> $@ 2>> $@
+all: $(OUT)/.log
+$(OUT)/.log: 7/22/4/4/exit-called-twice.c
+	mkdir $(OUT)
+	del $@
+	echo "  [CC] 7/22/4/4/exit-called-twice.c"
+	-($(CC) $(CFLAGS) $< -o $(OUT)/ || echo "--returned %ERRORLEVEL%\n") >> $@ 2>> $@
+all: $(OUT)/.log
+$(OUT)/.log: 7/22/4/4/sample-2.c
+	mkdir $(OUT)
+	del $@
+	echo "  [CC] 7/22/4/4/sample-2.c"
+	-($(CC) $(CFLAGS) $< -o $(OUT)/ || echo "--returned %ERRORLEVEL%\n") >> $@ 2>> $@
+all: $(OUT)/.log
+$(OUT)/.log: 7/22/4/7/quick_exit-raises-signal.c
+	mkdir $(OUT)
+	del $@
+	echo "  [CC] 7/22/4/7/quick_exit-raises-signal.c"
+	-($(CC) $(CFLAGS) $< -o $(OUT)/ || echo "--returned %ERRORLEVEL%\n") >> $@ 2>> $@
+all: $(OUT)/.log
+$(OUT)/.log: 7/22/4/6/modify-strerror-or-getenv-return-value.c
+	mkdir $(OUT)
+	del $@
+	echo "  [CC] 7/22/4/6/modify-strerror-or-getenv-return-value.c"
+	-($(CC) $(CFLAGS) $< -o $(OUT)/ || echo "--returned %ERRORLEVEL%\n") >> $@ 2>> $@
+all: $(OUT)/.log
+$(OUT)/.log: 7/22/4/8/sample-1.c
+	mkdir $(OUT)
+	del $@
+	echo "  [CC] 7/22/4/8/sample-1.c"
+	-($(CC) $(CFLAGS) $< -o $(OUT)/ || echo "--returned %ERRORLEVEL%\n") >> $@ 2>> $@
+all: $(OUT)/.log
+$(OUT)/.log: 7/22/7/sample-1.c
+	mkdir $(OUT)
+	del $@
+	echo "  [CC] 7/22/7/sample-1.c"
+	-($(CC) $(CFLAGS) $< -o $(OUT)/ || echo "--returned %ERRORLEVEL%\n") >> $@ 2>> $@
+all: $(OUT)/.log
+$(OUT)/.log: 7/22/5/1/sample-1.c
+	mkdir $(OUT)
+	del $@
+	echo "  [CC] 7/22/5/1/sample-1.c"
+	-($(CC) $(CFLAGS) $< -o $(OUT)/ || echo "--returned %ERRORLEVEL%\n") >> $@ 2>> $@
+all: $(OUT)/.log
+$(OUT)/.log: 7/22/5/sample-2.c
+	mkdir $(OUT)
+	del $@
+	echo "  [CC] 7/22/5/sample-2.c"
+	-($(CC) $(CFLAGS) $< -o $(OUT)/ || echo "--returned %ERRORLEVEL%\n") >> $@ 2>> $@
+all: $(OUT)/.log
+$(OUT)/.log: 7/22/5/sample-1.c
+	mkdir $(OUT)
+	del $@
+	echo "  [CC] 7/22/5/sample-1.c"
+	-($(CC) $(CFLAGS) $< -o $(OUT)/ || echo "--returned %ERRORLEVEL%\n") >> $@ 2>> $@
+all: $(OUT)/.log
+$(OUT)/.log: 7/22/3/4/use-uninitalized-malloc.c
+	mkdir $(OUT)
+	del $@
+	echo "  [CC] 7/22/3/4/use-uninitalized-malloc.c"
+	-($(CC) $(CFLAGS) $< -o $(OUT)/ || echo "--returned %ERRORLEVEL%\n") >> $@ 2>> $@
+all: $(OUT)/.log
+$(OUT)/.log: 7/22/3/use-0-byte-allocation.c
+	mkdir $(OUT)
+	del $@
+	echo "  [CC] 7/22/3/use-0-byte-allocation.c"
+	-($(CC) $(CFLAGS) $< -o $(OUT)/ || echo "--returned %ERRORLEVEL%\n") >> $@ 2>> $@
+all: $(OUT)/.log
+$(OUT)/.log: 7/22/3/5/use-of-uninitialized-realloc.c
+	mkdir $(OUT)
+	del $@
+	echo "  [CC] 7/22/3/5/use-of-uninitialized-realloc.c"
+	-($(CC) $(CFLAGS) $< -o $(OUT)/ || echo "--returned %ERRORLEVEL%\n") >> $@ 2>> $@
+all: $(OUT)/.log
+$(OUT)/.log: 7/22/3/use-after-free.c
+	mkdir $(OUT)
+	del $@
+	echo "  [CC] 7/22/3/use-after-free.c"
+	-($(CC) $(CFLAGS) $< -o $(OUT)/ || echo "--returned %ERRORLEVEL%\n") >> $@ 2>> $@
+all: $(OUT)/.log
+$(OUT)/.log: 7/22/3/3/invalid-free-address.c
+	mkdir $(OUT)
+	del $@
+	echo "  [CC] 7/22/3/3/invalid-free-address.c"
+	-($(CC) $(CFLAGS) $< -o $(OUT)/ || echo "--returned %ERRORLEVEL%\n") >> $@ 2>> $@
+all: $(OUT)/.log
+$(OUT)/.log: 7/17/1/suppress-generic-atomic-macro.c
+	mkdir $(OUT)
+	del $@
+	echo "  [CC] 7/17/1/suppress-generic-atomic-macro.c"
+	-($(CC) $(CFLAGS) $< -o $(OUT)/ || echo "--returned %ERRORLEVEL%\n") >> $@ 2>> $@
+all: $(OUT)/.log
+$(OUT)/.log: 7/26/4/4/sample-1.c
+	mkdir $(OUT)
+	del $@
+	echo "  [CC] 7/26/4/4/sample-1.c"
+	-($(CC) $(CFLAGS) $< -o $(OUT)/ || echo "--returned %ERRORLEVEL%\n") >> $@ 2>> $@
+all: $(OUT)/.log
+$(OUT)/.log: 7/26/4/6/sample-1.c
+	mkdir $(OUT)
+	del $@
+	echo "  [CC] 7/26/4/6/sample-1.c"
+	-($(CC) $(CFLAGS) $< -o $(OUT)/ || echo "--returned %ERRORLEVEL%\n") >> $@ 2>> $@
+all: $(OUT)/.log
+$(OUT)/.log: 7/26/4/3/sample-1.c
+	mkdir $(OUT)
+	del $@
+	echo "  [CC] 7/26/4/3/sample-1.c"
+	-($(CC) $(CFLAGS) $< -o $(OUT)/ || echo "--returned %ERRORLEVEL%\n") >> $@ 2>> $@
+all: $(OUT)/.log
+$(OUT)/.log: 7/26/5/3/sample-1.c
+	mkdir $(OUT)
+	del $@
+	echo "  [CC] 7/26/5/3/sample-1.c"
+	-($(CC) $(CFLAGS) $< -o $(OUT)/ || echo "--returned %ERRORLEVEL%\n") >> $@ 2>> $@
+all: $(OUT)/.log
+$(OUT)/.log: 7/26/6/1/sample-1.c
+	mkdir $(OUT)
+	del $@
+	echo "  [CC] 7/26/6/1/sample-1.c"
+	-($(CC) $(CFLAGS) $< -o $(OUT)/ || echo "--returned %ERRORLEVEL%\n") >> $@ 2>> $@
+all: $(OUT)/.log
+$(OUT)/.log: 7/26/6/2/sample-1.c
+	mkdir $(OUT)
+	del $@
+	echo "  [CC] 7/26/6/2/sample-1.c"
+	-($(CC) $(CFLAGS) $< -o $(OUT)/ || echo "--returned %ERRORLEVEL%\n") >> $@ 2>> $@
+all: $(OUT)/.log
+$(OUT)/.log: 7/4/ctype-parameter-out-of-range.c
+	mkdir $(OUT)
+	del $@
+	echo "  [CC] 7/4/ctype-parameter-out-of-range.c"
+	-($(CC) $(CFLAGS) $< -o $(OUT)/ || echo "--returned %ERRORLEVEL%\n") >> $@ 2>> $@
+all: $(OUT)/.log
+$(OUT)/.log: 7/11/1/1/modify-string-returned-by-setlocale.c
+	mkdir $(OUT)
+	del $@
+	echo "  [CC] 7/11/1/1/modify-string-returned-by-setlocale.c"
+	-($(CC) $(CFLAGS) $< -o $(OUT)/ || echo "--returned %ERRORLEVEL%\n") >> $@ 2>> $@
+all: $(OUT)/.log
+$(OUT)/.log: 7/11/2/1/modify-lconv-returned-by-localeconv.c
+	mkdir $(OUT)
+	del $@
+	echo "  [CC] 7/11/2/1/modify-lconv-returned-by-localeconv.c"
+	-($(CC) $(CFLAGS) $< -o $(OUT)/ || echo "--returned %ERRORLEVEL%\n") >> $@ 2>> $@
+all: $(OUT)/.log
+$(OUT)/.log: 7/14/1/1/signal-handler-generates-signal.c
+	mkdir $(OUT)
+	del $@
+	echo "  [CC] 7/14/1/1/signal-handler-generates-signal.c"
+	-($(CC) $(CFLAGS) $< -o $(OUT)/ || echo "--returned %ERRORLEVEL%\n") >> $@ 2>> $@
+all: $(OUT)/.log
+$(OUT)/.log: 7/14/1/1/signal-in-multithreaded-program.c
+	mkdir $(OUT)
+	del $@
+	echo "  [CC] 7/14/1/1/signal-in-multithreaded-program.c"
+	-($(CC) $(CFLAGS) $< -o $(OUT)/ || echo "--returned %ERRORLEVEL%\n") >> $@ 2>> $@
+all: $(OUT)/.log
+$(OUT)/.log: 7/14/1/1/standard-exception-signal-handler-returns.c
+	mkdir $(OUT)
+	del $@
+	echo "  [CC] 7/14/1/1/standard-exception-signal-handler-returns.c"
+	-($(CC) $(CFLAGS) $< -o $(OUT)/ || echo "--returned %ERRORLEVEL%\n") >> $@ 2>> $@
+all: $(OUT)/.log
+$(OUT)/.log: 7/14/1/1/invalid-signal-handler.c
+	mkdir $(OUT)
+	del $@
+	echo "  [CC] 7/14/1/1/invalid-signal-handler.c"
+	-($(CC) $(CFLAGS) $< -o $(OUT)/ || echo "--returned %ERRORLEVEL%\n") >> $@ 2>> $@
+all: $(OUT)/.log
+$(OUT)/.log: 7/14/1/1/exception-signal-handler-returns.c
+	mkdir $(OUT)
+	del $@
+	echo "  [CC] 7/14/1/1/exception-signal-handler-returns.c"
+	-($(CC) $(CFLAGS) $< -o $(OUT)/ || echo "--returned %ERRORLEVEL%\n") >> $@ 2>> $@
+all: $(OUT)/.log
+$(OUT)/.log: 7/14/1/1/sample-6.c
+	mkdir $(OUT)
+	del $@
+	echo "  [CC] 7/14/1/1/sample-6.c"
+	-($(CC) $(CFLAGS) $< -o $(OUT)/ || echo "--returned %ERRORLEVEL%\n") >> $@ 2>> $@
+all: $(OUT)/.log
+$(OUT)/.log: 7/14/1/1/raised-signal-calls-raise.c
+	mkdir $(OUT)
+	del $@
+	echo "  [CC] 7/14/1/1/raised-signal-calls-raise.c"
+	-($(CC) $(CFLAGS) $< -o $(OUT)/ || echo "--returned %ERRORLEVEL%\n") >> $@ 2>> $@
+all: $(OUT)/.log
+$(OUT)/.log: 7/14/1/1/sample-5.c
+	mkdir $(OUT)
+	del $@
+	echo "  [CC] 7/14/1/1/sample-5.c"
+	-($(CC) $(CFLAGS) $< -o $(OUT)/ || echo "--returned %ERRORLEVEL%\n") >> $@ 2>> $@
+all: $(OUT)/.log
+$(OUT)/.log: 7/29/4/5/7/sample-1.c
+	mkdir $(OUT)
+	del $@
+	echo "  [CC] 7/29/4/5/7/sample-1.c"
+	-($(CC) $(CFLAGS) $< -o $(OUT)/ || echo "--returned %ERRORLEVEL%\n") >> $@ 2>> $@
+all: $(OUT)/.log
+$(OUT)/.log: 7/29/6/sample-1.c
+	mkdir $(OUT)
+	del $@
+	echo "  [CC] 7/29/6/sample-1.c"
+	-($(CC) $(CFLAGS) $< -o $(OUT)/ || echo "--returned %ERRORLEVEL%\n") >> $@ 2>> $@
+all: $(OUT)/.log
+$(OUT)/.log: 7/29/2/11/non-l-s-conversion-with-invalid-multibyte-parameter.c
+	mkdir $(OUT)
+	del $@
+	echo "  [CC] 7/29/2/11/non-l-s-conversion-with-invalid-multibyte-parameter.c"
+	-($(CC) $(CFLAGS) $< -o $(OUT)/ || echo "--returned %ERRORLEVEL%\n") >> $@ 2>> $@
+all: $(OUT)/.log
+$(OUT)/.log: 7/24/4/5/short-strxfrm-output-used.c
+	mkdir $(OUT)
+	del $@
+	echo "  [CC] 7/24/4/5/short-strxfrm-output-used.c"
+	-($(CC) $(CFLAGS) $< -o $(OUT)/ || echo "--returned %ERRORLEVEL%\n") >> $@ 2>> $@
+all: $(OUT)/.log
+$(OUT)/.log: 7/24/1/string-function-passed-invalid-pointer.c
+	mkdir $(OUT)
+	del $@
+	echo "  [CC] 7/24/1/string-function-passed-invalid-pointer.c"
+	-($(CC) $(CFLAGS) $< -o $(OUT)/ || echo "--returned %ERRORLEVEL%\n") >> $@ 2>> $@
+all: $(OUT)/.log
+$(OUT)/.log: 7/24/1/string-function-instructed-to-access-beyond-an-array.c
+	mkdir $(OUT)
+	del $@
+	echo "  [CC] 7/24/1/string-function-instructed-to-access-beyond-an-array.c"
+	-($(CC) $(CFLAGS) $< -o $(OUT)/ || echo "--returned %ERRORLEVEL%\n") >> $@ 2>> $@
+all: $(OUT)/.log
+$(OUT)/.log: 7/24/5/8/first-strtok-NULL.c
+	mkdir $(OUT)
+	del $@
+	echo "  [CC] 7/24/5/8/first-strtok-NULL.c"
+	-($(CC) $(CFLAGS) $< -o $(OUT)/ || echo "--returned %ERRORLEVEL%\n") >> $@ 2>> $@
+all: $(OUT)/.log
+$(OUT)/.log: 7/16/1/4/sample-1.c
+	mkdir $(OUT)
+	del $@
+	echo "  [CC] 7/16/1/4/sample-1.c"
+	-($(CC) $(CFLAGS) $< -o $(OUT)/ || echo "--returned %ERRORLEVEL%\n") >> $@ 2>> $@
+all: $(OUT)/.log
+$(OUT)/.log: 7/16/1/mismatched-va_start-and-va_end.c
+	mkdir $(OUT)
+	del $@
+	echo "  [CC] 7/16/1/mismatched-va_start-and-va_end.c"
+	-($(CC) $(CFLAGS) $< -o $(OUT)/ || echo "--returned %ERRORLEVEL%\n") >> $@ 2>> $@
+all: $(OUT)/.log
+$(OUT)/.log: 7/16/1/1/sample-2.c
+	mkdir $(OUT)
+	del $@
+	echo "  [CC] 7/16/1/1/sample-2.c"
+	-($(CC) $(CFLAGS) $< -o $(OUT)/ || echo "--returned %ERRORLEVEL%\n") >> $@ 2>> $@
+all: $(OUT)/.log
+$(OUT)/.log: 7/16/1/1/sample-1.c
+	mkdir $(OUT)
+	del $@
+	echo "  [CC] 7/16/1/1/sample-1.c"
+	-($(CC) $(CFLAGS) $< -o $(OUT)/ || echo "--returned %ERRORLEVEL%\n") >> $@ 2>> $@
+all: $(OUT)/.log
+$(OUT)/.log: 7/16/1/2/sample-1.c
+	mkdir $(OUT)
+	del $@
+	echo "  [CC] 7/16/1/2/sample-1.c"
+	-($(CC) $(CFLAGS) $< -o $(OUT)/ || echo "--returned %ERRORLEVEL%\n") >> $@ 2>> $@
+all: $(OUT)/.log
+$(OUT)/.log: 7/16/sample-2.c
+	mkdir $(OUT)
+	del $@
+	echo "  [CC] 7/16/sample-2.c"
+	-($(CC) $(CFLAGS) $< -o $(OUT)/ || echo "--returned %ERRORLEVEL%\n") >> $@ 2>> $@
+all: $(OUT)/.log
+$(OUT)/.log: 7/16/sample-1.c
+	mkdir $(OUT)
+	del $@
+	echo "  [CC] 7/16/sample-1.c"
+	-($(CC) $(CFLAGS) $< -o $(OUT)/ || echo "--returned %ERRORLEVEL%\n") >> $@ 2>> $@
+all: $(OUT)/.log
+$(OUT)/.log: 7/21/7/2/sample-1.c
+	mkdir $(OUT)
+	del $@
+	echo "  [CC] 7/21/7/2/sample-1.c"
+	-($(CC) $(CFLAGS) $< -o $(OUT)/ || echo "--returned %ERRORLEVEL%\n") >> $@ 2>> $@
+all: $(OUT)/.log
+$(OUT)/.log: 7/21/7/10/sample-1.c
+	mkdir $(OUT)
+	del $@
+	echo "  [CC] 7/21/7/10/sample-1.c"
+	-($(CC) $(CFLAGS) $< -o $(OUT)/ || echo "--returned %ERRORLEVEL%\n") >> $@ 2>> $@
+all: $(OUT)/.log
+$(OUT)/.log: 7/21/5/6/use-setvbuf-array.c
+	mkdir $(OUT)
+	del $@
+	echo "  [CC] 7/21/5/6/use-setvbuf-array.c"
+	-($(CC) $(CFLAGS) $< -o $(OUT)/ || echo "--returned %ERRORLEVEL%\n") >> $@ 2>> $@
+all: $(OUT)/.log
+$(OUT)/.log: 7/21/5/2/fflush-input-stream.c
+	mkdir $(OUT)
+	del $@
+	echo "  [CC] 7/21/5/2/fflush-input-stream.c"
+	-($(CC) $(CFLAGS) $< -o $(OUT)/ || echo "--returned %ERRORLEVEL%\n") >> $@ 2>> $@
+all: $(OUT)/.log
+$(OUT)/.log: 7/21/5/3/invalid-fopen-mode.c
+	mkdir $(OUT)
+	del $@
+	echo "  [CC] 7/21/5/3/invalid-fopen-mode.c"
+	-($(CC) $(CFLAGS) $< -o $(OUT)/ || echo "--returned %ERRORLEVEL%\n") >> $@ 2>> $@
+all: $(OUT)/.log
+$(OUT)/.log: 7/21/5/3/input-output-transition-without-fflush.c
+	mkdir $(OUT)
+	del $@
+	echo "  [CC] 7/21/5/3/input-output-transition-without-fflush.c"
+	-($(CC) $(CFLAGS) $< -o $(OUT)/ || echo "--returned %ERRORLEVEL%\n") >> $@ 2>> $@
+all: $(OUT)/.log
+$(OUT)/.log: 7/21/6/1/invalid-length-specifier.c
+	mkdir $(OUT)
+	del $@
+	echo "  [CC] 7/21/6/1/invalid-length-specifier.c"
+	-($(CC) $(CFLAGS) $< -o $(OUT)/ || echo "--returned %ERRORLEVEL%\n") >> $@ 2>> $@
+all: $(OUT)/.log
+$(OUT)/.log: 7/21/6/1/invalid-percent-literal.c
+	mkdir $(OUT)
+	del $@
+	echo "  [CC] 7/21/6/1/invalid-percent-literal.c"
+	-($(CC) $(CFLAGS) $< -o $(OUT)/ || echo "--returned %ERRORLEVEL%\n") >> $@ 2>> $@
+all: $(OUT)/.log
+$(OUT)/.log: 7/21/6/1/invalid-multibyte-format-parameter.c
+	mkdir $(OUT)
+	del $@
+	echo "  [CC] 7/21/6/1/invalid-multibyte-format-parameter.c"
+	-($(CC) $(CFLAGS) $< -o $(OUT)/ || echo "--returned %ERRORLEVEL%\n") >> $@ 2>> $@
+all: $(OUT)/.log
+$(OUT)/.log: 7/21/6/1/invalid-percent-n-specification.c
+	mkdir $(OUT)
+	del $@
+	echo "  [CC] 7/21/6/1/invalid-percent-n-specification.c"
+	-($(CC) $(CFLAGS) $< -o $(OUT)/ || echo "--returned %ERRORLEVEL%\n") >> $@ 2>> $@
+all: $(OUT)/.log
+$(OUT)/.log: 7/21/6/1/invalid-conversion-specification.c
+	mkdir $(OUT)
+	del $@
+	echo "  [CC] 7/21/6/1/invalid-conversion-specification.c"
+	-($(CC) $(CFLAGS) $< -o $(OUT)/ || echo "--returned %ERRORLEVEL%\n") >> $@ 2>> $@
+all: $(OUT)/.log
+$(OUT)/.log: 7/21/6/1/missing-asterisk-width.c
+	mkdir $(OUT)
+	del $@
+	echo "  [CC] 7/21/6/1/missing-asterisk-width.c"
+	-($(CC) $(CFLAGS) $< -o $(OUT)/ || echo "--returned %ERRORLEVEL%\n") >> $@ 2>> $@
+all: $(OUT)/.log
+$(OUT)/.log: 7/21/6/1/insufficient-formatted-arguments.c
+	mkdir $(OUT)
+	del $@
+	echo "  [CC] 7/21/6/1/insufficient-formatted-arguments.c"
+	-($(CC) $(CFLAGS) $< -o $(OUT)/ || echo "--returned %ERRORLEVEL%\n") >> $@ 2>> $@
+all: $(OUT)/.log
+$(OUT)/.log: 7/21/6/1/invalid-precision.c
+	mkdir $(OUT)
+	del $@
+	echo "  [CC] 7/21/6/1/invalid-precision.c"
+	-($(CC) $(CFLAGS) $< -o $(OUT)/ || echo "--returned %ERRORLEVEL%\n") >> $@ 2>> $@
+all: $(OUT)/.log
+$(OUT)/.log: 7/21/6/1/output-greater-than-INT_MAX-characters.c
+	mkdir $(OUT)
+	del $@
+	echo "  [CC] 7/21/6/1/output-greater-than-INT_MAX-characters.c"
+	-($(CC) $(CFLAGS) $< -o $(OUT)/ || echo "--returned %ERRORLEVEL%\n") >> $@ 2>> $@
+all: $(OUT)/.log
+$(OUT)/.log: 7/21/6/1/non-terminated-string-percent-s.c
+	mkdir $(OUT)
+	del $@
+	echo "  [CC] 7/21/6/1/non-terminated-string-percent-s.c"
+	-($(CC) $(CFLAGS) $< -o $(OUT)/ || echo "--returned %ERRORLEVEL%\n") >> $@ 2>> $@
+all: $(OUT)/.log
+$(OUT)/.log: 7/21/6/8/va_list-function-called-with-invalid-va_list.c
+	mkdir $(OUT)
+	del $@
+	echo "  [CC] 7/21/6/8/va_list-function-called-with-invalid-va_list.c"
+	-($(CC) $(CFLAGS) $< -o $(OUT)/ || echo "--returned %ERRORLEVEL%\n") >> $@ 2>> $@
+all: $(OUT)/.log
+$(OUT)/.log: 7/21/6/2/sample-4.c
+	mkdir $(OUT)
+	del $@
+	echo "  [CC] 7/21/6/2/sample-4.c"
+	-($(CC) $(CFLAGS) $< -o $(OUT)/ || echo "--returned %ERRORLEVEL%\n") >> $@ 2>> $@
+all: $(OUT)/.log
+$(OUT)/.log: 7/21/6/2/sample-2.c
+	mkdir $(OUT)
+	del $@
+	echo "  [CC] 7/21/6/2/sample-2.c"
+	-($(CC) $(CFLAGS) $< -o $(OUT)/ || echo "--returned %ERRORLEVEL%\n") >> $@ 2>> $@
+all: $(OUT)/.log
+$(OUT)/.log: 7/21/6/2/sample-3.c
+	mkdir $(OUT)
+	del $@
+	echo "  [CC] 7/21/6/2/sample-3.c"
+	-($(CC) $(CFLAGS) $< -o $(OUT)/ || echo "--returned %ERRORLEVEL%\n") >> $@ 2>> $@
+all: $(OUT)/.log
+$(OUT)/.log: 7/21/6/2/sample-1.c
+	mkdir $(OUT)
+	del $@
+	echo "  [CC] 7/21/6/2/sample-1.c"
+	-($(CC) $(CFLAGS) $< -o $(OUT)/ || echo "--returned %ERRORLEVEL%\n") >> $@ 2>> $@
+all: $(OUT)/.log
+$(OUT)/.log: 7/21/6/2/sample-5.c
+	mkdir $(OUT)
+	del $@
+	echo "  [CC] 7/21/6/2/sample-5.c"
+	-($(CC) $(CFLAGS) $< -o $(OUT)/ || echo "--returned %ERRORLEVEL%\n") >> $@ 2>> $@
+all: $(OUT)/.log
+$(OUT)/.log: 7/21/9/2/bad-fseek-on-text-stream.c
+	mkdir $(OUT)
+	del $@
+	echo "  [CC] 7/21/9/2/bad-fseek-on-text-stream.c"
+	-($(CC) $(CFLAGS) $< -o $(OUT)/ || echo "--returned %ERRORLEVEL%\n") >> $@ 2>> $@
+all: $(OUT)/.log
+$(OUT)/.log: 7/21/9/3/fsetpos-without-fgetpos.c
+	mkdir $(OUT)
+	del $@
+	echo "  [CC] 7/21/9/3/fsetpos-without-fgetpos.c"
+	-($(CC) $(CFLAGS) $< -o $(OUT)/ || echo "--returned %ERRORLEVEL%\n") >> $@ 2>> $@
+all: $(OUT)/.log
+$(OUT)/.log: 7/21/8/1/sample-2.c
+	mkdir $(OUT)
+	del $@
+	echo "  [CC] 7/21/8/1/sample-2.c"
+	-($(CC) $(CFLAGS) $< -o $(OUT)/ || echo "--returned %ERRORLEVEL%\n") >> $@ 2>> $@
+all: $(OUT)/.log
+$(OUT)/.log: 7/21/8/1/sample-1.c
+	mkdir $(OUT)
+	del $@
+	echo "  [CC] 7/21/8/1/sample-1.c"
+	-($(CC) $(CFLAGS) $< -o $(OUT)/ || echo "--returned %ERRORLEVEL%\n") >> $@ 2>> $@
+all: $(OUT)/.log
+$(OUT)/.log: 7/21/2/mismatched-stream-io-char-width.c
+	mkdir $(OUT)
+	del $@
+	echo "  [CC] 7/21/2/mismatched-stream-io-char-width.c"
+	-($(CC) $(CFLAGS) $< -o $(OUT)/ || echo "--returned %ERRORLEVEL%\n") >> $@ 2>> $@
+all: $(OUT)/.log
+$(OUT)/.log: 7/21/2/sample-2.c
+	mkdir $(OUT)
+	del $@
+	echo "  [CC] 7/21/2/sample-2.c"
+	-($(CC) $(CFLAGS) $< -o $(OUT)/ || echo "--returned %ERRORLEVEL%\n") >> $@ 2>> $@
+all: $(OUT)/.log
+$(OUT)/.log: 7/21/3/use-FILE-after-close.c
+	mkdir $(OUT)
+	del $@
+	echo "  [CC] 7/21/3/use-FILE-after-close.c"
+	-($(CC) $(CFLAGS) $< -o $(OUT)/ || echo "--returned %ERRORLEVEL%\n") >> $@ 2>> $@
+all: $(OUT)/.log
+$(OUT)/.log: 7/1/4/invalid-variadic-parameter.c
+	mkdir $(OUT)
+	del $@
+	echo "  [CC] 7/1/4/invalid-variadic-parameter.c"
+	-($(CC) $(CFLAGS) $< -o $(OUT)/ || echo "--returned %ERRORLEVEL%\n") >> $@ 2>> $@
+all: $(OUT)/.log
+$(OUT)/.log: 7/1/4/sample-2.c
+	mkdir $(OUT)
+	del $@
+	echo "  [CC] 7/1/4/sample-2.c"
+	-($(CC) $(CFLAGS) $< -o $(OUT)/ || echo "--returned %ERRORLEVEL%\n") >> $@ 2>> $@
+all: $(OUT)/.log
+$(OUT)/.log: 7/1/2/file-matching-standard-header.c
+	mkdir $(OUT)
+	del $@
+	echo "  [CC] 7/1/2/file-matching-standard-header.c"
+	-($(CC) $(CFLAGS) $< -o $(OUT)/ || echo "--returned %ERRORLEVEL%\n") >> $@ 2>> $@
+all: $(OUT)/.log
+$(OUT)/.log: 7/1/2/include-standard-header-with-defined-keyword.c
+	mkdir $(OUT)
+	del $@
+	echo "  [CC] 7/1/2/include-standard-header-with-defined-keyword.c"
+	-($(CC) $(CFLAGS) $< -o $(OUT)/ || echo "--returned %ERRORLEVEL%\n") >> $@ 2>> $@
+all: $(OUT)/.log
+$(OUT)/.log: 7/1/2/use-of-standard-function-before-header.c
+	mkdir $(OUT)
+	del $@
+	echo "  [CC] 7/1/2/use-of-standard-function-before-header.c"
+	-($(CC) $(CFLAGS) $< -o $(OUT)/ || echo "--returned %ERRORLEVEL%\n") >> $@ 2>> $@
+all: $(OUT)/.log
+$(OUT)/.log: 7/1/2/sample-2.c
+	mkdir $(OUT)
+	del $@
+	echo "  [CC] 7/1/2/sample-2.c"
+	-($(CC) $(CFLAGS) $< -o $(OUT)/ || echo "--returned %ERRORLEVEL%\n") >> $@ 2>> $@
+all: $(OUT)/.log
+$(OUT)/.log: 7/1/2/declare-standard-function-with-internal-linkage.c
+	mkdir $(OUT)
+	del $@
+	echo "  [CC] 7/1/2/declare-standard-function-with-internal-linkage.c"
+	-($(CC) $(CFLAGS) $< -o $(OUT)/ || echo "--returned %ERRORLEVEL%\n") >> $@ 2>> $@
+all: $(OUT)/.log
+$(OUT)/.log: 7/1/3/use-of-reserved-identifier.c
+	mkdir $(OUT)
+	del $@
+	echo "  [CC] 7/1/3/use-of-reserved-identifier.c"
+	-($(CC) $(CFLAGS) $< -o $(OUT)/ || echo "--returned %ERRORLEVEL%\n") >> $@ 2>> $@
+all: $(OUT)/.log
+$(OUT)/.log: 7/1/3/undefined-reserved-macro.c
+	mkdir $(OUT)
+	del $@
+	echo "  [CC] 7/1/3/undefined-reserved-macro.c"
+	-($(CC) $(CFLAGS) $< -o $(OUT)/ || echo "--returned %ERRORLEVEL%\n") >> $@ 2>> $@
+all: $(OUT)/.log
+$(OUT)/.log: 7/5/suppress-errno-macro.c
+	mkdir $(OUT)
+	del $@
+	echo "  [CC] 7/5/suppress-errno-macro.c"
+	-($(CC) $(CFLAGS) $< -o $(OUT)/ || echo "--returned %ERRORLEVEL%\n") >> $@ 2>> $@
+all: $(OUT)/.log
+$(OUT)/.log: 7/6/4/3/invalid-fenv.c
+	mkdir $(OUT)
+	del $@
+	echo "  [CC] 7/6/4/3/invalid-fenv.c"
+	-($(CC) $(CFLAGS) $< -o $(OUT)/ || echo "--returned %ERRORLEVEL%\n") >> $@ 2>> $@
+all: $(OUT)/.log
+$(OUT)/.log: 7/6/1/access-fpstatus-with-fenv-off.c
+	mkdir $(OUT)
+	del $@
+	echo "  [CC] 7/6/1/access-fpstatus-with-fenv-off.c"
+	-($(CC) $(CFLAGS) $< -o $(OUT)/ || echo "--returned %ERRORLEVEL%\n") >> $@ 2>> $@
+all: $(OUT)/.log
+$(OUT)/.log: 7/6/2/4/set-fe-flags-not-in-get.c
+	mkdir $(OUT)
+	del $@
+	echo "  [CC] 7/6/2/4/set-fe-flags-not-in-get.c"
+	-($(CC) $(CFLAGS) $< -o $(OUT)/ || echo "--returned %ERRORLEVEL%\n") >> $@ 2>> $@
+all: $(OUT)/.log
+$(OUT)/.log: 7/6/2/exception-mask-not-from-bitwise-or.c
+	mkdir $(OUT)
+	del $@
+	echo "  [CC] 7/6/2/exception-mask-not-from-bitwise-or.c"
+	-($(CC) $(CFLAGS) $< -o $(OUT)/ || echo "--returned %ERRORLEVEL%\n") >> $@ 2>> $@
+all: $(OUT)/.log
+$(OUT)/.log: 7/19/invalid-offsetof.c
+	mkdir $(OUT)
+	del $@
+	echo "  [CC] 7/19/invalid-offsetof.c"
+	-($(CC) $(CFLAGS) $< -o $(OUT)/ || echo "--returned %ERRORLEVEL%\n") >> $@ 2>> $@
+all: $(OUT)/.log
+$(OUT)/.log: 7/8/2/1/unrepresentable-conversion.c
+	mkdir $(OUT)
+	del $@
+	echo "  [CC] 7/8/2/1/unrepresentable-conversion.c"
+	-($(CC) $(CFLAGS) $< -o $(OUT)/ || echo "--returned %ERRORLEVEL%\n") >> $@ 2>> $@
+all: $(OUT)/.log
+$(OUT)/.log: 7/12/clash-with-math_errhandling.c
+	mkdir $(OUT)
+	del $@
+	echo "  [CC] 7/12/clash-with-math_errhandling.c"
+	-($(CC) $(CFLAGS) $< -o $(OUT)/ || echo "--returned %ERRORLEVEL%\n") >> $@ 2>> $@
+all: $(OUT)/.log
+$(OUT)/.log: 7/12/3/fpclassify-non-real.c
+	mkdir $(OUT)
+	del $@
+	echo "  [CC] 7/12/3/fpclassify-non-real.c"
+	-($(CC) $(CFLAGS) $< -o $(OUT)/ || echo "--returned %ERRORLEVEL%\n") >> $@ 2>> $@
+all: $(OUT)/.log
+$(OUT)/.log: 7/2/suppress-assert-macro.c
+	mkdir $(OUT)
+	del $@
+	echo "  [CC] 7/2/suppress-assert-macro.c"
+	-($(CC) $(CFLAGS) $< -o $(OUT)/ || echo "--returned %ERRORLEVEL%\n") >> $@ 2>> $@
+all: $(OUT)/.log
+$(OUT)/.log: 7/2/assert-non-scalar.c
+	mkdir $(OUT)
+	del $@
+	echo "  [CC] 7/2/assert-non-scalar.c"
+	-($(CC) $(CFLAGS) $< -o $(OUT)/ || echo "--returned %ERRORLEVEL%\n") >> $@ 2>> $@
+all: $(OUT)/.log
+$(OUT)/.log: 7/13/suppress-setjmp-macro.c
+	mkdir $(OUT)
+	del $@
+	echo "  [CC] 7/13/suppress-setjmp-macro.c"
+	-($(CC) $(CFLAGS) $< -o $(OUT)/ || echo "--returned %ERRORLEVEL%\n") >> $@ 2>> $@
+all: $(OUT)/.log
+$(OUT)/.log: 7/13/2/1/setjmp-invalid-context.c
+	mkdir $(OUT)
+	del $@
+	echo "  [CC] 7/13/2/1/setjmp-invalid-context.c"
+	-($(CC) $(CFLAGS) $< -o $(OUT)/ || echo "--returned %ERRORLEVEL%\n") >> $@ 2>> $@
+all: $(OUT)/.log
+$(OUT)/.log: 7/13/2/1/longjmp-invalid-context.c
+	mkdir $(OUT)
+	del $@
+	echo "  [CC] 7/13/2/1/longjmp-invalid-context.c"
+	-($(CC) $(CFLAGS) $< -o $(OUT)/ || echo "--returned %ERRORLEVEL%\n") >> $@ 2>> $@
+all: $(OUT)/.log
+$(OUT)/.log: 7/13/2/1/access-auto-variable-changed-between-setjmp-and-longjmp.c
+	mkdir $(OUT)
+	del $@
+	echo "  [CC] 7/13/2/1/access-auto-variable-changed-between-setjmp-and-longjmp.c"
+	-($(CC) $(CFLAGS) $< -o $(OUT)/ || echo "--returned %ERRORLEVEL%\n") >> $@ 2>> $@
+all: $(OUT)/.log
+$(OUT)/.log: 7/3/4/invalid-fp-pragma-context.c
+	mkdir $(OUT)
+	del $@
+	echo "  [CC] 7/3/4/invalid-fp-pragma-context.c"
+	-($(CC) $(CFLAGS) $< -o $(OUT)/ || echo "--returned %ERRORLEVEL%\n") >> $@ 2>> $@
+all: $(OUT)/.log
+$(OUT)/.log: 7/25/incompatible-type-generic-argument.c
+	mkdir $(OUT)
+	del $@
+	echo "  [CC] 7/25/incompatible-type-generic-argument.c"
+	-($(CC) $(CFLAGS) $< -o $(OUT)/ || echo "--returned %ERRORLEVEL%\n") >> $@ 2>> $@
+all: $(OUT)/.log
+$(OUT)/.log: 7/25/complex-argument-to-real-only-macro.c
+	mkdir $(OUT)
+	del $@
+	echo "  [CC] 7/25/complex-argument-to-real-only-macro.c"
+	-($(CC) $(CFLAGS) $< -o $(OUT)/ || echo "--returned %ERRORLEVEL%\n") >> $@ 2>> $@
