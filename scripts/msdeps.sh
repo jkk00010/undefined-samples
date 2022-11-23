@@ -22,7 +22,9 @@ all: \$(OUT)\\${out}.log
 \$(OUT)\\${out}.log: $src
 	-mkdir \$(OUT) 2>nul
 	-del /f \$@ 2>nul
-	echo "  [CC] $src"
-	-(\$(CC) \$(CFLAGS) $src -o \$(OUT)\\${out} || echo "--returned %ERRORLEVEL%\\n") >> \$@ 2>> \$@
+	echo   [CC] $src
+	-(\$(CC) \$(CFLAGS) $src || echo "--returned %ERRORLEVEL%\\n") > \$@ 2>&1
+	-move *.exe \$(OUT)\\${out}.exe >nul 2>nul
+	-del *.obj 2>nul
 EOF
 done
