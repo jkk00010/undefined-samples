@@ -3,7 +3,7 @@
 exec > Makefile.nm
 
 cat<<EOH
-.SILENT:\n'
+.SILENT:
 .SUFFIXES: .c .log
 
 CC=cl
@@ -14,12 +14,15 @@ all:
 EOH
 
 for src in $(find */ -name \*.c); do
+	out=$(echo $src | sed -e 's#^/##g;s#/#.#g;s#\.c$##g;')
+	src=$(echo $src | tr '/.' '\\.')
+
 	cat <<EOF
-all: \$(OUT)/${out}.log
-\$(OUT)/${out}.log: $src
-	mkdir \$(OUT)
-	del \$@
+all: \$(OUT)\\${out}.log
+\$(OUT)\\${out}.log: $src
+	-mkdir \$(OUT) 2>nul
+	-del /f \$@ 2>nul
 	echo "  [CC] $src"
-	-(\$(CC) \$(CFLAGS) \$< -o \$(OUT)/${out} || echo "--returned %ERRORLEVEL%\\n") >> \$@ 2>> \$@
+	-(\$(CC) \$(CFLAGS) $src -o \$(OUT)\\${out} || echo "--returned %ERRORLEVEL%\\n") >> \$@ 2>> \$@
 EOF
 done
