@@ -1,7 +1,12 @@
+gcc/
 gcc-*/
+clang/
 clang-*/
+msvc/
+msvc-*/
 *.o
 a.out
 *.obj
 *.exe
 *.log
+*.csv
