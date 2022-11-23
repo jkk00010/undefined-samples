@@ -13,7 +13,7 @@ OUT=msvc
 all:
 EOH
 
-for src in $(find */ -name \*.c); do
+for src in $(find */ -name \*.c | grep -v /sample-); do
 	out=$(echo $src | sed -e 's#^/##g;s#/#.#g;s#\.c$##g;')
 	src=$(echo $src | tr '/.' '\\.')
 
@@ -21,9 +21,8 @@ for src in $(find */ -name \*.c); do
 all: \$(OUT)\\${out}.log
 \$(OUT)\\${out}.log: $src
 	-mkdir \$(OUT) 2>nul
-	-del /f \$@ 2>nul
 	echo   [CC] $src
-	-(\$(CC) \$(CFLAGS) $src || echo "--returned %ERRORLEVEL%\\n") > \$@ 2>&1
+	-\$(CC) \$(CFLAGS) $src > \$@ 2>&1
 	-move *.exe \$(OUT)\\${out}.exe >nul 2>nul
 	-del *.obj 2>nul
 EOF
