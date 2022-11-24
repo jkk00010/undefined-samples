@@ -1,4 +1,5 @@
 /* The value of a pointer to a FILE object is used after the associated file is closed (7.21.3). */
+#define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
 
 #ifdef _WIN32

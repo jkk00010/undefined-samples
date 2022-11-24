@@ -1,5 +1,7 @@
 /* The size expression in an array declaration is not a constant expression and evaluates at program execution time to a nonpositive value (6.7.6.2). */
 
+#ifndef __STDC_NO_VLA__
+
 #include <stdlib.h>
 
 int main(void)
@@ -11,3 +13,11 @@ int main(void)
 	}
 	return a[0];
 }
+
+#else
+
+int main(void)
+{
+}
+
+#endif

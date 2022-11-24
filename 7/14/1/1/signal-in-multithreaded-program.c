@@ -1,5 +1,7 @@
 /* The signal function is used in a multi-threaded program (7.14.1.1). */
 
+#ifndef __STDC_NO_THREADS__
+
 #include <threads.h>
 #include <signal.h>
 #include <stdlib.h>
@@ -24,3 +26,11 @@ int main(void)
 	thrd_join(thr, &n);
 	return n;
 }
+
+#else
+
+int main(void)
+{
+}
+
+#endif

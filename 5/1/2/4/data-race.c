@@ -1,5 +1,7 @@
 /* The execution of a program contains a data race (5.1.2.4). */
 
+#ifndef __STDC_NO_THREADS__
+
 #include <threads.h>
 #include <stdio.h>
 
@@ -27,3 +29,9 @@ int main(void)
 	thrd_join(thr2, NULL);
 	printf("%d\n", n);
 }
+
+#else
+int main(void)
+{
+}
+#endif
