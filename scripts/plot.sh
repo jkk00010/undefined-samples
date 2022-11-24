@@ -6,16 +6,12 @@ if [ $# -ne 1 ]; then
 fi
 
 gnuplot -p -e "filename='$1'" -<<-EOF
+	set terminal pslatex 10
+	set key above
 	set datafile separator ','
 	set key autotitle columnhead
 	set style data histogram
 	set style fill solid border -1
-	
-	set style line 1 lt 1 lc rgb '#800000'
-	set style line 2 lt 1 lc rgb '#008080'
-	set style line 3 lt 1 lc rgb '#008000'
-	set style fill solid
-	
 	set xtics rotate by -45
 	set yr [0:*]
 	
