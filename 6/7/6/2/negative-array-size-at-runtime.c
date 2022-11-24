@@ -4,7 +4,10 @@
 
 int main(void)
 {
-	int i = atoi("-1");
-	int a[i];
+	int n = atoi("-1");
+	int a[n];
+	for (int i = 0; i < n; i++) {
+		a[i] = i;
+	}
 	return a[0];
 }

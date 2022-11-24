@@ -8,5 +8,5 @@ int main(void)
 		int a :1;
 		int b :1;
 	};
-	printf("%zd\n", offsetof(foo, a));
+	printf("%zd\n", offsetof(struct foo, a));
 }

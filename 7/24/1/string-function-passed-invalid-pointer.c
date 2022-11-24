@@ -5,4 +5,5 @@
 int main(void)
 {
 	size_t l = strlen(NULL);
+	(void)l;
 }

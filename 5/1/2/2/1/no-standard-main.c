@@ -2,4 +2,5 @@
 
 void main(char *args[])
 {
+	(void)args;
 }

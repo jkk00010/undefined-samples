@@ -10,5 +10,6 @@ int main(void)
 	if (fetestexcept(FE_INVALID)) {
 		return 1;
 	}
+	(void)d;
 	return 0;
 }

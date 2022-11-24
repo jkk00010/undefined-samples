@@ -6,4 +6,5 @@ int main(void)
 {
 	int c = fgetc(stdin);
 	fflush(stdin);
+	return c;
 }

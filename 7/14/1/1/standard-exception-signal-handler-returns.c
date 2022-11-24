@@ -13,5 +13,5 @@ int main(void)
 {
 	signal(SIGFPE, fpe);
 	int x = 1 / atoi("0");
-	return 0;
+	return x;
 }

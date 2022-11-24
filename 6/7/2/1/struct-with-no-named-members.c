@@ -2,5 +2,8 @@
 
 int main(void)
 {
-	struct {} foo;
+	struct {
+		int :1;
+	} foo;
+	(void)foo;
 }

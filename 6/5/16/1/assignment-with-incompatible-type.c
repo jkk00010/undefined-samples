@@ -6,4 +6,5 @@ int main(void)
 	char *p;
 	const char c = 'A';
 	cpp = &p;
+	(void)cpp; (void)p; (void)c;
 }

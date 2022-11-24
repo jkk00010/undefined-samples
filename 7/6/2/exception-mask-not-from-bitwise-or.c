@@ -8,5 +8,6 @@ int main(void)
 	if (fetestexcept(0xdeadbeef)) {
 		return 1;
 	}
+	(void)d;
 	return 0;
 }

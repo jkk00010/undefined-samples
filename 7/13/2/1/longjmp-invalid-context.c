@@ -4,5 +4,5 @@
 int main(void)
 {
 	jmp_buf jb;
-	longjmp(jb);
+	longjmp(jb, 1);
 }

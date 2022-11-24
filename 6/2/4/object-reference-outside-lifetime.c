@@ -4,6 +4,7 @@ int main(void)
 {
 	if (0) {
 		int x = 42;
+		(void)x;
 	}
 	return x;
 }
