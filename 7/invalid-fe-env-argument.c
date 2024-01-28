@@ -4,7 +4,7 @@
 
 int main(void)
 {
-	fenv_t fenv;
+	fenv_t fenv = {0};
 	if (fesetenv(&fenv)) {
 		return 1;
 	}
