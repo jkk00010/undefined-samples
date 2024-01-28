@@ -5,7 +5,7 @@
 
 int main(void)
 {
-	char s[] = "this is a string\0\0\0\0\0";
+	char s[64] = "this is a string";
 	strcpy(s + 1, s);
 	puts(s);
 }
