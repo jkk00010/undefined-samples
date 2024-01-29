@@ -4,5 +4,5 @@
 int main(void)
 {
 	FILE *f = fopen("/dev/null", "read");
-	putc(fgetc(f));
+	putchar(fgetc(f));
 }
