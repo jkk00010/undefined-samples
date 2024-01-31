@@ -3,6 +3,6 @@
 
 int main(void)
 {
-	jmp_buf jb;
+	jmp_buf jb = {0};
 	longjmp(jb, 1);
 }
