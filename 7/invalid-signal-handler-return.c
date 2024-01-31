@@ -12,6 +12,6 @@ void fpe(int sig)
 int main(void)
 {
 	signal(SIGFPE, fpe);
-	int x = 1 / atoi("0");
-	return x;
+	raise(SIGFPE);
+	return 0;
 }
