@@ -4,10 +4,7 @@
 
 int main(void)
 {
-	double d = 1.0 / 0.0;
-	if (fetestexcept(0xdeadbeef)) {
-		return 1;
-	}
-	(void)d;
-	return 0;
+	fexcept_t fe;
+	fegetexceptflag(&fe, FE_ALL_EXCEPT);
+	return fesetexceptflag(&fe, 0xdeadbeef);
 }
