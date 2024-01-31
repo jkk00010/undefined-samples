@@ -3,16 +3,16 @@
 #include <signal.h>
 #include <stdlib.h>
 
-int n;
+int *p = 0;
 
 void sigsig(int sig)
 {
-	n = sig / atoi("0");
+	signal(SIGSEGV, sigsig);
+	*p = 0;
 }
 
 int main(void)
 {
 	signal(SIGSEGV, sigsig);
-	int *p = 0;
 	*p = 0;
 }
