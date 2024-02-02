@@ -5,5 +5,6 @@
 int main(void)
 {
 	FILE *f = fopen("/dev/null", "r");
-	fseek(f, 10, SEEK_END);
+	long int p = ftell(f);
+	fseek(f, p, SEEK_CUR);
 }
