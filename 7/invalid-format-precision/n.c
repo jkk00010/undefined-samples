@@ -4,5 +4,6 @@
 
 int main(void)
 {
-	printf("%.5s\n", "foo");
+	int n = 0;
+	printf("%.n\n", &n);
 }
