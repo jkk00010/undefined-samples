@@ -3,8 +3,6 @@
 #include <inttypes.h>
 #include <stdio.h>
 
-/* assumes twos compliment */
-
 int main(void)
 {
 	imaxdiv_t d = imaxdiv(INTMAX_MIN, 0);

@@ -3,8 +3,6 @@
 #include <stdlib.h>
 #include <stdio.h>
 
-/* assumes twos compliment */
-
 int main(void)
 {
 	unsigned long long int i = strtoull("0xfffffffffffffffffffffffffffffff", NULL, 16);

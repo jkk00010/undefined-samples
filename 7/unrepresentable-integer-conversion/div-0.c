@@ -4,8 +4,6 @@
 #include <stdlib.h>
 #include <stdio.h>
 
-/* assumes twos compliment */
-
 int main(void)
 {
 	div_t d = div(INT_MIN, 0);

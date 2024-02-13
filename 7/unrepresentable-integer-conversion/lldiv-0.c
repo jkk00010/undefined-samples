@@ -4,8 +4,6 @@
 #include <stdlib.h>
 #include <stdio.h>
 
-/* assumes twos compliment */
-
 int main(void)
 {
 	lldiv_t d = lldiv(LLONG_MIN, 0);

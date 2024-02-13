@@ -3,8 +3,6 @@
 #include <inttypes.h>
 #include <stdio.h>
 
-/* assumes twos compliment */
-
 int main(void)
 {
 	intmax_t i = strtoimax("0xfffffffffffffffffffffffffffffff", NULL, 16);

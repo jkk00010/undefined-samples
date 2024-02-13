@@ -3,8 +3,6 @@
 #include <stdlib.h>
 #include <stdio.h>
 
-/* assumes twos compliment */
-
 int main(void)
 {
 	long int i = strtol("0xfffffffffffffffffffffffffffffff", NULL, 16);
