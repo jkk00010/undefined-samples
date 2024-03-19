@@ -4,5 +4,5 @@
 
 int main(void)
 {
-	return feraiseexcept(0xdeadbeef);
+	return feraiseexcept(0x0eadbeef);
 }

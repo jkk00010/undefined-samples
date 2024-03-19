@@ -4,5 +4,5 @@
 
 int main(void)
 {
-	return feclearexcept(0xdeadbeef);
+	return feclearexcept(0x0eadbeef);
 }

@@ -6,5 +6,5 @@ int main(void)
 {
 	fexcept_t fe;
 	fegetexceptflag(&fe, FE_ALL_EXCEPT);
-	return fesetexceptflag(&fe, 0xdeadbeef);
+	return fesetexceptflag(&fe, 0x0eadbeef);
 }
