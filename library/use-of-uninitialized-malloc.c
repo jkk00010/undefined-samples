@@ -4,5 +4,7 @@
 int main(void)
 {
 	int *foo = malloc(sizeof(*foo));
-	return *foo;
+	int ret = *foo;
+	free(foo);
+	return ret;
 }

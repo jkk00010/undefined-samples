@@ -4,8 +4,11 @@
 
 int main(void)
 {
+	int ret;
 	int *foo = malloc(sizeof(*foo));
 	foo[0] = 1;
 	foo = realloc(foo, 2 * sizeof(*foo));
-	return foo[1];
+	ret = foo[1];
+	free(foo);
+	return ret;
 }
