@@ -4,8 +4,11 @@
 
 int main(void)
 {
+	int ret;
 	fpos_t pos;
 	FILE *f = fopen("/dev/null", "rb");
 	ungetc('a', f);
-	return fgetpos(f, &pos);
+	ret = fgetpos(f, &pos);
+	fclose(f);
+	return ret;
 }

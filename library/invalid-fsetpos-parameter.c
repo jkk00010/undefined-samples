@@ -9,4 +9,5 @@ int main(void)
 	fpos_t fp;
 	memset(&fp, '\xff', sizeof(fp));
 	fsetpos(f, &fp);
+	fclose(f);
 }

@@ -13,4 +13,5 @@ int main(void)
 	fclose(f);
 	int c = fgetc(f);
 	printf("%c\n", c);
+	fclose(f);
 }

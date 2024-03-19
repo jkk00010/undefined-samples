@@ -7,4 +7,5 @@ int main(void)
 	FILE *f = fopen("/dev/null", "r");
 	long int p = ftell(f);
 	fseek(f, p, SEEK_CUR);
+	fclose(f);
 }

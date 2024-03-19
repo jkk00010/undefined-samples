@@ -7,5 +7,6 @@ int main(void)
 	FILE *f = fopen("/dev/null", "r+");
 	fputc('a', f);
 	int c = fgetc(f);
+	fclose(f);
 	return c;
 }

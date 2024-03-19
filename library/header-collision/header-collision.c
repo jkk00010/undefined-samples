@@ -5,4 +5,5 @@
 int main(void)
 {
 	FILE *f = fopen("foo", "r");
+	fclose(f);
 }
