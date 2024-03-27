@@ -10,8 +10,10 @@ int main(void)
 		int b;
 	} s[2];
 	FILE *f = tmpfile();
-	fread(s, sizeof(s[0]), sizeof(s) / sizeof(s[0]), f);
-	ret = (int)ftell(f);
-	fclose(f);
+	if (f != NULL) {
+		fread(s, sizeof(s[0]), sizeof(s) / sizeof(s[0]), f);
+		ret = (int)ftell(f);
+		fclose(f);
+	}
 	return ret;
 }
