@@ -4,9 +4,11 @@
 
 int main(void)
 {
-	FILE *stream = fopen("/dev/null", "r+");
-	int c = fgetc(stream);
-	fflush(stream);
-	fclose(stream);
-	return c;
+	FILE *stream = tmpfile();
+	if (stream != NULL) {
+		int c = fgetc(stream);
+		fflush(stream);
+		fclose(stream);
+		return c;
+	}
 }

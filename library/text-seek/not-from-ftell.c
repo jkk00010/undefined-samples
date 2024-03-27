@@ -5,6 +5,8 @@
 int main(void)
 {
 	FILE *f = fopen("/dev/null", "r");
-	fseek(f, 1, SEEK_SET);
-	fclose(f);
+	if (f != NULL) {
+		fseek(f, 1, SEEK_SET);
+		fclose(f);
+	}
 }

@@ -7,7 +7,7 @@ int *p = 0;
 
 void sigsig(int sig)
 {
-	signal(SIGSEGV, sigsig);
+	signal(sig, sigsig);
 	*p = 0;
 }
 

@@ -10,8 +10,10 @@
 int main(void)
 {
 	FILE *f = fopen(filename, "rb");
-	fclose(f);
-	int c = fgetc(f);
-	printf("%c\n", c);
-	fclose(f);
+	if (f != NULL) {
+		fclose(f);
+		int c = fgetc(f);
+		printf("%c\n", c);
+		fclose(f);
+	}
 }

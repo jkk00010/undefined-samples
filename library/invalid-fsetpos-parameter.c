@@ -6,8 +6,10 @@
 int main(void)
 {
 	FILE *f = fopen("/dev/null", "r");
-	fpos_t fp;
-	memset(&fp, '\xff', sizeof(fp));
-	fsetpos(f, &fp);
-	fclose(f);
+	if (f != NULL) {
+		fpos_t fp;
+		memset(&fp, '\xff', sizeof(fp));
+		fsetpos(f, &fp);
+		fclose(f);
+	}
 }

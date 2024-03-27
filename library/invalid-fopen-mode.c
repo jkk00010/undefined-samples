@@ -4,6 +4,8 @@
 int main(void)
 {
 	FILE *f = fopen("/dev/null", "read");
-	putchar(fgetc(f));
-	fclose(f);
+	if (f != NULL) {
+		putchar(fgetc(f));
+		fclose(f);
+	}
 }

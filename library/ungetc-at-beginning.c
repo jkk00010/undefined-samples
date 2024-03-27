@@ -7,8 +7,10 @@ int main(void)
 	int ret;
 	fpos_t pos;
 	FILE *f = fopen("/dev/null", "rb");
-	ungetc('a', f);
-	ret = fgetpos(f, &pos);
-	fclose(f);
+	if (f != NULL) {
+		ungetc('a', f);
+		ret = fgetpos(f, &pos);
+		fclose(f);
+	}
 	return ret;
 }

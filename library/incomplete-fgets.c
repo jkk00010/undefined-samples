@@ -6,6 +6,8 @@ int main(void)
 {
 	char buf[32];
 	FILE *f = fopen("/dev/null", "w");
-	fgets(buf, sizeof(buf), f);
-	fclose(f);
+	if (f != NULL) {
+		fgets(buf, sizeof(buf), f);
+		fclose(f);
+	}
 }
