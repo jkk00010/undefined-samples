@@ -4,7 +4,7 @@
 
 int main(void)
 {
-	int ret;
+	int ret = 0;
 	fpos_t pos;
 	FILE *f = fopen("/dev/null", "rb");
 	if (f != NULL) {
