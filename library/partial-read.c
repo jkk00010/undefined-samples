@@ -14,11 +14,12 @@ int main(void)
 	FILE *f = tmpfile();
 	fwrite(s, sizeof(s[0]), sizeof(s) / sizeof(s[0]), f);
 	fflush(f);
-	fseek(f, -(sizeof(int) + 1), SEEK_CUR);
+	fseek(f, -(int)(sizeof(int) + 1), SEEK_CUR);
 	fputc('\0', f);
 	fflush(f);
 	rewind(f);
 	s[1].b = 0;
 	fread(s, sizeof(s[0]), sizeof(s) / sizeof(s[0]), f);
+	fclose(s);
 	return s[1].b;
 }
