@@ -4,11 +4,14 @@
 
 int main(void)
 {
+	int ret = 0;
 	struct {
 		int a;
 		int b;
 	} s[2];
 	FILE *f = tmpfile();
 	fread(s, sizeof(s[0]), sizeof(s) / sizeof(s[0]), f);
-	return (int)ftell(f);
+	ret = (int)ftell(f);
+	fclose(f);
+	return ret;
 }

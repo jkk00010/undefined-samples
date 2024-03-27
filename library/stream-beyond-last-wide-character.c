@@ -5,10 +5,13 @@
 
 int main(void)
 {
+	int ret = 0;
 	FILE *s = tmpfile();
 	fputws(L"foobarbaz", s);
 	fflush(s);
 	rewind(s);
 	fputws(L"quux", s);
-	return fgetwc(s);
+	ret = (int)fgetwc(s);
+	fclose(s);
+	return ret;
 }

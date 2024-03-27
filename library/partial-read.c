@@ -20,6 +20,6 @@ int main(void)
 	rewind(f);
 	s[1].b = 0;
 	fread(s, sizeof(s[0]), sizeof(s) / sizeof(s[0]), f);
-	fclose(s);
+	fclose(f);
 	return s[1].b;
 }
