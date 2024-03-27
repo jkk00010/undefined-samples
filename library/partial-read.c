@@ -12,13 +12,13 @@ int main(void)
 		{ 1, 2 },
 	};
 	FILE *f = tmpfile();
-	fwrite(s, sizeof(s[0]), sizeof(s[0]) / sizeof(s), f);
+	fwrite(s, sizeof(s[0]), sizeof(s) / sizeof(s[0]), f);
 	fflush(f);
 	fseek(f, -(sizeof(int) + 1), SEEK_CUR);
 	fputc('\0', f);
 	fflush(f);
 	rewind(f);
 	s[1].b = 0;
-	fread(s, sizeof(s[0]), sizeof(s[0]) / sizeof(s), f);
+	fread(s, sizeof(s[0]), sizeof(s) / sizeof(s[0]), f);
 	return s[1].b;
 }
